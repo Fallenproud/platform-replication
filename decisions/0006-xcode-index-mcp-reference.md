@@ -2,31 +2,26 @@
 
 ## Status
 
-Accepted on 2026-07-25.
+**Superseded by Decision 0007 on 2026-07-25.**
 
-## Decision
+## Original decision
 
-Use `block/xcode-index-mcp` only as evidence of an observable two-process semantic-index architecture. Do not copy, fork, modify, vendor or distribute its source under the current repository state because no explicit source license was found.
+Use `block/xcode-index-mcp` only as evidence of an observable two-process semantic-index architecture because the initial review did not find an explicit source license.
 
-## Rationale
+## Why this decision was superseded
 
-The architecture is relevant to Voltino: an MCP-facing adapter can translate product-neutral symbol queries into a platform-specific Xcode and IndexStoreDB provider. The implementation is not legally cleared for reuse and is technically coupled to macOS, Xcode DerivedData, a fixed local port and an unpinned IndexStoreDB branch.
+The initial check looked for a root file named `LICENSE` and inspected `pyproject.toml`. A subsequent CI job enumerated the repository tree and found a tracked root file named `LICENSE.txt`. That file contains Apache License 2.0.
 
-## Clean-room boundary
+The original legal premise was therefore incorrect. The architecture and security concerns remain valid, but source reuse is not prohibited by a missing license.
 
-The implementation team may use:
+## Preserved findings
 
-- public MCP specifications;
-- public Apple, Swift and IndexStoreDB documentation;
-- independently written tests and product requirements;
-- observable input and output behavior described in public documentation.
+- Voltino should own a language-neutral `CodeIndexProvider` contract.
+- The upstream implementation is coupled to macOS, Xcode DerivedData and Swift IndexStoreDB.
+- The fixed localhost port and missing explicit transport authentication require replacement.
+- IndexStoreDB must be pinned rather than consumed from an unbounded branch.
+- Goose-specific paths and assumptions must be removed.
 
-The implementation team must not copy upstream source text, prompts, screenshots, assets or internal structure into the product codebase.
+## Superseding decision
 
-## Target architecture
-
-Voltino owns a language-neutral `CodeIndexProvider` contract. Optional implementations may include Xcode IndexStoreDB, LSP, TypeScript language services and repository parsers.
-
-## Reassessment
-
-Source reuse may be reconsidered only after the upstream repository adds a clear compatible license and passes a new full assessment.
+Decision 0007 changes the disposition from `REFERENCE` to a conditional, narrow, optional `FORK` after confirming Apache-2.0 license evidence.
