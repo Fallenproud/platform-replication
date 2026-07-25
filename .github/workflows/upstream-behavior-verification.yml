@@ -1,0 +1,260 @@
+name: Upstream Behavior Verification
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "assessments/block/agent-task-queue.json"
+      - "assessments/block/ai-rules.json"
+      - ".github/workflows/upstream-behavior-verification.yml"
+  push:
+    branches:
+      - "program/**"
+    paths:
+      - "assessments/block/agent-task-queue.json"
+      - "assessments/block/ai-rules.json"
+      - ".github/workflows/upstream-behavior-verification.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: upstream-behavior-verification-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  agent-task-queue:
+    name: Agent Task Queue CLI and MCP behavior
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install uv
+        uses: astral-sh/setup-uv@eac588ad8def6316056a12d4907a9d4d84ff7a3b
+
+      - name: Fetch pinned upstream
+        run: |
+          git clone --filter=blob:none https://github.com/block/agent-task-queue.git upstream
+          cd upstream
+          git checkout ccb94ae25c2b286d62e7371fd4c0f7ce60e33efa
+          test "$(git rev-parse HEAD)" = "ccb94ae25c2b286d62e7371fd4c0f7ce60e33efa"
+
+      - name: Materialize environment
+        working-directory: upstream
+        env:
+          UV_DEFAULT_INDEX: https://pypi.org/simple
+          UV_INDEX_URL: https://pypi.org/simple
+        run: |
+          uv python install 3.13
+          uv sync --all-extras --python 3.13
+
+      - name: Verify CLI surface and empty state
+        working-directory: upstream
+        run: |
+          DATA_DIR="${RUNNER_TEMP}/agent-task-queue-cli"
+          uv run tq --help
+          uv run tq --data-dir "$DATA_DIR" list --json > empty.json
+          python - <<'PY'
+          import json
+          payload = json.load(open("empty.json"))
+          assert payload["summary"] == {"total": 0, "running": 0, "waiting": 0}
+          PY
+
+      - name: Verify command execution and logs
+        working-directory: upstream
+        run: |
+          DATA_DIR="${RUNNER_TEMP}/agent-task-queue-cli"
+          FIXTURE="${RUNNER_TEMP}/agent-task-fixture"
+          mkdir -p "$FIXTURE"
+          cat > "$FIXTURE/smoke.py" <<'PY'
+          from pathlib import Path
+          Path("smoke-result.txt").write_text("queue-smoke-ok", encoding="utf-8")
+          print("queue-smoke-ok")
+          PY
+          uv run tq --data-dir "$DATA_DIR" run -q smoke -t 30 -C "$FIXTURE" python smoke.py
+          test "$(cat "$FIXTURE/smoke-result.txt")" = "queue-smoke-ok"
+          uv run tq --data-dir "$DATA_DIR" logs --json > logs.json
+          python - <<'PY'
+          import json
+          events = [row.get("event") for row in json.load(open("logs.json"))["entries"]]
+          assert "task_queued" in events
+          assert "task_started" in events
+          assert "task_completed" in events
+          PY
+
+      - name: Verify FIFO serialization
+        working-directory: upstream
+        run: |
+          DATA_DIR="${RUNNER_TEMP}/agent-task-queue-fifo"
+          FIXTURE="${RUNNER_TEMP}/agent-task-fifo-fixture"
+          mkdir -p "$FIXTURE"
+          cat > "$FIXTURE/timed_task.py" <<'PY'
+          import json
+          import sys
+          import time
+          from pathlib import Path
+
+          name = sys.argv[1]
+          delay = float(sys.argv[2])
+          start = time.time()
+          time.sleep(delay)
+          end = time.time()
+          Path(f"{name}.json").write_text(json.dumps({"start": start, "end": end}), encoding="utf-8")
+          PY
+          uv run tq --data-dir "$DATA_DIR" run -q serial -t 30 -C "$FIXTURE" python timed_task.py first 1.5 &
+          FIRST_PID=$!
+          sleep 0.2
+          uv run tq --data-dir "$DATA_DIR" run -q serial -t 30 -C "$FIXTURE" python timed_task.py second 0 &
+          SECOND_PID=$!
+          wait "$FIRST_PID"
+          wait "$SECOND_PID"
+          python - <<PY
+          import json
+          from pathlib import Path
+          fixture = Path("$FIXTURE")
+          first = json.loads((fixture / "first.json").read_text())
+          second = json.loads((fixture / "second.json").read_text())
+          assert second["start"] >= first["end"] - 0.05, (first, second)
+          PY
+
+      - name: Verify timeout termination
+        working-directory: upstream
+        run: |
+          DATA_DIR="${RUNNER_TEMP}/agent-task-queue-timeout"
+          set +e
+          uv run tq --data-dir "$DATA_DIR" run -q timeout -t 1 python -c 'import time; time.sleep(10)'
+          EXIT_CODE=$?
+          set -e
+          test "$EXIT_CODE" = "124"
+
+      - name: Verify in-memory MCP transport
+        working-directory: upstream
+        env:
+          TASK_QUEUE_DATA_DIR: ${{ runner.temp }}/agent-task-queue-mcp
+        run: |
+          cat > mcp_smoke.py <<'PY'
+          import asyncio
+          import os
+          from pathlib import Path
+
+          from fastmcp import Client
+          import task_queue
+
+          async def main():
+              async with Client(task_queue.mcp) as client:
+                  tools = await client.list_tools()
+                  names = {tool.name for tool in tools}
+                  assert {"run_task", "clear_task_logs"}.issubset(names), names
+                  result = await client.call_tool(
+                      "run_task",
+                      {
+                          "command": "python -c 'print(\"mcp-smoke-ok\")'",
+                          "working_directory": str(Path.cwd()),
+                          "queue_name": "mcp-smoke",
+                          "timeout_seconds": 30,
+                          "env_vars": "",
+                          "agent_name": "platform-replication-ci",
+                      },
+                  )
+                  text = str(result).lower()
+                  assert "mcp-smoke-ok" in text or "exit_code" in text or "exit code" in text, result
+
+          asyncio.run(main())
+          PY
+          uv run python mcp_smoke.py
+
+  ai-rules:
+    name: AI Rules generation and cleanup behavior
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetch pinned upstream
+        run: |
+          git clone --filter=blob:none https://github.com/block/ai-rules.git upstream
+          cd upstream
+          git checkout b2c1cd16d05f47053eb3f059f87524f7b6ee1a1f
+          test "$(git rev-parse HEAD)" = "b2c1cd16d05f47053eb3f059f87524f7b6ee1a1f"
+
+      - name: Build release binary
+        working-directory: upstream
+        run: |
+          source bin/activate-hermit
+          cargo build --release
+
+      - name: Verify initialization and agent inventory
+        run: |
+          BIN="$PWD/upstream/target/release/ai-rules"
+          FIXTURE="${RUNNER_TEMP}/ai-rules-fixture"
+          mkdir -p "$FIXTURE"
+          cd "$FIXTURE"
+          "$BIN" --version
+          "$BIN" list-agents | tee agents.txt
+          grep -qi "claude" agents.txt
+          grep -qi "codex" agents.txt
+          grep -qi "cursor" agents.txt
+          "$BIN" init
+          test -d ai-rules
+
+      - name: Verify rule and MCP generation
+        run: |
+          BIN="$PWD/upstream/target/release/ai-rules"
+          FIXTURE="${RUNNER_TEMP}/ai-rules-fixture"
+          cd "$FIXTURE"
+          cat > ai-rules/platform-replication.md <<'EOF'
+          ---
+          description: Platform replication audit rules
+          alwaysApply: true
+          ---
+          # Platform Replication
+          Preserve provenance and never import unapproved source.
+          EOF
+          cat > ai-rules/mcp.json <<'EOF'
+          {
+            "mcpServers": {
+              "evidence": {
+                "command": "echo",
+                "args": ["evidence-ready"],
+                "env": {"EVIDENCE_TOKEN": "${EVIDENCE_TOKEN}"}
+              }
+            }
+          }
+          EOF
+          "$BIN" generate --agents claude,codex,cursor
+          test -e CLAUDE.md
+          test -e AGENTS.md
+          test -d .cursor/rules
+          test -f .mcp.json
+          test -f .codex/config.toml
+          test -f .cursor/mcp.json
+          grep -q "Preserve provenance" CLAUDE.md
+          "$BIN" status | tee status.txt
+
+      - name: Verify regeneration and cleanup
+        run: |
+          BIN="$PWD/upstream/target/release/ai-rules"
+          FIXTURE="${RUNNER_TEMP}/ai-rules-fixture"
+          cd "$FIXTURE"
+          echo "Local drift" >> CLAUDE.md
+          "$BIN" status | tee drift-status.txt || true
+          "$BIN" generate --agents claude,codex,cursor
+          grep -q "Preserve provenance" CLAUDE.md
+          "$BIN" clean
+          test ! -e CLAUDE.md
+          test ! -e AGENTS.md
+          test ! -e .mcp.json
+          test ! -e .codex/config.toml
+          test ! -e .cursor/mcp.json
+
+      - name: Verify symlink mode
+        run: |
+          BIN="$PWD/upstream/target/release/ai-rules"
+          FIXTURE="${RUNNER_TEMP}/ai-rules-symlink"
+          mkdir -p "$FIXTURE/ai-rules"
+          cat > "$FIXTURE/ai-rules/AGENTS.md" <<'EOF'
+          # Shared Agent Rules
+          Use evidence-first implementation.
+          EOF
+          cd "$FIXTURE"
+          "$BIN" generate --agents claude,codex
+          test -L CLAUDE.md
+          test -L AGENTS.md
+          test "$(readlink CLAUDE.md)" = "ai-rules/AGENTS.md"
+          test "$(readlink AGENTS.md)" = "ai-rules/AGENTS.md"
