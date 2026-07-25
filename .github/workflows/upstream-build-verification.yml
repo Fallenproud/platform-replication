@@ -1,0 +1,122 @@
+name: Upstream Build Verification
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "assessments/**"
+      - "decisions/**"
+      - "prototypes/**"
+      - ".github/workflows/upstream-build-verification.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: upstream-build-verification-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  agent-task-queue:
+    name: Agent Task Queue / Python ${{ matrix.python-version }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.13"]
+    steps:
+      - name: Install uv
+        uses: astral-sh/setup-uv@eac588ad8def6316056a12d4907a9d4d84ff7a3b
+
+      - name: Fetch pinned upstream
+        run: |
+          git clone --filter=blob:none https://github.com/block/agent-task-queue.git upstream
+          cd upstream
+          git checkout ccb94ae25c2b286d62e7371fd4c0f7ce60e33efa
+          test "$(git rev-parse HEAD)" = "ccb94ae25c2b286d62e7371fd4c0f7ce60e33efa"
+
+      - name: Set up Python
+        working-directory: upstream
+        run: uv python install ${{ matrix.python-version }}
+
+      - name: Install dependencies
+        working-directory: upstream
+        env:
+          UV_DEFAULT_INDEX: https://pypi.org/simple
+          UV_INDEX_URL: https://pypi.org/simple
+        run: uv sync --all-extras --python ${{ matrix.python-version }}
+
+      - name: Lint
+        working-directory: upstream
+        run: uv run --python ${{ matrix.python-version }} ruff check .
+
+      - name: Test
+        working-directory: upstream
+        run: uv run --python ${{ matrix.python-version }} pytest -v
+
+  ai-rules:
+    name: AI Rules / Rust build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetch pinned upstream
+        run: |
+          git clone --filter=blob:none https://github.com/block/ai-rules.git upstream
+          cd upstream
+          git checkout b2c1cd16d05f47053eb3f059f87524f7b6ee1a1f
+          test "$(git rev-parse HEAD)" = "b2c1cd16d05f47053eb3f059f87524f7b6ee1a1f"
+
+      - name: Verify license evidence
+        working-directory: upstream
+        run: |
+          test -f LICENSE
+          grep -q "Apache License" LICENSE
+          grep -q 'license = "Apache License 2.0"' Cargo.toml
+
+      - name: Format check
+        working-directory: upstream
+        run: |
+          source bin/activate-hermit
+          cargo fmt --check
+
+      - name: Clippy
+        working-directory: upstream
+        run: |
+          source bin/activate-hermit
+          ./scripts/clippy-check.sh
+
+      - name: Test
+        working-directory: upstream
+        run: |
+          source bin/activate-hermit
+          cargo test --verbose
+
+      - name: Release build
+        working-directory: upstream
+        run: |
+          source bin/activate-hermit
+          cargo build --release --verbose
+
+  xcode-index-license-gate:
+    name: Xcode Index MCP / source reuse gate
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetch pinned upstream
+        run: |
+          git clone --filter=blob:none https://github.com/block/xcode-index-mcp.git upstream
+          cd upstream
+          git checkout c89af82aee64c42690a60c2dda6d9e0f8bf022e9
+          test "$(git rev-parse HEAD)" = "c89af82aee64c42690a60c2dda6d9e0f8bf022e9"
+
+      - name: Enforce reference-only disposition
+        working-directory: upstream
+        run: |
+          if test -f LICENSE || test -f LICENSE.md || test -f LICENSE.txt; then
+            echo "A license now exists. Open a new assessment before changing the disposition."
+            exit 1
+          fi
+          if grep -Eq '^license[[:space:]]*=' pyproject.toml; then
+            echo "Project metadata now declares a license. Open a new assessment before changing the disposition."
+            exit 1
+          fi
+          echo "No explicit source license found at the pinned revision; REFERENCE-only gate remains correct."
