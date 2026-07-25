@@ -95,7 +95,7 @@ test("provider exit code 124 is normalized as timed_out", { concurrency: false }
   }
 });
 
-test("AbortSignal cancels the provider and records cancellation events", { concurrency: false }, async () => {
+test("AbortSignal cancels a ready provider and records cancellation events", { concurrency: false }, async () => {
   const context = await createFixture();
   const controller = new AbortController();
   const terminationRecord = path.join(context.root, "provider-terminated.txt");
@@ -104,6 +104,7 @@ test("AbortSignal cancels the provider and records cancellation events", { concu
     const result = await withEnvironment(
       {
         FAKE_TQ_SLEEP_MS: "10000",
+        FAKE_TQ_STDOUT: "provider-ready\n",
         FAKE_TQ_TERMINATION_RECORD: terminationRecord,
       },
       () => execute({
@@ -114,7 +115,9 @@ test("AbortSignal cancels the provider and records cancellation events", { concu
         signal: controller.signal,
         onEvent: (event) => {
           events.push(event);
-          if (event.type === "started") controller.abort();
+          if (event.type === "stdout" && event.payload.text.includes("provider-ready")) {
+            controller.abort();
+          }
         },
       }),
     );
