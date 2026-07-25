@@ -1,0 +1,46 @@
+name: Repository assessment
+description: Intake one upstream repository into the platform replication program
+title: "audit: OWNER/REPOSITORY"
+labels: ["repository-audit"]
+body:
+  - type: input
+    id: repository
+    attributes:
+      label: Canonical repository
+      placeholder: owner/repository
+    validations:
+      required: true
+  - type: input
+    id: target
+    attributes:
+      label: Intended Amarax or Daycostra target
+    validations:
+      required: true
+  - type: dropdown
+    id: urgency
+    attributes:
+      label: Priority
+      options:
+        - P0 — blocks active implementation
+        - P1 — high-value candidate
+        - P2 — planned research
+        - P3 — backlog
+    validations:
+      required: true
+  - type: textarea
+    id: capability
+    attributes:
+      label: Capability being evaluated
+    validations:
+      required: true
+  - type: checkboxes
+    id: gates
+    attributes:
+      label: Required gates
+      options:
+        - label: Canonical upstream and pinned revision
+        - label: License, NOTICE, assets, and dependency review
+        - label: Build and self-hostability reproduction
+        - label: Architecture and security assessment
+        - label: Product mapping and overlap analysis
+        - label: ADOPT / FORK / REFERENCE / REJECT decision

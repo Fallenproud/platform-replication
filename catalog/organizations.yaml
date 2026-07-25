@@ -1,0 +1,48 @@
+version: 1
+reviewed_at: 2026-07-25
+organizations:
+  - name: Block
+    github: block
+    classification: parent-company-open-source-organization
+    status: active
+  - name: Square
+    github: square
+    classification: product-engineering-open-source-organization
+    status: active
+  - name: Square Developers
+    github: Square-Developers
+    classification: developer-samples-organization
+    status: active
+  - name: Cash App
+    github: cashapp
+    classification: product-engineering-open-source-organization
+    status: active
+  - name: Weebly
+    github: weebly
+    classification: acquired-product-open-source-organization
+    status: requires-inventory
+  - name: Afterpay
+    github: afterpay
+    classification: product-integration-organization
+    status: requires-inventory
+  - name: TIDAL
+    github: tidal-music
+    classification: product-developer-platform-organization
+    status: requires-inventory
+  - name: Proto
+    github: proto-at-block
+    classification: bitcoin-hardware-and-operations-organization
+    status: requires-inventory
+  - name: Spiral
+    github: spiralbtc
+    classification: bitcoin-open-source-initiative
+    status: verify-canonical-organization
+  - name: c equals
+    github: cequals
+    classification: technical-open-source-initiative
+    status: requires-inventory
+  - name: Goose / AAIF
+    github: aaif-goose
+    classification: independent-open-source-agent-project-organization
+    status: active
+    notes: Canonical Goose repository currently resolves under aaif-goose rather than block.

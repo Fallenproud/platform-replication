@@ -1,0 +1,12 @@
+repository,organization,capability,archived,license_status,license,assessment_status,initial_target,disposition,notes
+aaif-goose/goose,aaif-goose,agent runtime and extension platform,false,verified,Apache-2.0,queued,AIKOV or Daycostra agent runtime,UNDECIDED,Canonical repository currently resolves outside the block organization
+block/thread-manager-for-amp,block,thread and session control,false,verified,Apache-2.0,queued,Daycostra Threads Monitor,UNDECIDED,High-priority architecture and product-fit audit
+block/agent-task-queue,block,agent task scheduling,false,verified,Apache-2.0,queued,AIKOV coordination runtime,UNDECIDED,Inspect persistence and runtime coupling
+block/ai-rules,block,AI instruction and rule management,false,unverified,UNKNOWN,queued,Sophie-X and AIKOV policy surfaces,UNDECIDED,License and package inventory required
+block/xcode-index-mcp,block,MCP code index integration,false,unverified,UNKNOWN,queued,Voltino developer tooling,UNDECIDED,Platform-specific dependency review required
+block/proto-fleet,block,fleet operations control plane,false,verified,Apache-2.0,queued,reference control-plane patterns,UNDECIDED,Do not assume mining product reuse equals general product fit
+square/okhttp,square,HTTP client library,false,unverified,UNKNOWN,backlog,SDK and runtime networking,UNDECIDED,Verify current license and target-language relevance
+square/retrofit,square,typed HTTP client generation,false,unverified,UNKNOWN,backlog,developer SDK patterns,UNDECIDED,Architecture reference may be more valuable than direct adoption
+square/moshi,square,JSON serialization,false,unverified,UNKNOWN,backlog,SDK serialization,UNDECIDED,Verify Kotlin and JVM product need
+square/workflow-kotlin,square,state machine and UI workflow architecture,false,unverified,UNKNOWN,backlog,workflow and UI architecture,UNDECIDED,Assess against existing TypeScript stack
+weebly/base-less-theme,weebly,website theme starter,unknown,unverified,UNKNOWN,backlog,SnapForge website generation,UNDECIDED,Assets and theme license require separate review
