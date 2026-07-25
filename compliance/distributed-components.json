@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "components": [
+    {
+      "repository": "aaif-goose/goose",
+      "upstream_ref": "192b5db8b947f91e8a6ceca67b4773dc28ae6169",
+      "license": "Apache-2.0",
+      "license_source": "https://github.com/aaif-goose/goose/blob/main/LICENSE",
+      "copyright": "Upstream copyright holders and contributors",
+      "distributed": false,
+      "target_products": [],
+      "modifications": "Assessment only; no source is currently distributed."
+    },
+    {
+      "repository": "block/thread-manager-for-amp",
+      "upstream_ref": "126cf2234a13a08a93d0d4cbd758a8fc77301d78",
+      "license": "Apache-2.0",
+      "license_source": "https://github.com/block/thread-manager-for-amp/blob/main/LICENSE",
+      "copyright": "Upstream copyright holders and contributors",
+      "distributed": false,
+      "target_products": [],
+      "modifications": "Architecture reference only; no source is currently distributed."
+    }
+  ]
+}
