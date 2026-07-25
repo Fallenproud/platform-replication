@@ -1,0 +1,11 @@
+{
+  "tqBinary": "tq",
+  "tqArgs": [],
+  "dataDir": ".amarax/task-queue",
+  "allowedExecutables": ["python", "python3", "node", "npm", "pnpm", "git"],
+  "allowedWorkspaceRoots": ["."],
+  "allowedEnvironmentReferences": ["CI", "PATH"],
+  "maxTimeoutSeconds": 900,
+  "queuePattern": "^[A-Za-z0-9._:-]{1,80}$",
+  "terminationGraceMs": 2000
+}
