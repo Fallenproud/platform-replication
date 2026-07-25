@@ -13,7 +13,7 @@
     "dependency_review": "pending"
   },
   "runtime": {
-    "build_reproduced": false,
+    "build_reproduced": true,
     "self_hostable": "yes",
     "private_dependencies": [],
     "required_services": [
@@ -41,7 +41,7 @@
     "Add command classification, allow and deny policy, working-directory scope, environment-variable filtering, secret redaction, actor identity, and approval gates.",
     "Replace the local-only SQLite authority when tasks must coordinate across hosts or tenants.",
     "Emit immutable queue, execution, timeout, cancellation, and process-kill audit events.",
-    "Reproduce package, CLI, MCP, tests, and desktop sidecar builds at the pinned revision.",
+    "Reproduce the desktop sidecar and perform explicit CLI and MCP smoke tests before product import.",
     "Complete Python, FastMCP, desktop-sidecar, asset, and transitive dependency license review before distribution.",
     "Preserve Apache-2.0 and applicable copyright or NOTICE material and document local modifications."
   ],
@@ -50,7 +50,8 @@
     "pyproject.toml declares version 0.4.1, Python 3.10+, FastMCP, Apache-2.0, and console entry points for the MCP server and tq CLI.",
     "queue_core.py uses SQLite WAL mode, queue rows, process identifiers, repository metadata, stale-lock cleanup, and process-tree termination.",
     "task_queue.py exposes a destructive MCP run_task tool and intentionally executes caller-provided commands through an operating-system shell.",
-    "The repository contains no mandatory private Block service dependency and is structurally self-hostable, but its trust model is suitable only for a trusted local developer context without additional controls."
+    "The repository contains no mandatory private Block service dependency and is structurally self-hostable, but its trust model is suitable only for a trusted local developer context without additional controls.",
+    "Platform Replication Upstream Build Verification run 30147827108 checked out the pinned commit and completed dependency installation, Ruff lint, and the upstream pytest suite successfully on Python 3.10 and Python 3.13."
   ],
   "reviewed_at": "2026-07-25",
   "reviewer": "Sophie-X / Amarax Platform Replication"
