@@ -15,6 +15,7 @@ It must not be confused with policy enforcement. The tool distributes text and c
 - Version observed: `1.7.0`
 - License: Apache-2.0
 - Build reproduction: **passed** through format, Clippy, tests and release build in workflow run `30147827108`
+- Core behavior reproduction: **passed** in workflow run `30148855573`
 - Dependency review: **conditional**
 
 ## Capability map
@@ -73,11 +74,32 @@ Required controls:
 4. reject literal credentials and secret values;
 5. generate into CI and require a clean git diff;
 6. separate product policy from agent prompt content;
-7. preserve provenance of generated files.
+7. preserve provenance of generated files;
+8. validate the pinned binary's generated manifest instead of trusting documentation alone.
 
 ## Reproduction evidence
 
 The pinned source completed Apache license verification, `cargo fmt --check`, the upstream Clippy script, the full Rust test suite and a release build in GitHub Actions. The core binary is therefore reproducibly buildable in the tested Linux environment.
+
+## Behavior evidence
+
+A disposable repository fixture verified:
+
+- version and supported-agent inventory;
+- initialization;
+- standard rule generation for Claude, Codex and Cursor;
+- Claude, Codex and Cursor MCP configuration output;
+- shared generated rule content;
+- status reporting;
+- deliberate drift and canonical regeneration;
+- generated-file cleanup;
+- direct symlink mode for Claude and Codex.
+
+### Documentation drift
+
+At pinned version 1.7.0, `docs/agents.md` describes Cursor standard-mode rules as `.cursor/rules/*.mdc`. The actual generator reports and creates a shared root `AGENTS.md` for Cursor, plus `.cursor/mcp.json`.
+
+The first behavior assertion followed the documentation and failed. A diagnostic artifact captured the actual generated tree. The final test follows the pinned executable's observable output and records the mismatch as an upstream-maintenance and wrapper-validation requirement.
 
 ## Dependency evidence
 
@@ -94,8 +116,9 @@ The inventory includes several multi-license expressions. Their presence is not 
 - Inspect installer behavior and binary provenance.
 - Select and document the applicable option for multi-license dependencies where distribution requires it.
 - Review dependency license files and generate the final product-specific notice set.
-- Test standard mode, symlink mode, nested scopes, clean, status, MCP generation, commands, and skills as product workflows.
-- Validate Windows behavior where symlink permissions differ.
+- Test nested scopes, commands and skills through the Amarax wrapper.
+- Validate Windows symlink and generated-file fallback behavior.
+- Add allowed-output-root enforcement, secret-reference validation and generated-manifest validation.
 - Add an Amarax wrapper and canonical config example without modifying upstream core.
 
 ## Final position
