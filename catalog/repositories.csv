@@ -1,9 +1,9 @@
 repository,organization,capability,archived,license_status,license,assessment_status,initial_target,disposition,notes
 aaif-goose/goose,aaif-goose,agent runtime and extension platform,false,verified,Apache-2.0,initial-audit-complete,AIKOV runtime and Voltino,FORK,Build and dependency gates remain open; canonical project moved outside Block
 block/thread-manager-for-amp,block,thread session terminal and workboard control,false,verified,Apache-2.0,initial-audit-complete,Daycostra Threads Monitor,REFERENCE,Excellent UX reference but Amp-coupled and unauthenticated localhost runtime
-block/agent-task-queue,block,agent task scheduling,false,verified,Apache-2.0,queued,AIKOV coordination runtime,UNDECIDED,Inspect persistence and runtime coupling
-block/ai-rules,block,AI instruction and rule management,false,unverified,UNKNOWN,queued,Sophie-X and AIKOV policy surfaces,UNDECIDED,License and package inventory required
-block/xcode-index-mcp,block,MCP Xcode index integration,false,unverified,UNKNOWN,queued,Voltino developer tooling,UNDECIDED,Platform-specific dependency review required
+block/agent-task-queue,block,agent task scheduling,false,verified,Apache-2.0,initial-audit-complete,AIKOV Guarded Build and resource scheduling,FORK,Trusted local execution candidate; arbitrary shell requires policy sandboxing and product-owned scheduler contracts
+block/ai-rules,block,AI instruction rule skill and MCP configuration compilation,false,verified,Apache-2.0,initial-audit-complete,repository agent instruction compiler,ADOPT,Adopt through pinned wrapper; distribution tooling is not runtime policy enforcement
+block/xcode-index-mcp,block,MCP Xcode semantic index integration,false,missing,NOASSERTION,initial-audit-complete,Voltino semantic code index,REFERENCE,No explicit source license found; clean-room provider only
 block/proto-fleet,block,fleet operations control plane,false,verified,Apache-2.0,queued,Daycostra operations patterns,UNDECIDED,Separate general fleet patterns from mining-specific logic
 block/buzz,block,communications platform,false,unverified,UNKNOWN,discovered,Velora Voice and communications services,UNDECIDED,Large candidate; verify self-hostability and external service coupling
 block/ftl,block,backend and service framework,false,unverified,UNKNOWN,discovered,Daycostra service runtime,UNDECIDED,High-value architecture candidate requiring language and operations review
