@@ -104,7 +104,7 @@ jobs:
           source bin/activate-hermit
           cargo build --release --verbose
 
-  xcode-index-license-gate:
+  xcode-index-license:
     name: Xcode Index MCP / license evidence
     runs-on: ubuntu-latest
     steps:
@@ -115,16 +115,45 @@ jobs:
           git checkout c89af82aee64c42690a60c2dda6d9e0f8bf022e9
           test "$(git rev-parse HEAD)" = "c89af82aee64c42690a60c2dda6d9e0f8bf022e9"
 
-      - name: Inspect tracked license evidence
+      - name: Verify Apache license evidence
         working-directory: upstream
         run: |
-          echo "Tracked license-like files:"
-          git ls-tree -r --name-only HEAD | grep -Ei '(^|/)(LICENSE|COPYING|NOTICE)(\..*)?$' || true
-          if git cat-file -e HEAD:LICENSE 2>/dev/null; then
-            echo "--- HEAD:LICENSE (first 20 lines) ---"
-            git show HEAD:LICENSE | sed -n '1,20p'
-          else
-            echo "No tracked root LICENSE blob at the pinned revision."
-          fi
-          echo "--- pyproject license declarations ---"
-          grep -En '^license[[:space:]]*=' pyproject.toml || true
+          test -f LICENSE.txt
+          grep -q "Apache License" LICENSE.txt
+          git ls-tree -r --name-only HEAD | grep -Fx "LICENSE.txt"
+
+  xcode-index-build:
+    name: Xcode Index MCP / macOS Python and Swift
+    runs-on: macos-15
+    steps:
+      - name: Install uv
+        uses: astral-sh/setup-uv@eac588ad8def6316056a12d4907a9d4d84ff7a3b
+
+      - name: Fetch pinned upstream
+        run: |
+          git clone --filter=blob:none https://github.com/block/xcode-index-mcp.git upstream
+          cd upstream
+          git checkout c89af82aee64c42690a60c2dda6d9e0f8bf022e9
+          test "$(git rev-parse HEAD)" = "c89af82aee64c42690a60c2dda6d9e0f8bf022e9"
+
+      - name: Set up Python 3.13
+        working-directory: upstream
+        run: uv python install 3.13
+
+      - name: Install Python dependencies
+        working-directory: upstream
+        run: uv sync --python 3.13
+
+      - name: Compile Python package
+        working-directory: upstream
+        run: uv run --python 3.13 python -m compileall -q src
+
+      - name: Build Swift service
+        working-directory: upstream/swift-service
+        run: |
+          swift --version
+          swift build
+
+      - name: Test Swift service
+        working-directory: upstream/swift-service
+        run: swift test
