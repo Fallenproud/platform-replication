@@ -1,0 +1,47 @@
+name: AI Rules Wrapper
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "workstreams/ai-rules-wrapper/**"
+      - ".github/workflows/ai-rules-wrapper.yml"
+  push:
+    branches:
+      - "program/**"
+    paths:
+      - "workstreams/ai-rules-wrapper/**"
+      - ".github/workflows/ai-rules-wrapper.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ai-rules-wrapper-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    name: Node 22 transactional wrapper tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    defaults:
+      run:
+        working-directory: workstreams/ai-rules-wrapper
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "npm"
+          cache-dependency-path: workstreams/ai-rules-wrapper/package.json
+
+      - name: Syntax check
+        run: npm run check
+
+      - name: Test
+        run: npm test
