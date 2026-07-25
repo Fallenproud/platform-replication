@@ -988,7 +988,7 @@
       "version": "16.1.1"
     }
   ],
-  "generated_at": "2026-07-25T06:52:56Z",
+  "generated_at": "2026-07-25T07:13:59Z",
   "license_override_count": 6,
   "license_override_registry": "compliance/license-overrides.json",
   "mode": "python-env",

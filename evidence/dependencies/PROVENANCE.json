@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
   "workflow": "Upstream SBOM Evidence",
-  "workflow_run_id": "30148276775",
+  "workflow_run_id": "30148930114",
   "source_branch": "program/block-ecosystem-intake",
-  "source_commit": "6ebd3aba296dc00d170c42e90ad3ffe311924a99",
-  "generated_at": "2026-07-25T06:53:18Z",
+  "source_commit": "8c7ac3b165f55b26af14ade73c6df0e0387884dc",
+  "generated_at": "2026-07-25T07:14:16Z",
   "artifacts": [
     "agent-task-queue-sbom-evidence",
     "ai-rules-sbom-evidence"

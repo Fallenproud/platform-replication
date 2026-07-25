@@ -2,7 +2,7 @@
 
 - Pinned revision: `b2c1cd16d05f47053eb3f059f87524f7b6ee1a1f`
 - Generation mode: `cargo-metadata`
-- Generated: `2026-07-25T06:53:09Z`
+- Generated: `2026-07-25T07:14:07Z`
 - Components: **110**
 - Evidence-backed metadata overrides: **0**
 - Components without normalized license metadata: **0**
