@@ -2,7 +2,7 @@
 
 - Pinned revision: `ccb94ae25c2b286d62e7371fd4c0f7ce60e33efa`
 - Generation mode: `python-env`
-- Generated: `2026-07-25T06:51:34Z`
+- Generated: `2026-07-25T06:52:56Z`
 - Components: **74**
 - Evidence-backed metadata overrides: **6**
 - Components without normalized license metadata: **0**

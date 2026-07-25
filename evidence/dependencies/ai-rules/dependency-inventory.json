@@ -1432,7 +1432,7 @@
       "version": "1.4.2"
     }
   ],
-  "generated_at": "2026-07-25T06:51:43Z",
+  "generated_at": "2026-07-25T06:53:09Z",
   "license_override_count": 0,
   "license_override_registry": "compliance/license-overrides.json",
   "mode": "cargo-metadata",
