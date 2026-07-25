@@ -13,7 +13,7 @@
     "dependency_review": "pending"
   },
   "runtime": {
-    "build_reproduced": false,
+    "build_reproduced": true,
     "self_hostable": "yes",
     "private_dependencies": [],
     "required_services": [
@@ -48,7 +48,8 @@
     "README.md documents init, generate, status, clean, agent selection, nested generation, and MCP configuration support.",
     "Cargo.toml declares version 1.7.0, a Rust 2021 binary, Apache License 2.0, and a small set of common parsing, CLI, filesystem, and serialization dependencies.",
     "docs/project-structure.md defines repository, nested package, command, skill, MCP, Codex overlay, symlink, and generated-file layouts.",
-    "docs/mcp.md shows that the tool transforms one MCP source into agent-specific configuration files; this is distribution behavior rather than runtime authorization or policy enforcement."
+    "docs/mcp.md shows that the tool transforms one MCP source into agent-specific configuration files; this is distribution behavior rather than runtime authorization or policy enforcement.",
+    "Platform Replication Upstream Build Verification run 30147827108 checked out the pinned commit and completed license verification, cargo fmt, Clippy, the full Rust test suite, and a release build successfully."
   ],
   "reviewed_at": "2026-07-25",
   "reviewer": "Sophie-X / Amarax Platform Replication"
