@@ -97,13 +97,18 @@ jobs:
           name = sys.argv[1]
           delay = float(sys.argv[2])
           start = time.time()
+          Path(f"{name}.started").write_text(str(start), encoding="utf-8")
           time.sleep(delay)
           end = time.time()
           Path(f"{name}.json").write_text(json.dumps({"start": start, "end": end}), encoding="utf-8")
           PY
           uv run tq --data-dir "$DATA_DIR" run -q serial -t 30 -C "$FIXTURE" python timed_task.py first 1.5 &
           FIRST_PID=$!
-          sleep 0.2
+          for _ in $(seq 1 200); do
+            test -f "$FIXTURE/first.started" && break
+            sleep 0.05
+          done
+          test -f "$FIXTURE/first.started"
           uv run tq --data-dir "$DATA_DIR" run -q serial -t 30 -C "$FIXTURE" python timed_task.py second 0 &
           SECOND_PID=$!
           wait "$FIRST_PID"
