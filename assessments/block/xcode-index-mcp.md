@@ -14,7 +14,7 @@ That correction removes the legal source-reuse block. It does not remove the tec
 - Commit: `c89af82aee64c42690a60c2dda6d9e0f8bf022e9`
 - Version observed: `0.1.0`
 - Source license: Apache-2.0 in `LICENSE.txt`
-- Build reproduction: pending on a pinned macOS runner
+- Build reproduction: **passed** for Python 3.13 compilation and Swift build/tests on macOS 15 in workflow run `30147827108`
 
 ## Architecture
 
@@ -54,8 +54,7 @@ Direct adoption is not recommended because:
 - the bridge uses a fixed local TCP port without an explicit authentication handshake;
 - logging paths are Goose-specific;
 - project and file-path validation require strengthening;
-- build and dependency evidence is incomplete;
-- repository assets require separate review.
+- dependency and asset evidence remains incomplete.
 
 A narrow fork allows us to preserve the useful provider logic while introducing product-owned boundaries and upstream synchronization.
 
@@ -82,14 +81,17 @@ The Xcode provider must:
 9. remove Goose-specific paths and branding;
 10. remain optional so the core platform is not Xcode-dependent.
 
-## Import gates
+## Reproduction evidence
 
-- Reproduce the Python package on the declared Python version.
-- Reproduce the Swift build and tests on macOS.
+The pinned source was checked out on a macOS 15 runner. The Python 3.13 environment installed successfully, the Python package compiled, the Swift service built against IndexStoreDB, and the Swift test suite passed. This verifies buildability of the current snapshot, but not a complete live query against a real disposable Xcode DerivedData project.
+
+## Remaining import gates
+
 - Pin IndexStoreDB and review its full dependency graph.
 - Generate Python and Swift SBOM and license inventories.
 - Review screenshots and other assets independently.
 - Add authenticated transport, lifecycle supervision and failure recovery.
+- Run integration tests against disposable Xcode DerivedData indexes.
 - Add product-owned adapter tests against the `CodeIndexProvider` contract.
 - Preserve Apache-2.0 and applicable notices.
 
@@ -99,4 +101,4 @@ Decision 0006 recorded a REFERENCE-only decision based on the mistaken missing-l
 
 ## Final position
 
-The source is legally reusable under Apache-2.0, but not ready for direct product import. A narrow, optional, upstream-tracked fork can become Voltino's Xcode semantic-index provider after build, dependency, security and adapter gates pass.
+The source is legally reusable under Apache-2.0 and reproducibly buildable in the tested macOS environment, but it is not ready for direct product import. A narrow, optional, upstream-tracked fork can become Voltino's Xcode semantic-index provider after dependency, security and adapter gates pass.
