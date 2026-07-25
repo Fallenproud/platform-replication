@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { mkdtemp, mkdir, rm, writeFile } from "node:fs/promises";
+import { lstat, mkdtemp, mkdir, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -8,6 +8,16 @@ import { AdapterError, configDefaults } from "../src/adapter.mjs";
 const fakeProvider = fileURLToPath(
   new URL("./fixtures/fake-tq.mjs", import.meta.url),
 );
+
+export async function exists(target) {
+  try {
+    await lstat(target);
+    return true;
+  } catch (error) {
+    if (error?.code === "ENOENT") return false;
+    throw error;
+  }
+}
 
 export async function createFixture(overrides = {}) {
   const root = await mkdtemp(path.join(tmpdir(), "amarax-guarded-task-test-"));
@@ -27,6 +37,7 @@ export async function createFixture(overrides = {}) {
     maxTimeoutSeconds: 30,
     ...overrides.config,
   };
+  config.queueRegex = new RegExp(config.queuePattern);
 
   const request = {
     requestId: "request-001",
