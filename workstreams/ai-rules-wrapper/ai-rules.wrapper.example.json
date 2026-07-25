@@ -1,0 +1,22 @@
+{
+  "binary": "ai-rules",
+  "binaryArgs": [],
+  "agents": ["claude", "codex", "cursor", "goose"],
+  "sourceDir": "ai-rules",
+  "manifestPath": ".amarax/ai-rules-manifest.json",
+  "allowedOutputs": [
+    "CLAUDE.md",
+    "AGENTS.md",
+    ".mcp.json",
+    ".codex/**",
+    ".cursor/**",
+    ".goosehints",
+    "ai-rules/.generated-ai-rules/**"
+  ],
+  "ignoredPaths": [
+    ".git/**",
+    ".amarax/**",
+    "node_modules/**"
+  ],
+  "compilerEnv": {}
+}
