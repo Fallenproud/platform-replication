@@ -216,7 +216,7 @@ jobs:
           find . -maxdepth 6 -mindepth 1 -printf '%y %p -> %l\n' | sort | tee "$DIAGNOSTICS/generated-tree.txt"
           "$BIN" status | tee "$DIAGNOSTICS/status.txt" || true
 
-      - name: Validate documented generated outputs
+      - name: Validate observed generated outputs
         run: |
           set -euo pipefail
           FIXTURE="${RUNNER_TEMP}/ai-rules-fixture"
@@ -225,18 +225,19 @@ jobs:
           require_path() {
             local path="$1"
             if [[ ! -e "$path" && ! -L "$path" ]]; then
-              echo "Missing documented output: $path" >&2
+              echo "Missing observed output: $path" >&2
               cat "$DIAGNOSTICS/generated-tree.txt" >&2
               return 1
             fi
           }
           require_path CLAUDE.md
           require_path AGENTS.md
-          require_path .cursor/rules
           require_path .mcp.json
           require_path .codex/config.toml
           require_path .cursor/mcp.json
+          require_path ai-rules/.generated-ai-rules/ai-rules-generated-AGENTS.md
           grep -q "Preserve provenance" CLAUDE.md
+          grep -q "cursor:" "$DIAGNOSTICS/generate.txt"
 
       - name: Verify regeneration and cleanup
         run: |
