@@ -37,7 +37,7 @@
   "conditions": [
     "Adopt as developer tooling and a compilation or synchronization layer, not as the authoritative Sophie-X or Orynero runtime policy engine.",
     "Pin a release or commit and execute it through a wrapper owned by the target repository.",
-    "Review clean, generate, symlink, nested-directory, and overwrite behavior against repository boundaries before automation is enabled.",
+    "Treat generated output manifests from the pinned binary as authoritative when upstream documentation and runtime behavior disagree.",
     "Do not place secrets directly in source MCP configuration files; generated outputs must reference approved environment or secret providers.",
     "Validate generated files in CI and require a clean diff after regeneration.",
     "Review each multi-license expression, license file, build script, installer, binary release, asset and notice obligation before redistribution.",
@@ -50,7 +50,9 @@
     "docs/project-structure.md defines repository, nested package, command, skill, MCP, Codex overlay, symlink, and generated-file layouts.",
     "docs/mcp.md shows that the tool transforms one MCP source into agent-specific configuration files; this is distribution behavior rather than runtime authorization or policy enforcement.",
     "Platform Replication Upstream Build Verification run 30147827108 checked out the pinned commit and completed license verification, cargo fmt, Clippy, the full Rust test suite, and a release build successfully.",
-    "Upstream SBOM Evidence run 30148183032 generated locked Cargo metadata and recorded 110 components with zero unresolved normalized license fields. Multi-license expressions and non-package content remain subject to explicit import review."
+    "Upstream SBOM Evidence run 30148183032 generated locked Cargo metadata and recorded 110 components with zero unresolved normalized license fields. Multi-license expressions and non-package content remain subject to explicit import review.",
+    "Upstream Behavior Verification run 30148855573 passed version and agent inventory checks, initialization, standard rule generation, Claude/Codex/Cursor MCP outputs, status reporting, drift regeneration, cleanup, and symlink mode.",
+    "At pinned version 1.7.0 the generator emits a shared root AGENTS.md for Cursor standard mode rather than the .cursor/rules/*.mdc location described in docs/agents.md; the wrapper must test observed outputs and record this documentation drift."
   ],
   "reviewed_at": "2026-07-25",
   "reviewer": "Sophie-X / Amarax Platform Replication"
