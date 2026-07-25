@@ -1,0 +1,18 @@
+{
+  "name": "@amarax/ai-rules-wrapper",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Transactional, policy-aware wrapper boundary for pinned AI Rules binaries.",
+  "engines": {
+    "node": ">=22"
+  },
+  "bin": {
+    "amarax-ai-rules": "./src/cli.mjs"
+  },
+  "scripts": {
+    "check": "node --check src/wrapper.mjs && node --check src/cli.mjs",
+    "test": "node --test"
+  },
+  "license": "UNLICENSED"
+}
