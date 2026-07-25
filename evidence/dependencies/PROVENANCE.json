@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "workflow": "Upstream SBOM Evidence",
+  "workflow_run_id": "30148239427",
+  "source_branch": "program/block-ecosystem-intake",
+  "source_commit": "d9984208202a5298c97bca8bfa7e5e59b86b68d4",
+  "generated_at": "2026-07-25T06:51:51Z",
+  "artifacts": [
+    "agent-task-queue-sbom-evidence",
+    "ai-rules-sbom-evidence"
+  ],
+  "policy": "Evidence only. Product distribution requires an approved repository assessment and import gate."
+}

@@ -1,0 +1,111 @@
+name,version,ecosystem,license,license_file,license_evidence,homepage,repository,source,purl,direct
+aho-corasick,1.1.3,cargo,Unlicense OR MIT,,,https://github.com/BurntSushi/aho-corasick,https://github.com/BurntSushi/aho-corasick,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/aho-corasick@1.1.3,False
+ai-rules,1.7.0,cargo,Apache License 2.0,,,,,,pkg:cargo/ai-rules@1.7.0,True
+anstream,0.6.20,cargo,MIT OR Apache-2.0,,,,https://github.com/rust-cli/anstyle.git,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/anstream@0.6.20,False
+anstyle,1.0.11,cargo,MIT OR Apache-2.0,,,,https://github.com/rust-cli/anstyle.git,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/anstyle@1.0.11,False
+anstyle-parse,0.2.7,cargo,MIT OR Apache-2.0,,,,https://github.com/rust-cli/anstyle.git,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/anstyle-parse@0.2.7,False
+anstyle-query,1.1.4,cargo,MIT OR Apache-2.0,,,,https://github.com/rust-cli/anstyle.git,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/anstyle-query@1.1.4,False
+anstyle-wincon,3.0.10,cargo,MIT OR Apache-2.0,,,,https://github.com/rust-cli/anstyle.git,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/anstyle-wincon@3.0.10,False
+anyhow,1.0.98,cargo,MIT OR Apache-2.0,,,,https://github.com/dtolnay/anyhow,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/anyhow@1.0.98,False
+bitflags,2.9.1,cargo,MIT OR Apache-2.0,,,https://github.com/bitflags/bitflags,https://github.com/bitflags/bitflags,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/bitflags@2.9.1,False
+bstr,1.12.1,cargo,MIT OR Apache-2.0,,,https://github.com/BurntSushi/bstr,https://github.com/BurntSushi/bstr,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/bstr@1.12.1,False
+bumpalo,3.19.0,cargo,MIT OR Apache-2.0,,,,https://github.com/fitzgen/bumpalo,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/bumpalo@3.19.0,False
+cfg-if,1.0.1,cargo,MIT OR Apache-2.0,,,,https://github.com/rust-lang/cfg-if,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/cfg-if@1.0.1,False
+clap,4.5.43,cargo,MIT OR Apache-2.0,,,,https://github.com/clap-rs/clap,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/clap@4.5.43,False
+clap_builder,4.5.43,cargo,MIT OR Apache-2.0,,,,https://github.com/clap-rs/clap,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/clap_builder@4.5.43,False
+clap_derive,4.5.41,cargo,MIT OR Apache-2.0,,,,https://github.com/clap-rs/clap,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/clap_derive@4.5.41,False
+clap_lex,0.7.5,cargo,MIT OR Apache-2.0,,,,https://github.com/clap-rs/clap,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/clap_lex@0.7.5,False
+cliclack,0.3.6,cargo,MIT,,,https://github.com/fadeevab/cliclack,https://github.com/fadeevab/cliclack,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/cliclack@0.3.6,False
+colorchoice,1.0.4,cargo,MIT OR Apache-2.0,,,,https://github.com/rust-cli/anstyle.git,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/colorchoice@1.0.4,False
+console,0.15.11,cargo,MIT,,,https://github.com/console-rs/console,https://github.com/console-rs/console,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/console@0.15.11,False
+crossbeam-deque,0.8.6,cargo,MIT OR Apache-2.0,,,https://github.com/crossbeam-rs/crossbeam/tree/master/crossbeam-deque,https://github.com/crossbeam-rs/crossbeam,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/crossbeam-deque@0.8.6,False
+crossbeam-epoch,0.9.18,cargo,MIT OR Apache-2.0,,,https://github.com/crossbeam-rs/crossbeam/tree/master/crossbeam-epoch,https://github.com/crossbeam-rs/crossbeam,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/crossbeam-epoch@0.9.18,False
+crossbeam-utils,0.8.21,cargo,MIT OR Apache-2.0,,,https://github.com/crossbeam-rs/crossbeam/tree/master/crossbeam-utils,https://github.com/crossbeam-rs/crossbeam,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/crossbeam-utils@0.8.21,False
+encode_unicode,1.0.0,cargo,Apache-2.0 OR MIT,,,,https://github.com/tormol/encode_unicode,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/encode_unicode@1.0.0,False
+env_home,0.1.0,cargo,MIT OR Apache-2.0,,,https://github.com/notpeter/env-home,https://github.com/notpeter/env-home,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/env_home@0.1.0,False
+equivalent,1.0.2,cargo,Apache-2.0 OR MIT,,,,https://github.com/indexmap-rs/equivalent,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/equivalent@1.0.2,False
+errno,0.3.13,cargo,MIT OR Apache-2.0,,,,https://github.com/lambda-fairy/rust-errno,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/errno@0.3.13,False
+fastrand,2.3.0,cargo,Apache-2.0 OR MIT,,,,https://github.com/smol-rs/fastrand,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/fastrand@2.3.0,False
+getrandom,0.3.3,cargo,MIT OR Apache-2.0,,,,https://github.com/rust-random/getrandom,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/getrandom@0.3.3,False
+globset,0.4.18,cargo,Unlicense OR MIT,,,https://github.com/BurntSushi/ripgrep/tree/master/crates/globset,https://github.com/BurntSushi/ripgrep/tree/master/crates/globset,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/globset@0.4.18,False
+hashbrown,0.15.5,cargo,MIT OR Apache-2.0,,,,https://github.com/rust-lang/hashbrown,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/hashbrown@0.15.5,False
+heck,0.5.0,cargo,MIT OR Apache-2.0,,,,https://github.com/withoutboats/heck,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/heck@0.5.0,False
+ignore,0.4.25,cargo,Unlicense OR MIT,,,https://github.com/BurntSushi/ripgrep/tree/master/crates/ignore,https://github.com/BurntSushi/ripgrep/tree/master/crates/ignore,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/ignore@0.4.25,False
+indexmap,2.10.0,cargo,Apache-2.0 OR MIT,,,,https://github.com/indexmap-rs/indexmap,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/indexmap@2.10.0,False
+indicatif,0.17.11,cargo,MIT,,,,https://github.com/console-rs/indicatif,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/indicatif@0.17.11,False
+is_terminal_polyfill,1.70.1,cargo,MIT OR Apache-2.0,,,,https://github.com/polyfill-rs/is_terminal_polyfill,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/is_terminal_polyfill@1.70.1,False
+itoa,1.0.15,cargo,MIT OR Apache-2.0,,,,https://github.com/dtolnay/itoa,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/itoa@1.0.15,False
+js-sys,0.3.81,cargo,MIT OR Apache-2.0,,,https://wasm-bindgen.github.io/wasm-bindgen/,https://github.com/wasm-bindgen/wasm-bindgen/tree/master/crates/js-sys,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/js-sys@0.3.81,False
+libc,0.2.174,cargo,MIT OR Apache-2.0,,,,https://github.com/rust-lang/libc,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/libc@0.2.174,False
+linux-raw-sys,0.9.4,cargo,Apache-2.0 WITH LLVM-exception OR Apache-2.0 OR MIT,,,,https://github.com/sunfishcode/linux-raw-sys,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/linux-raw-sys@0.9.4,False
+log,0.4.28,cargo,MIT OR Apache-2.0,,,,https://github.com/rust-lang/log,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/log@0.4.28,False
+memchr,2.7.5,cargo,Unlicense OR MIT,,,https://github.com/BurntSushi/memchr,https://github.com/BurntSushi/memchr,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/memchr@2.7.5,False
+number_prefix,0.4.0,cargo,MIT,,,,https://github.com/ogham/rust-number-prefix,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/number_prefix@0.4.0,False
+once_cell,1.21.3,cargo,MIT OR Apache-2.0,,,,https://github.com/matklad/once_cell,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/once_cell@1.21.3,False
+once_cell_polyfill,1.70.1,cargo,MIT OR Apache-2.0,,,,https://github.com/polyfill-rs/once_cell_polyfill,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/once_cell_polyfill@1.70.1,False
+portable-atomic,1.11.1,cargo,Apache-2.0 OR MIT,,,,https://github.com/taiki-e/portable-atomic,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/portable-atomic@1.11.1,False
+proc-macro2,1.0.95,cargo,MIT OR Apache-2.0,,,,https://github.com/dtolnay/proc-macro2,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/proc-macro2@1.0.95,False
+quote,1.0.40,cargo,MIT OR Apache-2.0,,,,https://github.com/dtolnay/quote,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/quote@1.0.40,False
+r-efi,5.3.0,cargo,MIT OR Apache-2.0 OR LGPL-2.1-or-later,,,https://github.com/r-efi/r-efi/wiki,https://github.com/r-efi/r-efi,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/r-efi@5.3.0,False
+regex,1.12.2,cargo,MIT OR Apache-2.0,,,https://github.com/rust-lang/regex,https://github.com/rust-lang/regex,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/regex@1.12.2,False
+regex-automata,0.4.13,cargo,MIT OR Apache-2.0,,,https://github.com/rust-lang/regex/tree/master/regex-automata,https://github.com/rust-lang/regex,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/regex-automata@0.4.13,False
+regex-syntax,0.8.8,cargo,MIT OR Apache-2.0,,,https://github.com/rust-lang/regex/tree/master/regex-syntax,https://github.com/rust-lang/regex,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/regex-syntax@0.8.8,False
+rustix,1.0.8,cargo,Apache-2.0 WITH LLVM-exception OR Apache-2.0 OR MIT,,,,https://github.com/bytecodealliance/rustix,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/rustix@1.0.8,False
+rustversion,1.0.22,cargo,MIT OR Apache-2.0,,,,https://github.com/dtolnay/rustversion,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/rustversion@1.0.22,False
+ryu,1.0.20,cargo,Apache-2.0 OR BSL-1.0,,,,https://github.com/dtolnay/ryu,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/ryu@1.0.20,False
+same-file,1.0.6,cargo,Unlicense/MIT,,,https://github.com/BurntSushi/same-file,https://github.com/BurntSushi/same-file,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/same-file@1.0.6,False
+serde,1.0.219,cargo,MIT OR Apache-2.0,,,https://serde.rs,https://github.com/serde-rs/serde,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/serde@1.0.219,False
+serde_derive,1.0.219,cargo,MIT OR Apache-2.0,,,https://serde.rs,https://github.com/serde-rs/serde,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/serde_derive@1.0.219,False
+serde_json,1.0.142,cargo,MIT OR Apache-2.0,,,,https://github.com/serde-rs/json,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/serde_json@1.0.142,False
+serde_spanned,0.6.9,cargo,MIT OR Apache-2.0,,,,https://github.com/toml-rs/toml,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/serde_spanned@0.6.9,False
+serde_yaml,0.9.34+deprecated,cargo,MIT OR Apache-2.0,,,,https://github.com/dtolnay/serde-yaml,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/serde_yaml@0.9.34+deprecated,False
+smawk,0.3.2,cargo,MIT,,,,https://github.com/mgeisler/smawk,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/smawk@0.3.2,False
+strsim,0.11.1,cargo,MIT,,,https://github.com/rapidfuzz/strsim-rs,https://github.com/rapidfuzz/strsim-rs,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/strsim@0.11.1,False
+syn,2.0.104,cargo,MIT OR Apache-2.0,,,,https://github.com/dtolnay/syn,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/syn@2.0.104,False
+tempfile,3.20.0,cargo,MIT OR Apache-2.0,,,https://stebalien.com/projects/tempfile-rs/,https://github.com/Stebalien/tempfile,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/tempfile@3.20.0,False
+textwrap,0.16.2,cargo,MIT,,,,https://github.com/mgeisler/textwrap,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/textwrap@0.16.2,False
+toml,0.8.23,cargo,MIT OR Apache-2.0,,,,https://github.com/toml-rs/toml,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/toml@0.8.23,False
+toml_datetime,0.6.11,cargo,MIT OR Apache-2.0,,,,https://github.com/toml-rs/toml,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/toml_datetime@0.6.11,False
+toml_edit,0.22.27,cargo,MIT OR Apache-2.0,,,,https://github.com/toml-rs/toml,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/toml_edit@0.22.27,False
+toml_write,0.1.2,cargo,MIT OR Apache-2.0,,,,https://github.com/toml-rs/toml,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/toml_write@0.1.2,False
+unicode-ident,1.0.18,cargo,(MIT OR Apache-2.0) AND Unicode-3.0,,,,https://github.com/dtolnay/unicode-ident,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/unicode-ident@1.0.18,False
+unicode-linebreak,0.1.5,cargo,Apache-2.0,,,https://github.com/axelf4/unicode-linebreak,https://github.com/axelf4/unicode-linebreak,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/unicode-linebreak@0.1.5,False
+unicode-width,0.2.2,cargo,MIT OR Apache-2.0,,,https://github.com/unicode-rs/unicode-width,https://github.com/unicode-rs/unicode-width,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/unicode-width@0.2.2,False
+unsafe-libyaml,0.2.11,cargo,MIT,,,,https://github.com/dtolnay/unsafe-libyaml,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/unsafe-libyaml@0.2.11,False
+utf8parse,0.2.2,cargo,Apache-2.0 OR MIT,,,,https://github.com/alacritty/vte,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/utf8parse@0.2.2,False
+walkdir,2.5.0,cargo,Unlicense/MIT,,,https://github.com/BurntSushi/walkdir,https://github.com/BurntSushi/walkdir,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/walkdir@2.5.0,False
+wasi,0.14.2+wasi-0.2.4,cargo,Apache-2.0 WITH LLVM-exception OR Apache-2.0 OR MIT,,,,https://github.com/bytecodealliance/wasi-rs,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/wasi@0.14.2+wasi-0.2.4,False
+wasm-bindgen,0.2.104,cargo,MIT OR Apache-2.0,,,https://wasm-bindgen.github.io/wasm-bindgen,https://github.com/wasm-bindgen/wasm-bindgen,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/wasm-bindgen@0.2.104,False
+wasm-bindgen-backend,0.2.104,cargo,MIT OR Apache-2.0,,,https://wasm-bindgen.github.io/wasm-bindgen/,https://github.com/wasm-bindgen/wasm-bindgen/tree/master/crates/backend,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/wasm-bindgen-backend@0.2.104,False
+wasm-bindgen-macro,0.2.104,cargo,MIT OR Apache-2.0,,,https://wasm-bindgen.github.io/wasm-bindgen/,https://github.com/wasm-bindgen/wasm-bindgen/tree/master/crates/macro,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/wasm-bindgen-macro@0.2.104,False
+wasm-bindgen-macro-support,0.2.104,cargo,MIT OR Apache-2.0,,,https://wasm-bindgen.github.io/wasm-bindgen/,https://github.com/wasm-bindgen/wasm-bindgen/tree/master/crates/macro-support,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/wasm-bindgen-macro-support@0.2.104,False
+wasm-bindgen-shared,0.2.104,cargo,MIT OR Apache-2.0,,,https://wasm-bindgen.github.io/wasm-bindgen/,https://github.com/wasm-bindgen/wasm-bindgen/tree/master/crates/shared,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/wasm-bindgen-shared@0.2.104,False
+web-time,1.1.0,cargo,MIT OR Apache-2.0,,,,https://github.com/daxpedda/web-time,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/web-time@1.1.0,False
+which,8.0.0,cargo,MIT,,,,https://github.com/harryfei/which-rs.git,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/which@8.0.0,False
+winapi-util,0.1.11,cargo,Unlicense OR MIT,,,https://github.com/BurntSushi/winapi-util,https://github.com/BurntSushi/winapi-util,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/winapi-util@0.1.11,False
+windows-link,0.1.3,cargo,MIT OR Apache-2.0,,,,https://github.com/microsoft/windows-rs,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/windows-link@0.1.3,False
+windows-sys,0.59.0,cargo,MIT OR Apache-2.0,,,,https://github.com/microsoft/windows-rs,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/windows-sys@0.59.0,False
+windows-sys,0.60.2,cargo,MIT OR Apache-2.0,,,,https://github.com/microsoft/windows-rs,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/windows-sys@0.60.2,False
+windows-targets,0.52.6,cargo,MIT OR Apache-2.0,,,,https://github.com/microsoft/windows-rs,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/windows-targets@0.52.6,False
+windows-targets,0.53.3,cargo,MIT OR Apache-2.0,,,,https://github.com/microsoft/windows-rs,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/windows-targets@0.53.3,False
+windows_aarch64_gnullvm,0.52.6,cargo,MIT OR Apache-2.0,,,,https://github.com/microsoft/windows-rs,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/windows_aarch64_gnullvm@0.52.6,False
+windows_aarch64_gnullvm,0.53.0,cargo,MIT OR Apache-2.0,,,,https://github.com/microsoft/windows-rs,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/windows_aarch64_gnullvm@0.53.0,False
+windows_aarch64_msvc,0.52.6,cargo,MIT OR Apache-2.0,,,,https://github.com/microsoft/windows-rs,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/windows_aarch64_msvc@0.52.6,False
+windows_aarch64_msvc,0.53.0,cargo,MIT OR Apache-2.0,,,,https://github.com/microsoft/windows-rs,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/windows_aarch64_msvc@0.53.0,False
+windows_i686_gnu,0.52.6,cargo,MIT OR Apache-2.0,,,,https://github.com/microsoft/windows-rs,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/windows_i686_gnu@0.52.6,False
+windows_i686_gnu,0.53.0,cargo,MIT OR Apache-2.0,,,,https://github.com/microsoft/windows-rs,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/windows_i686_gnu@0.53.0,False
+windows_i686_gnullvm,0.52.6,cargo,MIT OR Apache-2.0,,,,https://github.com/microsoft/windows-rs,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/windows_i686_gnullvm@0.52.6,False
+windows_i686_gnullvm,0.53.0,cargo,MIT OR Apache-2.0,,,,https://github.com/microsoft/windows-rs,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/windows_i686_gnullvm@0.53.0,False
+windows_i686_msvc,0.52.6,cargo,MIT OR Apache-2.0,,,,https://github.com/microsoft/windows-rs,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/windows_i686_msvc@0.52.6,False
+windows_i686_msvc,0.53.0,cargo,MIT OR Apache-2.0,,,,https://github.com/microsoft/windows-rs,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/windows_i686_msvc@0.53.0,False
+windows_x86_64_gnu,0.52.6,cargo,MIT OR Apache-2.0,,,,https://github.com/microsoft/windows-rs,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/windows_x86_64_gnu@0.52.6,False
+windows_x86_64_gnu,0.53.0,cargo,MIT OR Apache-2.0,,,,https://github.com/microsoft/windows-rs,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/windows_x86_64_gnu@0.53.0,False
+windows_x86_64_gnullvm,0.52.6,cargo,MIT OR Apache-2.0,,,,https://github.com/microsoft/windows-rs,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/windows_x86_64_gnullvm@0.52.6,False
+windows_x86_64_gnullvm,0.53.0,cargo,MIT OR Apache-2.0,,,,https://github.com/microsoft/windows-rs,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/windows_x86_64_gnullvm@0.53.0,False
+windows_x86_64_msvc,0.52.6,cargo,MIT OR Apache-2.0,,,,https://github.com/microsoft/windows-rs,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/windows_x86_64_msvc@0.52.6,False
+windows_x86_64_msvc,0.53.0,cargo,MIT OR Apache-2.0,,,,https://github.com/microsoft/windows-rs,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/windows_x86_64_msvc@0.53.0,False
+winnow,0.7.15,cargo,MIT,,,,https://github.com/winnow-rs/winnow,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/winnow@0.7.15,False
+winsafe,0.0.19,cargo,MIT,,,,https://github.com/rodrigocfd/winsafe,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/winsafe@0.0.19,False
+wit-bindgen-rt,0.39.0,cargo,Apache-2.0 WITH LLVM-exception OR Apache-2.0 OR MIT,,,https://github.com/bytecodealliance/wit-bindgen,https://github.com/bytecodealliance/wit-bindgen,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/wit-bindgen-rt@0.39.0,False
+zeroize,1.8.2,cargo,Apache-2.0 OR MIT,,,https://github.com/RustCrypto/utils/tree/master/zeroize,https://github.com/RustCrypto/utils,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/zeroize@1.8.2,False
+zeroize_derive,1.4.2,cargo,Apache-2.0 OR MIT,,,,https://github.com/RustCrypto/utils/tree/master/zeroize/derive,registry+https://github.com/rust-lang/crates.io-index,pkg:cargo/zeroize_derive@1.4.2,False

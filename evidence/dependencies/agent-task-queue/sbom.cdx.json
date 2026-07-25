@@ -1,0 +1,2963 @@
+{
+  "bomFormat": "CycloneDX",
+  "components": [
+    {
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0"
+          }
+        }
+      ],
+      "name": "agent-task-queue",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "pypi"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": "LICENSE"
+        },
+        {
+          "name": "amarax:source",
+          "value": ""
+        },
+        {
+          "name": "amarax:direct",
+          "value": "unknown"
+        }
+      ],
+      "purl": "pkg:pypi/agent-task-queue@0.4.1",
+      "type": "library",
+      "version": "0.4.1"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/mosquito/aiofile"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0"
+          }
+        }
+      ],
+      "name": "aiofile",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "pypi"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": "LICENCE; LICENCE.md"
+        },
+        {
+          "name": "amarax:source",
+          "value": ""
+        },
+        {
+          "name": "amarax:direct",
+          "value": "unknown"
+        }
+      ],
+      "purl": "pkg:pypi/aiofile@3.11.1",
+      "type": "library",
+      "version": "3.11.1"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/annotated-types/annotated-types"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/annotated-types/annotated-types"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "name": "annotated-types",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "pypi"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": "LICENSE"
+        },
+        {
+          "name": "amarax:source",
+          "value": ""
+        },
+        {
+          "name": "amarax:direct",
+          "value": "unknown"
+        }
+      ],
+      "purl": "pkg:pypi/annotated-types@0.8.0",
+      "type": "library",
+      "version": "0.8.0"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://anyio.readthedocs.io/en/latest/"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/agronholm/anyio"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "name": "anyio",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "pypi"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": "LICENSE"
+        },
+        {
+          "name": "amarax:source",
+          "value": ""
+        },
+        {
+          "name": "amarax:direct",
+          "value": "unknown"
+        }
+      ],
+      "purl": "pkg:pypi/anyio@4.14.2",
+      "type": "library",
+      "version": "4.14.2"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://www.attrs.org/"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "name": "attrs",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "pypi"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": "LICENSE"
+        },
+        {
+          "name": "amarax:source",
+          "value": ""
+        },
+        {
+          "name": "amarax:direct",
+          "value": "unknown"
+        }
+      ],
+      "purl": "pkg:pypi/attrs@26.1.0",
+      "type": "library",
+      "version": "26.1.0"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://docs.authlib.org/"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/authlib/authlib"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "BSD-3-Clause"
+          }
+        }
+      ],
+      "name": "Authlib",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "pypi"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": "LICENSE"
+        },
+        {
+          "name": "amarax:source",
+          "value": ""
+        },
+        {
+          "name": "amarax:direct",
+          "value": "unknown"
+        }
+      ],
+      "purl": "pkg:pypi/authlib@1.7.2",
+      "type": "library",
+      "version": "1.7.2"
+    },
+    {
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "name": "beartype",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "pypi"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": "LICENSE"
+        },
+        {
+          "name": "amarax:source",
+          "value": ""
+        },
+        {
+          "name": "amarax:direct",
+          "value": "unknown"
+        },
+        {
+          "name": "amarax:license-override",
+          "value": "true"
+        },
+        {
+          "name": "amarax:license-evidence",
+          "value": "https://github.com/beartype/beartype/blob/main/LICENSE"
+        }
+      ],
+      "purl": "pkg:pypi/beartype@0.22.9",
+      "type": "library",
+      "version": "0.22.9"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/tkem/cachetools/"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/tkem/cachetools/"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "name": "cachetools",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "pypi"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": "LICENSE"
+        },
+        {
+          "name": "amarax:source",
+          "value": ""
+        },
+        {
+          "name": "amarax:direct",
+          "value": "unknown"
+        }
+      ],
+      "purl": "pkg:pypi/cachetools@7.1.6",
+      "type": "library",
+      "version": "7.1.6"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/mosquito/caio/"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0"
+          }
+        }
+      ],
+      "name": "caio",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "pypi"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": "COPYING"
+        },
+        {
+          "name": "amarax:source",
+          "value": ""
+        },
+        {
+          "name": "amarax:direct",
+          "value": "unknown"
+        }
+      ],
+      "purl": "pkg:pypi/caio@0.9.25",
+      "type": "library",
+      "version": "0.9.25"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/certifi/python-certifi"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/certifi/python-certifi"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MPL-2.0"
+          }
+        }
+      ],
+      "name": "certifi",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "pypi"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": "LICENSE"
+        },
+        {
+          "name": "amarax:source",
+          "value": ""
+        },
+        {
+          "name": "amarax:direct",
+          "value": "unknown"
+        }
+      ],
+      "purl": "pkg:pypi/certifi@2026.7.22",
+      "type": "library",
+      "version": "2026.7.22"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://cffi.readthedocs.io/"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/python-cffi/cffi"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT-0"
+          }
+        }
+      ],
+      "name": "cffi",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "pypi"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": "LICENSE"
+        },
+        {
+          "name": "amarax:source",
+          "value": ""
+        },
+        {
+          "name": "amarax:direct",
+          "value": "unknown"
+        }
+      ],
+      "purl": "pkg:pypi/cffi@2.1.0",
+      "type": "library",
+      "version": "2.1.0"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://click.palletsprojects.com/"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/pallets/click/"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "BSD-3-Clause"
+          }
+        }
+      ],
+      "name": "click",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "pypi"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": "LICENSE.txt"
+        },
+        {
+          "name": "amarax:source",
+          "value": ""
+        },
+        {
+          "name": "amarax:direct",
+          "value": "unknown"
+        }
+      ],
+      "purl": "pkg:pypi/click@8.4.2",
+      "type": "library",
+      "version": "8.4.2"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/pyca/cryptography"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/pyca/cryptography/"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0 OR BSD-3-Clause"
+          }
+        }
+      ],
+      "name": "cryptography",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "pypi"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": "LICENSE; LICENSE.APACHE; LICENSE.BSD"
+        },
+        {
+          "name": "amarax:source",
+          "value": ""
+        },
+        {
+          "name": "amarax:direct",
+          "value": "unknown"
+        }
+      ],
+      "purl": "pkg:pypi/cryptography@49.0.0",
+      "type": "library",
+      "version": "49.0.0"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/BrianPugh/cyclopts"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/BrianPugh/cyclopts"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0"
+          }
+        }
+      ],
+      "name": "cyclopts",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "pypi"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": "LICENSE"
+        },
+        {
+          "name": "amarax:source",
+          "value": ""
+        },
+        {
+          "name": "amarax:direct",
+          "value": "unknown"
+        }
+      ],
+      "purl": "pkg:pypi/cyclopts@4.22.2",
+      "type": "library",
+      "version": "4.22.2"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://www.dnspython.org"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/rthalley/dnspython.git"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "ISC"
+          }
+        }
+      ],
+      "name": "dnspython",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "pypi"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": "LICENSE"
+        },
+        {
+          "name": "amarax:source",
+          "value": ""
+        },
+        {
+          "name": "amarax:direct",
+          "value": "unknown"
+        }
+      ],
+      "purl": "pkg:pypi/dnspython@2.8.0",
+      "type": "library",
+      "version": "2.8.0"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/rr-/docstring_parser"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/rr-/docstring_parser"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "name": "docstring_parser",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "pypi"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": "LICENSE.md"
+        },
+        {
+          "name": "amarax:source",
+          "value": ""
+        },
+        {
+          "name": "amarax:direct",
+          "value": "unknown"
+        }
+      ],
+      "purl": "pkg:pypi/docstring_parser@0.18.0",
+      "type": "library",
+      "version": "0.18.0"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/JoshData/python-email-validator"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "Unlicense"
+          }
+        }
+      ],
+      "name": "email-validator",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "pypi"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": "LICENSE"
+        },
+        {
+          "name": "amarax:source",
+          "value": ""
+        },
+        {
+          "name": "amarax:direct",
+          "value": "unknown"
+        }
+      ],
+      "purl": "pkg:pypi/email-validator@2.3.0",
+      "type": "library",
+      "version": "2.3.0"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/agronholm/exceptiongroup"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT AND PSF-2.0"
+          }
+        }
+      ],
+      "name": "exceptiongroup",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "pypi"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": "LICENSE"
+        },
+        {
+          "name": "amarax:source",
+          "value": ""
+        },
+        {
+          "name": "amarax:direct",
+          "value": "unknown"
+        },
+        {
+          "name": "amarax:license-override",
+          "value": "true"
+        },
+        {
+          "name": "amarax:license-evidence",
+          "value": "https://github.com/agronholm/exceptiongroup/blob/main/LICENSE"
+        }
+      ],
+      "purl": "pkg:pypi/exceptiongroup@1.3.1",
+      "type": "library",
+      "version": "1.3.1"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://gofastmcp.com"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/PrefectHQ/fastmcp"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0"
+          }
+        }
+      ],
+      "name": "fastmcp",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "pypi"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": "LICENSE"
+        },
+        {
+          "name": "amarax:source",
+          "value": ""
+        },
+        {
+          "name": "amarax:direct",
+          "value": "unknown"
+        }
+      ],
+      "purl": "pkg:pypi/fastmcp@3.4.4",
+      "type": "library",
+      "version": "3.4.4"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://gofastmcp.com"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/PrefectHQ/fastmcp"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0"
+          }
+        }
+      ],
+      "name": "fastmcp-slim",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "pypi"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": ""
+        },
+        {
+          "name": "amarax:direct",
+          "value": "unknown"
+        }
+      ],
+      "purl": "pkg:pypi/fastmcp-slim@3.4.4",
+      "type": "library",
+      "version": "3.4.4"
+    },
+    {
+      "licenses": [
+        {
+          "license": {
+            "name": "ISC"
+          }
+        }
+      ],
+      "name": "griffelib",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "pypi"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": "LICENSE"
+        },
+        {
+          "name": "amarax:source",
+          "value": ""
+        },
+        {
+          "name": "amarax:direct",
+          "value": "unknown"
+        }
+      ],
+      "purl": "pkg:pypi/griffelib@2.1.0",
+      "type": "library",
+      "version": "2.1.0"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/python-hyper/h11"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "name": "h11",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "pypi"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": "LICENSE.txt"
+        },
+        {
+          "name": "amarax:source",
+          "value": ""
+        },
+        {
+          "name": "amarax:direct",
+          "value": "unknown"
+        }
+      ],
+      "purl": "pkg:pypi/h11@0.16.0",
+      "type": "library",
+      "version": "0.16.0"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://www.encode.io/httpcore/"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/encode/httpcore"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "BSD-3-Clause"
+          }
+        }
+      ],
+      "name": "httpcore",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "pypi"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": "LICENSE.md"
+        },
+        {
+          "name": "amarax:source",
+          "value": ""
+        },
+        {
+          "name": "amarax:direct",
+          "value": "unknown"
+        }
+      ],
+      "purl": "pkg:pypi/httpcore@1.0.9",
+      "type": "library",
+      "version": "1.0.9"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/encode/httpx"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/encode/httpx"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "BSD-3-Clause"
+          }
+        }
+      ],
+      "name": "httpx",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "pypi"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": ""
+        },
+        {
+          "name": "amarax:direct",
+          "value": "unknown"
+        }
+      ],
+      "purl": "pkg:pypi/httpx@0.28.1",
+      "type": "library",
+      "version": "0.28.1"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/florimondmanca/httpx-sse"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "name": "httpx-sse",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "pypi"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": "LICENSE"
+        },
+        {
+          "name": "amarax:source",
+          "value": ""
+        },
+        {
+          "name": "amarax:direct",
+          "value": "unknown"
+        }
+      ],
+      "purl": "pkg:pypi/httpx-sse@0.4.3",
+      "type": "library",
+      "version": "0.4.3"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/kjd/idna"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "BSD-3-Clause"
+          }
+        }
+      ],
+      "name": "idna",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "pypi"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": "LICENSE.md"
+        },
+        {
+          "name": "amarax:source",
+          "value": ""
+        },
+        {
+          "name": "amarax:direct",
+          "value": "unknown"
+        }
+      ],
+      "purl": "pkg:pypi/idna@3.18",
+      "type": "library",
+      "version": "3.18"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/pytest-dev/iniconfig"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "name": "iniconfig",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "pypi"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": "LICENSE"
+        },
+        {
+          "name": "amarax:source",
+          "value": ""
+        },
+        {
+          "name": "amarax:direct",
+          "value": "unknown"
+        }
+      ],
+      "purl": "pkg:pypi/iniconfig@2.3.0",
+      "type": "library",
+      "version": "2.3.0"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/jaraco/jaraco.classes"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "name": "jaraco.classes",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "pypi"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": "LICENSE"
+        },
+        {
+          "name": "amarax:source",
+          "value": ""
+        },
+        {
+          "name": "amarax:direct",
+          "value": "unknown"
+        },
+        {
+          "name": "amarax:license-override",
+          "value": "true"
+        },
+        {
+          "name": "amarax:license-evidence",
+          "value": "https://github.com/jaraco/jaraco.classes/blob/main/pyproject.toml"
+        }
+      ],
+      "purl": "pkg:pypi/jaraco.classes@3.4.0",
+      "type": "library",
+      "version": "3.4.0"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/jaraco/jaraco.context"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "name": "jaraco.context",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "pypi"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": "LICENSE"
+        },
+        {
+          "name": "amarax:source",
+          "value": ""
+        },
+        {
+          "name": "amarax:direct",
+          "value": "unknown"
+        }
+      ],
+      "purl": "pkg:pypi/jaraco.context@6.1.2",
+      "type": "library",
+      "version": "6.1.2"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/jaraco/jaraco.functools"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "name": "jaraco.functools",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "pypi"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": "LICENSE"
+        },
+        {
+          "name": "amarax:source",
+          "value": ""
+        },
+        {
+          "name": "amarax:direct",
+          "value": "unknown"
+        }
+      ],
+      "purl": "pkg:pypi/jaraco.functools@4.6.0",
+      "type": "library",
+      "version": "4.6.0"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://jeepney.readthedocs.io/en/latest/"
+        },
+        {
+          "type": "vcs",
+          "url": "https://gitlab.com/takluyver/jeepney"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "name": "jeepney",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "pypi"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": "LICENSE"
+        },
+        {
+          "name": "amarax:source",
+          "value": ""
+        },
+        {
+          "name": "amarax:direct",
+          "value": "unknown"
+        }
+      ],
+      "purl": "pkg:pypi/jeepney@0.9.0",
+      "type": "library",
+      "version": "0.9.0"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://jose.authlib.org/"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/authlib/joserfc"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "BSD-3-Clause"
+          }
+        }
+      ],
+      "name": "joserfc",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "pypi"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": "LICENSE"
+        },
+        {
+          "name": "amarax:source",
+          "value": ""
+        },
+        {
+          "name": "amarax:direct",
+          "value": "unknown"
+        }
+      ],
+      "purl": "pkg:pypi/joserfc@1.7.4",
+      "type": "library",
+      "version": "1.7.4"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://jsonref.readthedocs.io/en/latest/"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/gazpachoking/jsonref"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "name": "jsonref",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "pypi"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": ""
+        },
+        {
+          "name": "amarax:direct",
+          "value": "unknown"
+        }
+      ],
+      "purl": "pkg:pypi/jsonref@1.1.0",
+      "type": "library",
+      "version": "1.1.0"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/python-jsonschema/jsonschema"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/python-jsonschema/jsonschema"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "name": "jsonschema",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "pypi"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": "COPYING"
+        },
+        {
+          "name": "amarax:source",
+          "value": ""
+        },
+        {
+          "name": "amarax:direct",
+          "value": "unknown"
+        }
+      ],
+      "purl": "pkg:pypi/jsonschema@4.26.0",
+      "type": "library",
+      "version": "4.26.0"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/p1c2u/jsonschema-path"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0"
+          }
+        }
+      ],
+      "name": "jsonschema-path",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "pypi"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": "LICENSE"
+        },
+        {
+          "name": "amarax:source",
+          "value": ""
+        },
+        {
+          "name": "amarax:direct",
+          "value": "unknown"
+        }
+      ],
+      "purl": "pkg:pypi/jsonschema-path@0.5.0",
+      "type": "library",
+      "version": "0.5.0"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/python-jsonschema/jsonschema-specifications"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/python-jsonschema/jsonschema-specifications"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "name": "jsonschema-specifications",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "pypi"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": "COPYING"
+        },
+        {
+          "name": "amarax:source",
+          "value": ""
+        },
+        {
+          "name": "amarax:direct",
+          "value": "unknown"
+        }
+      ],
+      "purl": "pkg:pypi/jsonschema-specifications@2025.9.1",
+      "type": "library",
+      "version": "2025.9.1"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/jaraco/keyring"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "name": "keyring",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "pypi"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": "LICENSE"
+        },
+        {
+          "name": "amarax:source",
+          "value": ""
+        },
+        {
+          "name": "amarax:direct",
+          "value": "unknown"
+        }
+      ],
+      "purl": "pkg:pypi/keyring@25.7.0",
+      "type": "library",
+      "version": "25.7.0"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/executablebooks/markdown-it-py"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "name": "markdown-it-py",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "pypi"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": "LICENSE; LICENSE.markdown-it"
+        },
+        {
+          "name": "amarax:source",
+          "value": ""
+        },
+        {
+          "name": "amarax:direct",
+          "value": "unknown"
+        },
+        {
+          "name": "amarax:license-override",
+          "value": "true"
+        },
+        {
+          "name": "amarax:license-evidence",
+          "value": "https://github.com/executablebooks/markdown-it-py/blob/master/LICENSE"
+        }
+      ],
+      "purl": "pkg:pypi/markdown-it-py@4.2.0",
+      "type": "library",
+      "version": "4.2.0"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://modelcontextprotocol.io"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/modelcontextprotocol/python-sdk"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "name": "mcp",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "pypi"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": "LICENSE"
+        },
+        {
+          "name": "amarax:source",
+          "value": ""
+        },
+        {
+          "name": "amarax:direct",
+          "value": "unknown"
+        }
+      ],
+      "purl": "pkg:pypi/mcp@1.28.1",
+      "type": "library",
+      "version": "1.28.1"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/executablebooks/mdurl"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "name": "mdurl",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "pypi"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": ""
+        },
+        {
+          "name": "amarax:direct",
+          "value": "unknown"
+        },
+        {
+          "name": "amarax:license-override",
+          "value": "true"
+        },
+        {
+          "name": "amarax:license-evidence",
+          "value": "https://github.com/executablebooks/mdurl/blob/master/LICENSE"
+        }
+      ],
+      "purl": "pkg:pypi/mdurl@0.1.2",
+      "type": "library",
+      "version": "0.1.2"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/more-itertools/more-itertools"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "name": "more-itertools",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "pypi"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": "LICENSE"
+        },
+        {
+          "name": "amarax:source",
+          "value": ""
+        },
+        {
+          "name": "amarax:direct",
+          "value": "unknown"
+        }
+      ],
+      "purl": "pkg:pypi/more-itertools@11.1.0",
+      "type": "library",
+      "version": "11.1.0"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/mike-oakley/openapi-pydantic"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/mike-oakley/openapi-pydantic"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "name": "openapi-pydantic",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "pypi"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": ""
+        },
+        {
+          "name": "amarax:direct",
+          "value": "unknown"
+        }
+      ],
+      "purl": "pkg:pypi/openapi-pydantic@0.5.1",
+      "type": "library",
+      "version": "0.5.1"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/open-telemetry/opentelemetry-python/tree/main/opentelemetry-api"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/open-telemetry/opentelemetry-python"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0"
+          }
+        }
+      ],
+      "name": "opentelemetry-api",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "pypi"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": "LICENSE"
+        },
+        {
+          "name": "amarax:source",
+          "value": ""
+        },
+        {
+          "name": "amarax:direct",
+          "value": "unknown"
+        }
+      ],
+      "purl": "pkg:pypi/opentelemetry-api@1.44.0",
+      "type": "library",
+      "version": "1.44.0"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://packaging.pypa.io/"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/pypa/packaging"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0 OR BSD-2-Clause"
+          }
+        }
+      ],
+      "name": "packaging",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "pypi"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": "LICENSE; LICENSE.APACHE; LICENSE.BSD"
+        },
+        {
+          "name": "amarax:source",
+          "value": ""
+        },
+        {
+          "name": "amarax:direct",
+          "value": "unknown"
+        }
+      ],
+      "purl": "pkg:pypi/packaging@26.2",
+      "type": "library",
+      "version": "26.2"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/p1c2u/pathable"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0"
+          }
+        }
+      ],
+      "name": "pathable",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "pypi"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": "LICENSE"
+        },
+        {
+          "name": "amarax:source",
+          "value": ""
+        },
+        {
+          "name": "amarax:direct",
+          "value": "unknown"
+        }
+      ],
+      "purl": "pkg:pypi/pathable@0.6.0",
+      "type": "library",
+      "version": "0.6.0"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/tox-dev/platformdirs"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/tox-dev/platformdirs"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "name": "platformdirs",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "pypi"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": "LICENSE"
+        },
+        {
+          "name": "amarax:source",
+          "value": ""
+        },
+        {
+          "name": "amarax:direct",
+          "value": "unknown"
+        }
+      ],
+      "purl": "pkg:pypi/platformdirs@4.11.0",
+      "type": "library",
+      "version": "4.11.0"
+    },
+    {
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "name": "pluggy",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "pypi"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": "LICENSE"
+        },
+        {
+          "name": "amarax:source",
+          "value": ""
+        },
+        {
+          "name": "amarax:direct",
+          "value": "unknown"
+        }
+      ],
+      "purl": "pkg:pypi/pluggy@1.6.0",
+      "type": "library",
+      "version": "1.6.0"
+    },
+    {
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0"
+          }
+        }
+      ],
+      "name": "py-key-value-aio",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "pypi"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": "LICENSE"
+        },
+        {
+          "name": "amarax:source",
+          "value": ""
+        },
+        {
+          "name": "amarax:direct",
+          "value": "unknown"
+        }
+      ],
+      "purl": "pkg:pypi/py-key-value-aio@0.4.5",
+      "type": "library",
+      "version": "0.4.5"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/eliben/pycparser"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "BSD-3-Clause"
+          }
+        }
+      ],
+      "name": "pycparser",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "pypi"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": "LICENSE"
+        },
+        {
+          "name": "amarax:source",
+          "value": ""
+        },
+        {
+          "name": "amarax:direct",
+          "value": "unknown"
+        }
+      ],
+      "purl": "pkg:pypi/pycparser@3.0",
+      "type": "library",
+      "version": "3.0"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/pydantic/pydantic"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/pydantic/pydantic"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "name": "pydantic",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "pypi"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": "LICENSE"
+        },
+        {
+          "name": "amarax:source",
+          "value": ""
+        },
+        {
+          "name": "amarax:direct",
+          "value": "unknown"
+        }
+      ],
+      "purl": "pkg:pypi/pydantic@2.13.4",
+      "type": "library",
+      "version": "2.13.4"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/pydantic/pydantic-settings"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/pydantic/pydantic-settings"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "name": "pydantic-settings",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "pypi"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": "LICENSE"
+        },
+        {
+          "name": "amarax:source",
+          "value": ""
+        },
+        {
+          "name": "amarax:direct",
+          "value": "unknown"
+        }
+      ],
+      "purl": "pkg:pypi/pydantic-settings@2.14.2",
+      "type": "library",
+      "version": "2.14.2"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/pydantic/pydantic"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/pydantic/pydantic/tree/main/pydantic-core"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "name": "pydantic_core",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "pypi"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": "LICENSE"
+        },
+        {
+          "name": "amarax:source",
+          "value": ""
+        },
+        {
+          "name": "amarax:direct",
+          "value": "unknown"
+        }
+      ],
+      "purl": "pkg:pypi/pydantic_core@2.46.4",
+      "type": "library",
+      "version": "2.46.4"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://pygments.org"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/pygments/pygments"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "BSD-2-Clause"
+          }
+        }
+      ],
+      "name": "Pygments",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "pypi"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": "AUTHORS; LICENSE"
+        },
+        {
+          "name": "amarax:source",
+          "value": ""
+        },
+        {
+          "name": "amarax:direct",
+          "value": "unknown"
+        }
+      ],
+      "purl": "pkg:pypi/pygments@2.20.0",
+      "type": "library",
+      "version": "2.20.0"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/jpadilla/pyjwt"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "name": "PyJWT",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "pypi"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": "LICENSE; AUTHORS.rst"
+        },
+        {
+          "name": "amarax:source",
+          "value": ""
+        },
+        {
+          "name": "amarax:direct",
+          "value": "unknown"
+        }
+      ],
+      "purl": "pkg:pypi/pyjwt@2.13.0",
+      "type": "library",
+      "version": "2.13.0"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/asweigart/pyperclip"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "BSD"
+          }
+        }
+      ],
+      "name": "pyperclip",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "pypi"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": "LICENSE.txt; AUTHORS.txt"
+        },
+        {
+          "name": "amarax:source",
+          "value": ""
+        },
+        {
+          "name": "amarax:direct",
+          "value": "unknown"
+        }
+      ],
+      "purl": "pkg:pypi/pyperclip@1.11.0",
+      "type": "library",
+      "version": "1.11.0"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://docs.pytest.org/en/latest/"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/pytest-dev/pytest"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "name": "pytest",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "pypi"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": "LICENSE"
+        },
+        {
+          "name": "amarax:source",
+          "value": ""
+        },
+        {
+          "name": "amarax:direct",
+          "value": "unknown"
+        }
+      ],
+      "purl": "pkg:pypi/pytest@9.1.1",
+      "type": "library",
+      "version": "9.1.1"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/pytest-dev/pytest-asyncio"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/pytest-dev/pytest-asyncio"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0"
+          }
+        }
+      ],
+      "name": "pytest-asyncio",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "pypi"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": "LICENSE"
+        },
+        {
+          "name": "amarax:source",
+          "value": ""
+        },
+        {
+          "name": "amarax:direct",
+          "value": "unknown"
+        }
+      ],
+      "purl": "pkg:pypi/pytest-asyncio@1.4.0",
+      "type": "library",
+      "version": "1.4.0"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/theskumar/python-dotenv"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "BSD-3-Clause"
+          }
+        }
+      ],
+      "name": "python-dotenv",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "pypi"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": "LICENSE"
+        },
+        {
+          "name": "amarax:source",
+          "value": ""
+        },
+        {
+          "name": "amarax:direct",
+          "value": "unknown"
+        }
+      ],
+      "purl": "pkg:pypi/python-dotenv@1.2.2",
+      "type": "library",
+      "version": "1.2.2"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/Kludex/python-multipart"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/Kludex/python-multipart"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0"
+          }
+        }
+      ],
+      "name": "python-multipart",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "pypi"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": "LICENSE.txt"
+        },
+        {
+          "name": "amarax:source",
+          "value": ""
+        },
+        {
+          "name": "amarax:direct",
+          "value": "unknown"
+        }
+      ],
+      "purl": "pkg:pypi/python-multipart@0.0.32",
+      "type": "library",
+      "version": "0.0.32"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://pyyaml.org/"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/yaml/pyyaml"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "name": "PyYAML",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "pypi"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": "LICENSE"
+        },
+        {
+          "name": "amarax:source",
+          "value": ""
+        },
+        {
+          "name": "amarax:direct",
+          "value": "unknown"
+        }
+      ],
+      "purl": "pkg:pypi/pyyaml@6.0.3",
+      "type": "library",
+      "version": "6.0.3"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/python-jsonschema/referencing"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/python-jsonschema/referencing"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "name": "referencing",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "pypi"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": "COPYING"
+        },
+        {
+          "name": "amarax:source",
+          "value": ""
+        },
+        {
+          "name": "amarax:direct",
+          "value": "unknown"
+        }
+      ],
+      "purl": "pkg:pypi/referencing@0.37.0",
+      "type": "library",
+      "version": "0.37.0"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/Textualize/rich"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "name": "rich",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "pypi"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": "LICENSE"
+        },
+        {
+          "name": "amarax:source",
+          "value": ""
+        },
+        {
+          "name": "amarax:direct",
+          "value": "unknown"
+        }
+      ],
+      "purl": "pkg:pypi/rich@15.0.0",
+      "type": "library",
+      "version": "15.0.0"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://wasi-master.github.io/rich-rst"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/wasi-master/rich-rst"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "name": "rich-rst",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "pypi"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": "LICENSE; rich_rst/_vendor/LICENSES.txt"
+        },
+        {
+          "name": "amarax:source",
+          "value": ""
+        },
+        {
+          "name": "amarax:direct",
+          "value": "unknown"
+        }
+      ],
+      "purl": "pkg:pypi/rich-rst@2.1.0",
+      "type": "library",
+      "version": "2.1.0"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/crate-py/rpds"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/crate-py/rpds"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "name": "rpds-py",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "pypi"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": "LICENSE"
+        },
+        {
+          "name": "amarax:source",
+          "value": ""
+        },
+        {
+          "name": "amarax:direct",
+          "value": "unknown"
+        }
+      ],
+      "purl": "pkg:pypi/rpds-py@2026.6.3",
+      "type": "library",
+      "version": "2026.6.3"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://docs.astral.sh/ruff"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/astral-sh/ruff"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "name": "ruff",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "pypi"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": "LICENSE"
+        },
+        {
+          "name": "amarax:source",
+          "value": ""
+        },
+        {
+          "name": "amarax:direct",
+          "value": "unknown"
+        }
+      ],
+      "purl": "pkg:pypi/ruff@0.16.0",
+      "type": "library",
+      "version": "0.16.0"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/mitya57/secretstorage"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "BSD-3-Clause"
+          }
+        }
+      ],
+      "name": "SecretStorage",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "pypi"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": "LICENSE"
+        },
+        {
+          "name": "amarax:source",
+          "value": ""
+        },
+        {
+          "name": "amarax:direct",
+          "value": "unknown"
+        }
+      ],
+      "purl": "pkg:pypi/secretstorage@3.5.0",
+      "type": "library",
+      "version": "3.5.0"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/sysid/sse-starlette"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/sysid/sse-starlette"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "BSD-3-Clause"
+          }
+        }
+      ],
+      "name": "sse-starlette",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "pypi"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": "LICENSE; AUTHORS"
+        },
+        {
+          "name": "amarax:source",
+          "value": ""
+        },
+        {
+          "name": "amarax:direct",
+          "value": "unknown"
+        }
+      ],
+      "purl": "pkg:pypi/sse-starlette@3.4.6",
+      "type": "library",
+      "version": "3.4.6"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/Kludex/starlette"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/Kludex/starlette"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "BSD-3-Clause"
+          }
+        }
+      ],
+      "name": "starlette",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "pypi"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": "LICENSE.md"
+        },
+        {
+          "name": "amarax:source",
+          "value": ""
+        },
+        {
+          "name": "amarax:direct",
+          "value": "unknown"
+        }
+      ],
+      "purl": "pkg:pypi/starlette@1.3.1",
+      "type": "library",
+      "version": "1.3.1"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/pydantic/typing-inspection"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/pydantic/typing-inspection"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "name": "typing-inspection",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "pypi"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": "LICENSE"
+        },
+        {
+          "name": "amarax:source",
+          "value": ""
+        },
+        {
+          "name": "amarax:direct",
+          "value": "unknown"
+        }
+      ],
+      "purl": "pkg:pypi/typing-inspection@0.4.2",
+      "type": "library",
+      "version": "0.4.2"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://typing-extensions.readthedocs.io/"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/python/typing_extensions"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "PSF-2.0"
+          }
+        }
+      ],
+      "name": "typing_extensions",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "pypi"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": "LICENSE"
+        },
+        {
+          "name": "amarax:source",
+          "value": ""
+        },
+        {
+          "name": "amarax:direct",
+          "value": "unknown"
+        }
+      ],
+      "purl": "pkg:pypi/typing_extensions@4.16.0",
+      "type": "library",
+      "version": "4.16.0"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/chrisguidry/uncalled-for"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "name": "uncalled-for",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "pypi"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": "LICENSE"
+        },
+        {
+          "name": "amarax:source",
+          "value": ""
+        },
+        {
+          "name": "amarax:direct",
+          "value": "unknown"
+        },
+        {
+          "name": "amarax:license-override",
+          "value": "true"
+        },
+        {
+          "name": "amarax:license-evidence",
+          "value": "https://github.com/chrisguidry/uncalled-for/blob/main/LICENSE"
+        }
+      ],
+      "purl": "pkg:pypi/uncalled-for@0.3.2",
+      "type": "library",
+      "version": "0.3.2"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://uvicorn.dev/"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/Kludex/uvicorn"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "BSD-3-Clause"
+          }
+        }
+      ],
+      "name": "uvicorn",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "pypi"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": "LICENSE.md"
+        },
+        {
+          "name": "amarax:source",
+          "value": ""
+        },
+        {
+          "name": "amarax:direct",
+          "value": "unknown"
+        }
+      ],
+      "purl": "pkg:pypi/uvicorn@0.51.0",
+      "type": "library",
+      "version": "0.51.0"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/samuelcolvin/watchfiles"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/samuelcolvin/watchfiles"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "name": "watchfiles",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "pypi"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": "LICENSE"
+        },
+        {
+          "name": "amarax:source",
+          "value": ""
+        },
+        {
+          "name": "amarax:direct",
+          "value": "unknown"
+        }
+      ],
+      "purl": "pkg:pypi/watchfiles@1.2.0",
+      "type": "library",
+      "version": "1.2.0"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/python-websockets/websockets"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "BSD-3-Clause"
+          }
+        }
+      ],
+      "name": "websockets",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "pypi"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": "LICENSE"
+        },
+        {
+          "name": "amarax:source",
+          "value": ""
+        },
+        {
+          "name": "amarax:direct",
+          "value": "unknown"
+        }
+      ],
+      "purl": "pkg:pypi/websockets@16.1.1",
+      "type": "library",
+      "version": "16.1.1"
+    }
+  ],
+  "metadata": {
+    "component": {
+      "name": "block/agent-task-queue",
+      "properties": [
+        {
+          "name": "amarax:pinned-revision",
+          "value": "ccb94ae25c2b286d62e7371fd4c0f7ce60e33efa"
+        }
+      ],
+      "type": "application",
+      "version": "ccb94ae25c2b286d62e7371fd4c0f7ce60e33efa"
+    },
+    "properties": [
+      {
+        "name": "amarax:license-override-registry",
+        "value": "compliance/license-overrides.json"
+      }
+    ],
+    "timestamp": "2026-07-25T06:51:34Z",
+    "tools": [
+      {
+        "name": "generate_upstream_sbom.py",
+        "vendor": "Amarax Platform Replication",
+        "version": "1.0.0"
+      }
+    ]
+  },
+  "serialNumber": "urn:uuid:b3541f04-d3da-58aa-9d51-e1a1b859caca",
+  "specVersion": "1.5",
+  "version": 1
+}
