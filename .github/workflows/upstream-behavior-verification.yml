@@ -134,7 +134,6 @@ jobs:
         run: |
           cat > mcp_smoke.py <<'PY'
           import asyncio
-
           from fastmcp import Client
           import task_queue
 
@@ -143,10 +142,7 @@ jobs:
                   tools = await asyncio.wait_for(client.list_tools(), timeout=20)
                   names = {tool.name for tool in tools}
                   assert {"run_task", "clear_task_logs"}.issubset(names), names
-                  result = await asyncio.wait_for(
-                      client.call_tool("clear_task_logs", {}),
-                      timeout=20,
-                  )
+                  result = await asyncio.wait_for(client.call_tool("clear_task_logs", {}), timeout=20)
                   assert "Deleted" in str(result), result
 
           asyncio.run(asyncio.wait_for(verify(), timeout=45))
@@ -168,28 +164,34 @@ jobs:
       - name: Build release binary
         working-directory: upstream
         run: |
-          source bin/activate-hermit
-          cargo build --release --quiet
+          source bin/activate-hermit >/tmp/hermit-activation.log 2>&1
+          cargo build --release --quiet >/tmp/ai-rules-build.log 2>&1 || {
+            cat /tmp/hermit-activation.log
+            cat /tmp/ai-rules-build.log
+            exit 1
+          }
 
       - name: Verify initialization and agent inventory
         run: |
           BIN="$PWD/upstream/target/release/ai-rules"
           FIXTURE="${RUNNER_TEMP}/ai-rules-fixture"
-          mkdir -p "$FIXTURE"
+          DIAGNOSTICS="${RUNNER_TEMP}/ai-rules-diagnostics"
+          mkdir -p "$FIXTURE" "$DIAGNOSTICS"
           cd "$FIXTURE"
-          "$BIN" --version
-          "$BIN" list-agents | tee agents.txt
-          grep -qi "claude" agents.txt
-          grep -qi "codex" agents.txt
-          grep -qi "cursor" agents.txt
-          "$BIN" init
+          "$BIN" --version | tee "$DIAGNOSTICS/version.txt"
+          "$BIN" list-agents | tee "$DIAGNOSTICS/agents.txt"
+          grep -qi "claude" "$DIAGNOSTICS/agents.txt"
+          grep -qi "codex" "$DIAGNOSTICS/agents.txt"
+          grep -qi "cursor" "$DIAGNOSTICS/agents.txt"
+          "$BIN" init | tee "$DIAGNOSTICS/init.txt"
           test -d ai-rules
 
-      - name: Verify rule and MCP generation
+      - name: Generate rules and MCP outputs
         run: |
           set -euxo pipefail
           BIN="$PWD/upstream/target/release/ai-rules"
           FIXTURE="${RUNNER_TEMP}/ai-rules-fixture"
+          DIAGNOSTICS="${RUNNER_TEMP}/ai-rules-diagnostics"
           cd "$FIXTURE"
           cat > ai-rules/platform-replication.md <<'EOF'
           ---
@@ -210,31 +212,47 @@ jobs:
             }
           }
           EOF
-          "$BIN" generate --agents claude,codex,cursor
-          echo "--- generated tree ---"
-          find . -maxdepth 5 -mindepth 1 -printf '%y %p -> %l\n' | sort
-          test -e CLAUDE.md || test -L CLAUDE.md
-          test -e AGENTS.md || test -L AGENTS.md
-          test -d .cursor/rules
-          test -e .mcp.json || test -L .mcp.json
-          test -e .codex/config.toml || test -L .codex/config.toml
-          test -e .cursor/mcp.json || test -L .cursor/mcp.json
+          "$BIN" generate --agents claude,codex,cursor | tee "$DIAGNOSTICS/generate.txt"
+          find . -maxdepth 6 -mindepth 1 -printf '%y %p -> %l\n' | sort | tee "$DIAGNOSTICS/generated-tree.txt"
+          "$BIN" status | tee "$DIAGNOSTICS/status.txt" || true
+
+      - name: Validate documented generated outputs
+        run: |
+          set -euo pipefail
+          FIXTURE="${RUNNER_TEMP}/ai-rules-fixture"
+          DIAGNOSTICS="${RUNNER_TEMP}/ai-rules-diagnostics"
+          cd "$FIXTURE"
+          require_path() {
+            local path="$1"
+            if [[ ! -e "$path" && ! -L "$path" ]]; then
+              echo "Missing documented output: $path" >&2
+              cat "$DIAGNOSTICS/generated-tree.txt" >&2
+              return 1
+            fi
+          }
+          require_path CLAUDE.md
+          require_path AGENTS.md
+          require_path .cursor/rules
+          require_path .mcp.json
+          require_path .codex/config.toml
+          require_path .cursor/mcp.json
           grep -q "Preserve provenance" CLAUDE.md
-          "$BIN" status | tee status.txt
 
       - name: Verify regeneration and cleanup
         run: |
           set -euxo pipefail
           BIN="$PWD/upstream/target/release/ai-rules"
           FIXTURE="${RUNNER_TEMP}/ai-rules-fixture"
+          DIAGNOSTICS="${RUNNER_TEMP}/ai-rules-diagnostics"
           cd "$FIXTURE"
           GENERATED_TARGET="$(readlink -f CLAUDE.md)"
           echo "Local drift" >> "$GENERATED_TARGET"
-          "$BIN" status | tee drift-status.txt || true
-          "$BIN" generate --agents claude,codex,cursor
+          "$BIN" status | tee "$DIAGNOSTICS/drift-status.txt" || true
+          "$BIN" generate --agents claude,codex,cursor | tee "$DIAGNOSTICS/regenerate.txt"
           grep -q "Preserve provenance" CLAUDE.md
           ! grep -q "Local drift" CLAUDE.md
-          "$BIN" clean
+          "$BIN" clean | tee "$DIAGNOSTICS/clean.txt"
+          find . -maxdepth 6 -mindepth 1 -printf '%y %p -> %l\n' | sort | tee "$DIAGNOSTICS/post-clean-tree.txt"
           test ! -e CLAUDE.md && test ! -L CLAUDE.md
           test ! -e AGENTS.md && test ! -L AGENTS.md
           test ! -e .mcp.json && test ! -L .mcp.json
@@ -246,15 +264,25 @@ jobs:
           set -euxo pipefail
           BIN="$PWD/upstream/target/release/ai-rules"
           FIXTURE="${RUNNER_TEMP}/ai-rules-symlink"
+          DIAGNOSTICS="${RUNNER_TEMP}/ai-rules-diagnostics"
           mkdir -p "$FIXTURE/ai-rules"
           cat > "$FIXTURE/ai-rules/AGENTS.md" <<'EOF'
           # Shared Agent Rules
           Use evidence-first implementation.
           EOF
           cd "$FIXTURE"
-          "$BIN" generate --agents claude,codex
-          find . -maxdepth 3 -mindepth 1 -printf '%y %p -> %l\n' | sort
+          "$BIN" generate --agents claude,codex | tee "$DIAGNOSTICS/symlink-generate.txt"
+          find . -maxdepth 4 -mindepth 1 -printf '%y %p -> %l\n' | sort | tee "$DIAGNOSTICS/symlink-tree.txt"
           test -L CLAUDE.md
           test -L AGENTS.md
           test "$(readlink CLAUDE.md)" = "ai-rules/AGENTS.md"
           test "$(readlink AGENTS.md)" = "ai-rules/AGENTS.md"
+
+      - name: Upload AI Rules behavior diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ai-rules-behavior-diagnostics
+          path: ${{ runner.temp }}/ai-rules-diagnostics
+          if-no-files-found: error
+          retention-days: 30
