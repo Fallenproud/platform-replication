@@ -17,7 +17,7 @@ This wave assessed three independent repositories rather than assigning one bund
 |---|---|---|---|---|
 | `block/agent-task-queue` | `ccb94ae25c2b286d62e7371fd4c0f7ce60e33efa` | Apache-2.0 | FORK, conditional | AIKOV Guarded Build and Resource Scheduler |
 | `block/ai-rules` | `b2c1cd16d05f47053eb3f059f87524f7b6ee1a1f` | Apache-2.0 | ADOPT, conditional | Repository instruction, skill and MCP config compiler |
-| `block/xcode-index-mcp` | `c89af82aee64c42690a60c2dda6d9e0f8bf022e9` | Missing / NOASSERTION | REFERENCE | Voltino semantic code-index provider |
+| `block/xcode-index-mcp` | `c89af82aee64c42690a60c2dda6d9e0f8bf022e9` | Apache-2.0 in `LICENSE.txt` | FORK, conditional | Voltino optional macOS semantic code-index provider |
 
 ## Combined topology
 
@@ -41,7 +41,9 @@ AI Rules has excellent fit for the multi-agent repository workflow. It generates
 
 ### Xcode Index MCP
 
-The two-process Python plus Swift architecture is useful as a reference for exposing Xcode's IndexStoreDB through MCP. Source reuse is blocked because no explicit source license was found. Voltino should implement a clean-room language-neutral code-index contract and an optional macOS provider.
+The two-process Python plus Swift architecture is useful for exposing Xcode's IndexStoreDB through MCP. CI corrected the initial license finding by discovering `LICENSE.txt`, which contains Apache License 2.0. The source is therefore legally reusable, but direct adoption remains unsuitable because the implementation is early, macOS-specific, uses a fixed unauthenticated localhost port, contains Goose-specific paths and follows an unpinned IndexStoreDB branch.
+
+Decision 0006 is retained as a superseded error record. Decision 0007 establishes a narrow optional FORK after build, dependency, transport, path-validation and adapter gates pass.
 
 ## Original adapter package
 
@@ -61,5 +63,6 @@ No third-party source has been copied.
 - Reproduce AI Rules build and test suite.
 - Test generation, clean, nested scopes, symlinks, MCP files and Windows behavior.
 - Generate Cargo dependency and license inventory.
-- Keep Xcode Index MCP source excluded unless an explicit compatible license is added.
-- Design and test an independent Voltino Xcode index provider.
+- Reproduce Xcode Index MCP Python and Swift builds on macOS.
+- Pin IndexStoreDB and generate Python and Swift dependency inventories.
+- Replace the fixed local transport and validate the Voltino provider adapter.
