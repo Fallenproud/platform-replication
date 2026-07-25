@@ -1,0 +1,102 @@
+name: Upstream SBOM Evidence
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "assessments/block/agent-task-queue.json"
+      - "assessments/block/ai-rules.json"
+      - "tools/generate_upstream_sbom.py"
+      - ".github/workflows/upstream-sbom-evidence.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: upstream-sbom-evidence-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  agent-task-queue:
+    name: Agent Task Queue dependency evidence
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout replication program
+        uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@eac588ad8def6316056a12d4907a9d4d84ff7a3b
+
+      - name: Fetch pinned upstream
+        run: |
+          mkdir -p _upstream
+          git clone --filter=blob:none https://github.com/block/agent-task-queue.git _upstream/agent-task-queue
+          cd _upstream/agent-task-queue
+          git checkout ccb94ae25c2b286d62e7371fd4c0f7ce60e33efa
+          test "$(git rev-parse HEAD)" = "ccb94ae25c2b286d62e7371fd4c0f7ce60e33efa"
+
+      - name: Materialize Python environment
+        working-directory: _upstream/agent-task-queue
+        env:
+          UV_DEFAULT_INDEX: https://pypi.org/simple
+          UV_INDEX_URL: https://pypi.org/simple
+        run: |
+          uv python install 3.13
+          uv sync --all-extras --python 3.13
+
+      - name: Generate dependency and license evidence
+        run: |
+          python tools/generate_upstream_sbom.py \
+            --repository block/agent-task-queue \
+            --revision ccb94ae25c2b286d62e7371fd4c0f7ce60e33efa \
+            --out-dir evidence-output/agent-task-queue \
+            python-env \
+            --python _upstream/agent-task-queue/.venv/bin/python
+
+      - name: Upload Agent Task Queue evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: agent-task-queue-sbom-evidence
+          path: evidence-output/agent-task-queue
+          if-no-files-found: error
+          retention-days: 14
+
+  ai-rules:
+    name: AI Rules dependency evidence
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout replication program
+        uses: actions/checkout@v4
+
+      - name: Fetch pinned upstream
+        run: |
+          mkdir -p _upstream
+          git clone --filter=blob:none https://github.com/block/ai-rules.git _upstream/ai-rules
+          cd _upstream/ai-rules
+          git checkout b2c1cd16d05f47053eb3f059f87524f7b6ee1a1f
+          test "$(git rev-parse HEAD)" = "b2c1cd16d05f47053eb3f059f87524f7b6ee1a1f"
+
+      - name: Generate locked Cargo metadata
+        working-directory: _upstream/ai-rules
+        run: |
+          source bin/activate-hermit
+          cargo metadata --locked --format-version 1 > ../../cargo-metadata.json
+
+      - name: Generate dependency and license evidence
+        run: |
+          python tools/generate_upstream_sbom.py \
+            --repository block/ai-rules \
+            --revision b2c1cd16d05f47053eb3f059f87524f7b6ee1a1f \
+            --out-dir evidence-output/ai-rules \
+            cargo-metadata \
+            --metadata cargo-metadata.json
+          cp cargo-metadata.json evidence-output/ai-rules/cargo-metadata.json
+
+      - name: Upload AI Rules evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: ai-rules-sbom-evidence
+          path: evidence-output/ai-rules
+          if-no-files-found: error
+          retention-days: 14
