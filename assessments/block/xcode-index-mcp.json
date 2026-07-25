@@ -13,7 +13,7 @@
     "dependency_review": "pending"
   },
   "runtime": {
-    "build_reproduced": false,
+    "build_reproduced": true,
     "self_hostable": "partial",
     "private_dependencies": [],
     "required_services": [
@@ -43,7 +43,7 @@
     "Validate project identity, DerivedData roots, file paths, request sizes, symbol-query limits, and index freshness.",
     "Remove Goose-specific paths and assumptions from the product adapter.",
     "Review screenshots, assets, Swift dependencies, Python dependencies, and all transitive licenses separately before redistribution.",
-    "Reproduce Python and Swift builds on a pinned macOS runner before source enters Voltino.",
+    "Perform an integration test against a real disposable Xcode DerivedData index before source enters Voltino.",
     "Preserve Apache-2.0, applicable notices, and a clear record of local modifications."
   ],
   "evidence": [
@@ -53,7 +53,8 @@
     "swift-service/Package.swift requires macOS 12 and follows the main branch of Apple's IndexStoreDB instead of pinning a release or commit.",
     "server.py launches a local Swift executable, connects to fixed localhost port 7949, writes Goose-specific logs, and exchanges newline-delimited JSON without an authentication or handshake layer.",
     "The implementation is strongly coupled to macOS, Xcode DerivedData, Swift IndexStoreDB, and local process behavior.",
-    "The initial missing-license finding was corrected after CI enumerated tracked files and found LICENSE.txt; Decision 0006 is superseded by Decision 0007."
+    "The initial missing-license finding was corrected after CI enumerated tracked files and found LICENSE.txt; Decision 0006 is superseded by Decision 0007.",
+    "Platform Replication Upstream Build Verification run 30147827108 checked out the pinned commit on macOS 15, installed the Python 3.13 environment, compiled the Python package, built the Swift service, and completed the Swift test suite successfully."
   ],
   "reviewed_at": "2026-07-25",
   "reviewer": "Sophie-X / Amarax Platform Replication"
