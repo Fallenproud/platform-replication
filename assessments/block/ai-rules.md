@@ -14,7 +14,7 @@ It must not be confused with policy enforcement. The tool distributes text and c
 - Commit: `b2c1cd16d05f47053eb3f059f87524f7b6ee1a1f`
 - Version observed: `1.7.0`
 - License: Apache-2.0
-- Build reproduction: pending
+- Build reproduction: **passed** through format, Clippy, tests and release build in workflow run `30147827108`
 
 ## Capability map
 
@@ -74,12 +74,15 @@ Required controls:
 6. separate product policy from agent prompt content;
 7. preserve provenance of generated files.
 
-## Import gates
+## Reproduction evidence
 
-- Reproduce the Rust build and test suite.
+The pinned source completed Apache license verification, `cargo fmt --check`, the upstream Clippy script, the full Rust test suite and a release build in GitHub Actions. The core binary is therefore reproducibly buildable in the tested Linux environment.
+
+## Remaining import gates
+
 - Inspect installer behavior and binary provenance.
 - Generate a Cargo SBOM and license inventory.
-- Test standard mode, symlink mode, nested scopes, clean, status, MCP generation, commands, and skills.
+- Test standard mode, symlink mode, nested scopes, clean, status, MCP generation, commands, and skills as product workflows.
 - Validate Windows behavior where symlink permissions differ.
 - Add an Amarax wrapper and canonical config example without modifying upstream core.
 
