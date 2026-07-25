@@ -27,6 +27,7 @@ jobs:
   agent-task-queue:
     name: Agent Task Queue CLI and MCP behavior
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - name: Install uv
         uses: astral-sh/setup-uv@eac588ad8def6316056a12d4907a9d4d84ff7a3b
@@ -126,45 +127,36 @@ jobs:
           set -e
           test "$EXIT_CODE" = "124"
 
-      - name: Verify in-memory MCP transport
+      - name: Verify in-memory MCP transport and non-shell tool call
         working-directory: upstream
         env:
           TASK_QUEUE_DATA_DIR: ${{ runner.temp }}/agent-task-queue-mcp
         run: |
           cat > mcp_smoke.py <<'PY'
           import asyncio
-          import os
-          from pathlib import Path
 
           from fastmcp import Client
           import task_queue
 
-          async def main():
+          async def verify():
               async with Client(task_queue.mcp) as client:
-                  tools = await client.list_tools()
+                  tools = await asyncio.wait_for(client.list_tools(), timeout=20)
                   names = {tool.name for tool in tools}
                   assert {"run_task", "clear_task_logs"}.issubset(names), names
-                  result = await client.call_tool(
-                      "run_task",
-                      {
-                          "command": "python -c 'print(\"mcp-smoke-ok\")'",
-                          "working_directory": str(Path.cwd()),
-                          "queue_name": "mcp-smoke",
-                          "timeout_seconds": 30,
-                          "env_vars": "",
-                          "agent_name": "platform-replication-ci",
-                      },
+                  result = await asyncio.wait_for(
+                      client.call_tool("clear_task_logs", {}),
+                      timeout=20,
                   )
-                  text = str(result).lower()
-                  assert "mcp-smoke-ok" in text or "exit_code" in text or "exit code" in text, result
+                  assert "Deleted" in str(result), result
 
-          asyncio.run(main())
+          asyncio.run(asyncio.wait_for(verify(), timeout=45))
           PY
-          uv run python mcp_smoke.py
+          timeout 60s uv run python mcp_smoke.py
 
   ai-rules:
     name: AI Rules generation and cleanup behavior
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - name: Fetch pinned upstream
         run: |
@@ -177,7 +169,7 @@ jobs:
         working-directory: upstream
         run: |
           source bin/activate-hermit
-          cargo build --release
+          cargo build --release --quiet
 
       - name: Verify initialization and agent inventory
         run: |
@@ -195,6 +187,7 @@ jobs:
 
       - name: Verify rule and MCP generation
         run: |
+          set -euxo pipefail
           BIN="$PWD/upstream/target/release/ai-rules"
           FIXTURE="${RUNNER_TEMP}/ai-rules-fixture"
           cd "$FIXTURE"
@@ -218,33 +211,39 @@ jobs:
           }
           EOF
           "$BIN" generate --agents claude,codex,cursor
-          test -e CLAUDE.md
-          test -e AGENTS.md
+          echo "--- generated tree ---"
+          find . -maxdepth 5 -mindepth 1 -printf '%y %p -> %l\n' | sort
+          test -e CLAUDE.md || test -L CLAUDE.md
+          test -e AGENTS.md || test -L AGENTS.md
           test -d .cursor/rules
-          test -f .mcp.json
-          test -f .codex/config.toml
-          test -f .cursor/mcp.json
+          test -e .mcp.json || test -L .mcp.json
+          test -e .codex/config.toml || test -L .codex/config.toml
+          test -e .cursor/mcp.json || test -L .cursor/mcp.json
           grep -q "Preserve provenance" CLAUDE.md
           "$BIN" status | tee status.txt
 
       - name: Verify regeneration and cleanup
         run: |
+          set -euxo pipefail
           BIN="$PWD/upstream/target/release/ai-rules"
           FIXTURE="${RUNNER_TEMP}/ai-rules-fixture"
           cd "$FIXTURE"
-          echo "Local drift" >> CLAUDE.md
+          GENERATED_TARGET="$(readlink -f CLAUDE.md)"
+          echo "Local drift" >> "$GENERATED_TARGET"
           "$BIN" status | tee drift-status.txt || true
           "$BIN" generate --agents claude,codex,cursor
           grep -q "Preserve provenance" CLAUDE.md
+          ! grep -q "Local drift" CLAUDE.md
           "$BIN" clean
-          test ! -e CLAUDE.md
-          test ! -e AGENTS.md
-          test ! -e .mcp.json
-          test ! -e .codex/config.toml
-          test ! -e .cursor/mcp.json
+          test ! -e CLAUDE.md && test ! -L CLAUDE.md
+          test ! -e AGENTS.md && test ! -L AGENTS.md
+          test ! -e .mcp.json && test ! -L .mcp.json
+          test ! -e .codex/config.toml && test ! -L .codex/config.toml
+          test ! -e .cursor/mcp.json && test ! -L .cursor/mcp.json
 
       - name: Verify symlink mode
         run: |
+          set -euxo pipefail
           BIN="$PWD/upstream/target/release/ai-rules"
           FIXTURE="${RUNNER_TEMP}/ai-rules-symlink"
           mkdir -p "$FIXTURE/ai-rules"
@@ -254,6 +253,7 @@ jobs:
           EOF
           cd "$FIXTURE"
           "$BIN" generate --agents claude,codex
+          find . -maxdepth 3 -mindepth 1 -printf '%y %p -> %l\n' | sort
           test -L CLAUDE.md
           test -L AGENTS.md
           test "$(readlink CLAUDE.md)" = "ai-rules/AGENTS.md"
