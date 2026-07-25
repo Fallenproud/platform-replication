@@ -10,10 +10,20 @@ on:
       - "tools/generate_upstream_sbom.py"
       - "tools/apply_license_overrides.py"
       - ".github/workflows/upstream-sbom-evidence.yml"
+  push:
+    branches:
+      - "program/**"
+    paths:
+      - "assessments/block/agent-task-queue.json"
+      - "assessments/block/ai-rules.json"
+      - "compliance/license-overrides.json"
+      - "tools/generate_upstream_sbom.py"
+      - "tools/apply_license_overrides.py"
+      - ".github/workflows/upstream-sbom-evidence.yml"
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 concurrency:
   group: upstream-sbom-evidence-${{ github.ref }}
@@ -110,3 +120,60 @@ jobs:
           path: evidence-output/ai-rules
           if-no-files-found: error
           retention-days: 90
+
+  persist-evidence:
+    name: Persist dependency evidence
+    if: github.event_name == 'push'
+    needs: [agent-task-queue, ai-rules]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout program branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+          fetch-depth: 0
+
+      - name: Download Agent Task Queue evidence
+        uses: actions/download-artifact@v4
+        with:
+          name: agent-task-queue-sbom-evidence
+          path: evidence/dependencies/agent-task-queue
+
+      - name: Download AI Rules evidence
+        uses: actions/download-artifact@v4
+        with:
+          name: ai-rules-sbom-evidence
+          path: evidence/dependencies/ai-rules
+
+      - name: Remove raw Cargo metadata from committed evidence
+        run: rm -f evidence/dependencies/ai-rules/cargo-metadata.json
+
+      - name: Write provenance manifest
+        run: |
+          cat > evidence/dependencies/PROVENANCE.json <<EOF
+          {
+            "schema_version": 1,
+            "workflow": "Upstream SBOM Evidence",
+            "workflow_run_id": "${GITHUB_RUN_ID}",
+            "source_branch": "${GITHUB_REF_NAME}",
+            "source_commit": "${GITHUB_SHA}",
+            "generated_at": "$(date -u +%Y-%m-%dT%H:%M:%SZ)",
+            "artifacts": [
+              "agent-task-queue-sbom-evidence",
+              "ai-rules-sbom-evidence"
+            ],
+            "policy": "Evidence only. Product distribution requires an approved repository assessment and import gate."
+          }
+          EOF
+
+      - name: Commit generated evidence
+        run: |
+          git config user.name "platform-replication-bot"
+          git config user.email "platform-replication-bot@users.noreply.github.com"
+          git add evidence/dependencies
+          if git diff --cached --quiet; then
+            echo "Dependency evidence is already current."
+            exit 0
+          fi
+          git commit -m "evidence: persist upstream dependency inventories [skip ci]"
+          git push origin HEAD:${GITHUB_REF_NAME}
