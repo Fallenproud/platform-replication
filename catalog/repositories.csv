@@ -1,12 +1,52 @@
 repository,organization,capability,archived,license_status,license,assessment_status,initial_target,disposition,notes
-aaif-goose/goose,aaif-goose,agent runtime and extension platform,false,verified,Apache-2.0,queued,AIKOV or Daycostra agent runtime,UNDECIDED,Canonical repository currently resolves outside the block organization
-block/thread-manager-for-amp,block,thread and session control,false,verified,Apache-2.0,queued,Daycostra Threads Monitor,UNDECIDED,High-priority architecture and product-fit audit
+aaif-goose/goose,aaif-goose,agent runtime and extension platform,false,verified,Apache-2.0,initial-audit-complete,AIKOV runtime and Voltino,FORK,Build and dependency gates remain open; canonical project moved outside Block
+block/thread-manager-for-amp,block,thread session terminal and workboard control,false,verified,Apache-2.0,initial-audit-complete,Daycostra Threads Monitor,REFERENCE,Excellent UX reference but Amp-coupled and unauthenticated localhost runtime
 block/agent-task-queue,block,agent task scheduling,false,verified,Apache-2.0,queued,AIKOV coordination runtime,UNDECIDED,Inspect persistence and runtime coupling
 block/ai-rules,block,AI instruction and rule management,false,unverified,UNKNOWN,queued,Sophie-X and AIKOV policy surfaces,UNDECIDED,License and package inventory required
-block/xcode-index-mcp,block,MCP code index integration,false,unverified,UNKNOWN,queued,Voltino developer tooling,UNDECIDED,Platform-specific dependency review required
-block/proto-fleet,block,fleet operations control plane,false,verified,Apache-2.0,queued,reference control-plane patterns,UNDECIDED,Do not assume mining product reuse equals general product fit
-square/okhttp,square,HTTP client library,false,unverified,UNKNOWN,backlog,SDK and runtime networking,UNDECIDED,Verify current license and target-language relevance
-square/retrofit,square,typed HTTP client generation,false,unverified,UNKNOWN,backlog,developer SDK patterns,UNDECIDED,Architecture reference may be more valuable than direct adoption
-square/moshi,square,JSON serialization,false,unverified,UNKNOWN,backlog,SDK serialization,UNDECIDED,Verify Kotlin and JVM product need
-square/workflow-kotlin,square,state machine and UI workflow architecture,false,unverified,UNKNOWN,backlog,workflow and UI architecture,UNDECIDED,Assess against existing TypeScript stack
-weebly/base-less-theme,weebly,website theme starter,unknown,unverified,UNKNOWN,backlog,SnapForge website generation,UNDECIDED,Assets and theme license require separate review
+block/xcode-index-mcp,block,MCP Xcode index integration,false,unverified,UNKNOWN,queued,Voltino developer tooling,UNDECIDED,Platform-specific dependency review required
+block/proto-fleet,block,fleet operations control plane,false,verified,Apache-2.0,queued,Daycostra operations patterns,UNDECIDED,Separate general fleet patterns from mining-specific logic
+block/buzz,block,communications platform,false,unverified,UNKNOWN,discovered,Velora Voice and communications services,UNDECIDED,Large candidate; verify self-hostability and external service coupling
+block/ftl,block,backend and service framework,false,unverified,UNKNOWN,discovered,Daycostra service runtime,UNDECIDED,High-value architecture candidate requiring language and operations review
+block/elasticgraph,block,GraphQL and search data platform,false,unverified,UNKNOWN,discovered,Project Graph and evidence query,UNDECIDED,Assess persistence model and Elasticsearch coupling
+block/mcp-council-of-mine,block,multi-agent MCP deliberation,false,unverified,UNKNOWN,discovered,SophieSwarm orchestration,UNDECIDED,Research and prototype classification required
+block/vscode-mcp,block,VS Code MCP integration,false,unverified,UNKNOWN,discovered,Voltino developer tooling,UNDECIDED,Inspect editor-specific coupling
+block/flight-control,block,operations or deployment tooling,false,unverified,UNKNOWN,discovered,Daycostra operations,UNDECIDED,Capability verification required
+block/fowlcon,block,agent or developer tooling,false,unverified,UNKNOWN,discovered,AIKOV or Voltino,UNDECIDED,Capability verification required
+block/goose-discord,block,Discord integration for Goose,false,unverified,UNKNOWN,discovered,agent channels,UNDECIDED,Assess against current canonical Goose organization
+block/trailblaze,block,developer platform tooling,false,unverified,UNKNOWN,discovered,Voltino or CI,UNDECIDED,Capability and maintenance review required
+square/okhttp,square,JVM HTTP client,false,unverified,UNKNOWN,backlog,mobile and JVM networking,UNDECIDED,Foundational library; direct relevance depends on target stack
+square/retrofit,square,typed JVM HTTP client generation,false,unverified,UNKNOWN,backlog,developer SDK patterns,UNDECIDED,Architecture reference may exceed direct TypeScript relevance
+square/moshi,square,Kotlin and Java JSON serialization,false,unverified,UNKNOWN,backlog,mobile SDK serialization,UNDECIDED,Verify Kotlin product need
+square/workflow-kotlin,square,state machine and UI workflow architecture,false,unverified,UNKNOWN,backlog,workflow and UI architecture,UNDECIDED,Assess against TypeScript workflow engine
+square/leakcanary,square,Android memory leak diagnostics,false,unverified,UNKNOWN,discovered,mobile quality tooling,UNDECIDED,Useful only for Android product work
+square/kotlinpoet,square,Kotlin source generation,false,unverified,UNKNOWN,discovered,mobile code export,UNDECIDED,Potential Expo or native export support
+square/wire,square,Protocol Buffer tooling,false,unverified,UNKNOWN,discovered,SDK contracts,UNDECIDED,Assess against existing schema toolchain
+Square-Developers/oauth-examples,Square-Developers,Square OAuth samples,unknown,unverified,UNKNOWN,discovered,commerce integration references,UNDECIDED,Sample code not a Square platform replica
+Square-Developers/order-hoarder-with-supabase,Square-Developers,Square order sample with Supabase,unknown,unverified,UNKNOWN,discovered,commerce reference application,UNDECIDED,Reference only until license and API terms are reviewed
+cashapp/turbine,cashapp,Kotlin Flow testing,false,unverified,UNKNOWN,discovered,mobile test tooling,UNDECIDED,Focused library rather than Cash App product source
+cashapp/paparazzi,cashapp,Android screenshot testing,false,unverified,UNKNOWN,discovered,mobile visual regression,UNDECIDED,Potential quality pipeline component
+cashapp/zipline,cashapp,Kotlin multiplatform JavaScript runtime,false,unverified,UNKNOWN,discovered,mobile dynamic runtime,UNDECIDED,Security and update model require deep review
+cashapp/molecule,cashapp,Compose state production,false,unverified,UNKNOWN,discovered,mobile UI architecture,UNDECIDED,Architecture-level candidate
+cashapp/redwood,cashapp,multiplatform UI system,false,unverified,UNKNOWN,discovered,cross-platform UI,UNDECIDED,Potentially high-value but large integration surface
+cashapp/licensee,cashapp,Gradle dependency license tooling,false,unverified,UNKNOWN,priority,compliance pipeline,UNDECIDED,Strong candidate for JVM projects; Python pipeline remains language-neutral
+cashapp/misk,cashapp,Kotlin service framework,false,unverified,UNKNOWN,discovered,backend architecture reference,UNDECIDED,Assess against Node and TypeScript canonical stack
+Weebly/base-less-theme,Weebly,website theme starter,unknown,unverified,UNKNOWN,backlog,SnapForge website generation,UNDECIDED,Theme source only; not the proprietary Weebly builder
+Weebly/base-css-theme,Weebly,website theme starter,unknown,unverified,UNKNOWN,backlog,SnapForge website generation,UNDECIDED,Theme source only; not the proprietary Weebly builder
+Weebly/weebly-client-php,Weebly,Weebly API client,unknown,unverified,UNKNOWN,discovered,historical integration reference,UNDECIDED,May depend on legacy hosted APIs
+Weebly/node-webhook-client,Weebly,webhook client,unknown,unverified,UNKNOWN,discovered,integration reference,UNDECIDED,Verify maintenance and API availability
+afterpay/sdk-ios,afterpay,Afterpay iOS SDK,unknown,unverified,UNKNOWN,discovered,payment integration reference,UNDECIDED,SDK does not include Afterpay backend
+afterpay/sdk-android,afterpay,Afterpay Android SDK,unknown,unverified,UNKNOWN,discovered,payment integration reference,UNDECIDED,SDK does not include Afterpay backend
+afterpay/sdk-php,afterpay,Afterpay PHP SDK,unknown,unverified,UNKNOWN,discovered,payment integration reference,UNDECIDED,Review API terms and current maintenance
+afterpay/afterpay-magento-2,afterpay,Magento merchant integration,unknown,unverified,UNKNOWN,discovered,commerce connector reference,UNDECIDED,Product integration rather than platform core
+tidal-music/tidal-sdk-web,tidal-music,TIDAL web SDK,false,unverified,UNKNOWN,discovered,media platform SDK reference,UNDECIDED,SDK requires TIDAL services
+tidal-music/tidal-sdk-android,tidal-music,TIDAL Android SDK,false,unverified,UNKNOWN,discovered,media platform SDK reference,UNDECIDED,SDK requires TIDAL services
+tidal-music/tidal-sdk-ios,tidal-music,TIDAL iOS SDK,false,unverified,UNKNOWN,discovered,media platform SDK reference,UNDECIDED,SDK requires TIDAL services
+tidal-music/embed-player,tidal-music,embedded media player,false,unverified,UNKNOWN,discovered,media embedding reference,UNDECIDED,Assess asset and service terms separately
+tidal-music/tidal-algorithmic-mixes,tidal-music,algorithmic mix research,false,unverified,UNKNOWN,discovered,music intelligence research,UNDECIDED,Dataset and model provenance require separate review
+proto-at-block/bitkey,proto-at-block,Bitcoin wallet source,unknown,unverified,UNKNOWN,discovered,Bitcoin architecture research,UNDECIDED,Regulated and security-sensitive; no automatic product mapping
+proto-at-block/sparrow,proto-at-block,Proto-related repository,unknown,unverified,UNKNOWN,discovered,hardware or Bitcoin research,UNDECIDED,Capability verification required
+spiralxyz/bitcoinmythology.org,spiralxyz,Bitcoin educational website,unknown,unverified,UNKNOWN,discovered,content architecture reference,UNDECIDED,Canonical Spiral GitHub organization corrected from spiralbtc
+cequals/rust-lightning,cequals,Lightning protocol implementation,unknown,unverified,UNKNOWN,discovered,Bitcoin research,UNDECIDED,High security and protocol review burden
+cequals/ldk-node,cequals,Lightning node library,unknown,unverified,UNKNOWN,discovered,Bitcoin research,UNDECIDED,Do not map into core platform without explicit product decision
+cequals/electrs,cequals,Bitcoin Electrum server,unknown,unverified,UNKNOWN,discovered,Bitcoin infrastructure research,UNDECIDED,Operational and data integrity review required
+cequals/console,cequals,developer or node console,unknown,unverified,UNKNOWN,discovered,Bitcoin operations reference,UNDECIDED,Capability verification required
