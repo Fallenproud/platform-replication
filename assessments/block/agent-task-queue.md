@@ -14,7 +14,7 @@ It is not a production multi-tenant scheduler. Its primary tool intentionally ac
 - Commit: `ccb94ae25c2b286d62e7371fd4c0f7ce60e33efa`
 - Version observed: `0.4.1`
 - License: Apache-2.0
-- Build reproduction: pending
+- Build reproduction: **passed** on Python 3.10 and Python 3.13 in workflow run `30147827108`
 
 ## Capability map
 
@@ -72,11 +72,14 @@ Before product integration, the fork requires:
 8. distributed queue authority when coordinating more than one machine;
 9. explicit retention for logs and command output.
 
-## Import gates
+## Reproduction evidence
 
-- Reproduce Python package and test suite at the pinned commit.
-- Reproduce the `tq` CLI.
-- Reproduce or deliberately exclude the desktop sidecar.
+The pinned source was checked out in GitHub Actions. Dependency installation, Ruff validation and the complete upstream pytest suite passed independently on Python 3.10 and Python 3.13. This establishes reproducibility of the Python package and test surface, not production safety or distributed readiness.
+
+## Remaining import gates
+
+- Perform explicit `tq` CLI and MCP protocol smoke tests.
+- Reproduce or deliberately exclude the Compose desktop sidecar.
 - Generate Python and Gradle dependency inventories.
 - Review FastMCP, desktop dependencies, assets, and all distributed notices.
 - Create a minimal patch queue containing only Amarax-specific boundaries and controls.
