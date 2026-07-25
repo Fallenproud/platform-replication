@@ -48,10 +48,11 @@
 - verified Apache-2.0 and mapped multi-agent rules, commands, skills, MCP configuration, nested scopes and drift checks;
 - accepted a conditional ADOPT decision as repository tooling rather than runtime policy;
 - pinned `block/xcode-index-mcp` to `c89af82aee64c42690a60c2dda6d9e0f8bf022e9`;
-- found no explicit source license and accepted a clean-room REFERENCE decision;
+- corrected the initial license lookup after CI found Apache-2.0 in `LICENSE.txt`;
+- superseded Decision 0006 and accepted Decision 0007 for a conditional optional FORK;
 - created product-owned scheduler, instruction compiler and semantic code-index contracts.
 
-**State:** architecture, license classification and dispositions complete; build reproduction and dependency inventories remain open for Agent Task Queue and AI Rules. Xcode Index MCP source remains excluded.
+**State:** architecture, license classification and dispositions complete. Build reproduction and dependency inventories remain open. Xcode Index MCP requires macOS Python and Swift verification before any import.
 
 ### Issue #6 — compliance pipeline
 
@@ -59,7 +60,8 @@
 - added a deterministic third-party notice generator;
 - added a distribution registry that distinguishes assessment from actual source distribution;
 - added a generated notice baseline;
-- added GitHub Actions enforcement.
+- added GitHub Actions enforcement;
+- added pinned upstream build-verification CI.
 
 **State:** initial pipeline implemented; dependency SBOM ingestion, asset detection and product-specific notice packaging remain open.
 
@@ -78,19 +80,25 @@
 | `block/thread-manager-for-amp` | REFERENCE | Reconstruct behavior against Daycostra contracts; assess individual component reuse separately |
 | `block/agent-task-queue` | FORK, conditional | Use as a guarded trusted-local execution provider after policy, sandbox and provenance gates pass |
 | `block/ai-rules` | ADOPT, conditional | Consume through a pinned wrapper as repository instruction tooling, not runtime authorization |
-| `block/xcode-index-mcp` | REFERENCE | Reimplement independently because no explicit source license was found |
+| `block/xcode-index-mcp` | FORK, conditional | Maintain an optional Voltino macOS semantic-index provider after macOS build, dependency and transport gates pass |
+
+## Correction record
+
+The first Xcode Index MCP assessment searched for `LICENSE` and missed the tracked `LICENSE.txt`. CI exposed the mistake. Decision 0006 is retained as superseded, and Decision 0007 records the corrected Apache-2.0 fork decision.
 
 ## Next executable queue
 
-1. Run compliance validation for all five machine-readable assessments and generated notices.
+1. Complete the upstream build-verification workflow and record pass or failure evidence.
 2. Reproduce Agent Task Queue package, tests, CLI and desktop sidecar.
 3. Generate Python and Gradle SBOM and license inventories for Agent Task Queue.
 4. Reproduce AI Rules Rust build and test suite; test generation, cleanup, symlinks, nested scopes and Windows behavior.
 5. Generate Cargo SBOM and license inventory for AI Rules.
-6. Reproduce Goose CLI/server/desktop builds and generate Cargo and pnpm SBOMs.
-7. Reproduce Thread Manager build and test the documented localhost boundary.
-8. Audit `block/ftl`, `block/elasticgraph` and `block/buzz` as high-value second-wave candidates.
-9. Promote approved adapters into target repositories only after import gates pass.
+6. Add a macOS verification job for Xcode Index MCP Python and Swift builds.
+7. Pin and review IndexStoreDB and the full Python and Swift dependency graph.
+8. Reproduce Goose CLI/server/desktop builds and generate Cargo and pnpm SBOMs.
+9. Reproduce Thread Manager build and test the documented localhost boundary.
+10. Audit `block/ftl`, `block/elasticgraph` and `block/buzz` as high-value second-wave candidates.
+11. Promote approved adapters into target repositories only after import gates pass.
 
 ## Program boundary
 
