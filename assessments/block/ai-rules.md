@@ -15,6 +15,7 @@ It must not be confused with policy enforcement. The tool distributes text and c
 - Version observed: `1.7.0`
 - License: Apache-2.0
 - Build reproduction: **passed** through format, Clippy, tests and release build in workflow run `30147827108`
+- Dependency review: **conditional**
 
 ## Capability map
 
@@ -78,10 +79,21 @@ Required controls:
 
 The pinned source completed Apache license verification, `cargo fmt --check`, the upstream Clippy script, the full Rust test suite and a release build in GitHub Actions. The core binary is therefore reproducibly buildable in the tested Linux environment.
 
+## Dependency evidence
+
+Locked Cargo metadata produced a checked-in dependency inventory, license CSV and CycloneDX SBOM under `evidence/dependencies/ai-rules/`.
+
+- Components: **110**
+- Evidence-backed metadata corrections required: **0**
+- Remaining unresolved normalized license fields: **0**
+
+The inventory includes several multi-license expressions. Their presence is not automatically problematic, but the intended option must be selected consistently when notices and distributed artifacts are prepared. Installer behavior, binary-release provenance, license files, assets, generated outputs and non-package content remain separate review surfaces.
+
 ## Remaining import gates
 
 - Inspect installer behavior and binary provenance.
-- Generate a Cargo SBOM and license inventory.
+- Select and document the applicable option for multi-license dependencies where distribution requires it.
+- Review dependency license files and generate the final product-specific notice set.
 - Test standard mode, symlink mode, nested scopes, clean, status, MCP generation, commands, and skills as product workflows.
 - Validate Windows behavior where symlink permissions differ.
 - Add an Amarax wrapper and canonical config example without modifying upstream core.
