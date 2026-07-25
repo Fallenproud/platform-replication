@@ -10,7 +10,7 @@
     "status": "verified",
     "identifier": "Apache-2.0",
     "notice_required": true,
-    "dependency_review": "pending"
+    "dependency_review": "conditional"
   },
   "runtime": {
     "build_reproduced": true,
@@ -42,7 +42,7 @@
     "Replace the local-only SQLite authority when tasks must coordinate across hosts or tenants.",
     "Emit immutable queue, execution, timeout, cancellation, and process-kill audit events.",
     "Reproduce the desktop sidecar and perform explicit CLI and MCP smoke tests before product import.",
-    "Complete Python, FastMCP, desktop-sidecar, asset, and transitive dependency license review before distribution.",
+    "Review FastMCP, desktop-sidecar dependencies, license files, assets, build scripts, vendored content and all required notices before distribution.",
     "Preserve Apache-2.0 and applicable copyright or NOTICE material and document local modifications."
   ],
   "evidence": [
@@ -51,7 +51,8 @@
     "queue_core.py uses SQLite WAL mode, queue rows, process identifiers, repository metadata, stale-lock cleanup, and process-tree termination.",
     "task_queue.py exposes a destructive MCP run_task tool and intentionally executes caller-provided commands through an operating-system shell.",
     "The repository contains no mandatory private Block service dependency and is structurally self-hostable, but its trust model is suitable only for a trusted local developer context without additional controls.",
-    "Platform Replication Upstream Build Verification run 30147827108 checked out the pinned commit and completed dependency installation, Ruff lint, and the upstream pytest suite successfully on Python 3.10 and Python 3.13."
+    "Platform Replication Upstream Build Verification run 30147827108 checked out the pinned commit and completed dependency installation, Ruff lint, and the upstream pytest suite successfully on Python 3.10 and Python 3.13.",
+    "Upstream SBOM Evidence run 30148183032 materialized the Python 3.13 all-extras environment and recorded 74 components. Six incomplete or non-normalized package license fields were corrected through version-pinned primary-source evidence, leaving zero components with unresolved normalized license metadata."
   ],
   "reviewed_at": "2026-07-25",
   "reviewer": "Sophie-X / Amarax Platform Replication"
