@@ -6,7 +6,9 @@ on:
     paths:
       - "assessments/block/agent-task-queue.json"
       - "assessments/block/ai-rules.json"
+      - "compliance/license-overrides.json"
       - "tools/generate_upstream_sbom.py"
+      - "tools/apply_license_overrides.py"
       - ".github/workflows/upstream-sbom-evidence.yml"
   workflow_dispatch:
 
@@ -53,6 +55,10 @@ jobs:
             --out-dir evidence-output/agent-task-queue \
             python-env \
             --python _upstream/agent-task-queue/.venv/bin/python
+          python tools/apply_license_overrides.py \
+            --directory evidence-output/agent-task-queue \
+            --overrides compliance/license-overrides.json
+          test "$(python -c 'import json; print(json.load(open("evidence-output/agent-task-queue/dependency-inventory.json"))["unknown_license_count"])')" = "0"
 
       - name: Upload Agent Task Queue evidence
         uses: actions/upload-artifact@v4
@@ -60,7 +66,7 @@ jobs:
           name: agent-task-queue-sbom-evidence
           path: evidence-output/agent-task-queue
           if-no-files-found: error
-          retention-days: 14
+          retention-days: 90
 
   ai-rules:
     name: AI Rules dependency evidence
@@ -91,7 +97,11 @@ jobs:
             --out-dir evidence-output/ai-rules \
             cargo-metadata \
             --metadata cargo-metadata.json
+          python tools/apply_license_overrides.py \
+            --directory evidence-output/ai-rules \
+            --overrides compliance/license-overrides.json
           cp cargo-metadata.json evidence-output/ai-rules/cargo-metadata.json
+          test "$(python -c 'import json; print(json.load(open("evidence-output/ai-rules/dependency-inventory.json"))["unknown_license_count"])')" = "0"
 
       - name: Upload AI Rules evidence
         uses: actions/upload-artifact@v4
@@ -99,4 +109,4 @@ jobs:
           name: ai-rules-sbom-evidence
           path: evidence-output/ai-rules
           if-no-files-found: error
-          retention-days: 14
+          retention-days: 90
