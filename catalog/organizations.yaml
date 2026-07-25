@@ -1,48 +1,79 @@
-version: 1
+version: 2
 reviewed_at: 2026-07-25
 organizations:
   - name: Block
     github: block
     classification: parent-company-open-source-organization
     status: active
+    inventory_state: first-wave-curated
+    notes: Parent-level projects include agent tooling, MCP integrations, service frameworks, communications, fleet operations and shared infrastructure.
+
   - name: Square
     github: square
     classification: product-engineering-open-source-organization
     status: active
+    inventory_state: first-wave-curated
+    notes: Primarily reusable engineering libraries; not the Square commerce backend.
+
   - name: Square Developers
     github: Square-Developers
     classification: developer-samples-organization
     status: active
+    inventory_state: first-wave-curated
+    notes: Official API samples and reference integrations; samples must not be mistaken for the hosted Square platform.
+
   - name: Cash App
     github: cashapp
     classification: product-engineering-open-source-organization
     status: active
+    inventory_state: first-wave-curated
+    notes: Strong mobile, runtime, testing and service-framework portfolio; not the Cash App financial backend.
+
   - name: Weebly
-    github: weebly
+    github: Weebly
     classification: acquired-product-open-source-organization
-    status: requires-inventory
+    status: legacy-active
+    inventory_state: first-wave-curated
+    notes: Contains themes, clients, webhooks and general libraries; the hosted Weebly website builder is not present.
+
   - name: Afterpay
     github: afterpay
     classification: product-integration-organization
-    status: requires-inventory
+    status: active
+    inventory_state: first-wave-curated
+    notes: Primarily SDKs and merchant-platform integrations rather than the BNPL service backend.
+
   - name: TIDAL
     github: tidal-music
     classification: product-developer-platform-organization
-    status: requires-inventory
+    status: active
+    inventory_state: first-wave-curated
+    notes: Public SDKs, player components, research and infrastructure utilities; core hosted service remains external.
+
   - name: Proto
     github: proto-at-block
-    classification: bitcoin-hardware-and-operations-organization
-    status: requires-inventory
+    classification: bitcoin-hardware-wallet-and-operations-organization
+    status: active
+    inventory_state: first-wave-curated
+    notes: Public repositories are split between proto-at-block and block; proto-fleet currently lives under block.
+
   - name: Spiral
-    github: spiralbtc
+    github: spiralxyz
     classification: bitcoin-open-source-initiative
-    status: verify-canonical-organization
+    status: active
+    inventory_state: canonical-organization-corrected
+    notes: The prior spiralbtc handle did not resolve through repository search; the observable organization is spiralxyz.
+
   - name: c equals
     github: cequals
-    classification: technical-open-source-initiative
-    status: requires-inventory
-  - name: Goose / AAIF
+    classification: bitcoin-and-lightning-open-source-initiative
+    status: active
+    inventory_state: first-wave-curated
+    notes: Includes Lightning, node, Electrum and related infrastructure projects with high security-review requirements.
+
+  - name: Goose / Agentic AI Foundation
     github: aaif-goose
     classification: independent-open-source-agent-project-organization
     status: active
-    notes: Canonical Goose repository currently resolves under aaif-goose rather than block.
+    inventory_state: priority-audit-started
+    notes: Canonical Goose repository resolves under aaif-goose rather than block and is governed under the Agentic AI Foundation.
