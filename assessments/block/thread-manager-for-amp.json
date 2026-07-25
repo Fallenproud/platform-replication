@@ -1,0 +1,57 @@
+{
+  "repository": "block/thread-manager-for-amp",
+  "upstream": {
+    "default_branch": "main",
+    "pinned_ref": "126cf2234a13a08a93d0d4cbd758a8fc77301d78",
+    "archived": false,
+    "moved_from": null
+  },
+  "license": {
+    "status": "verified",
+    "identifier": "Apache-2.0",
+    "notice_required": true,
+    "dependency_review": "pending"
+  },
+  "runtime": {
+    "build_reproduced": false,
+    "self_hostable": "partial",
+    "private_dependencies": [
+      "Amp CLI authentication and Amp internal API/data formats"
+    ],
+    "required_services": [
+      "Amp CLI",
+      "local filesystem thread store",
+      "SQLite",
+      "local PTY"
+    ]
+  },
+  "scores": {
+    "product_fit": 5,
+    "license_confidence": 5,
+    "self_hostability": 3,
+    "independence": 2,
+    "maintenance": 4,
+    "security": 2,
+    "integration_cost": 4,
+    "replacement_difficulty": 3
+  },
+  "target": "Daycostra Threads Monitor and Workboard architecture",
+  "disposition": "REFERENCE",
+  "conditions": [
+    "Do not expose the upstream server beyond localhost; it has no API or WebSocket authentication.",
+    "Do not import Amp credential handling, Amp internal API coupling, or Amp thread-file assumptions into Daycostra.",
+    "Any reused component must receive an isolated component-level license and dependency assessment.",
+    "Reimplement authorization, organization/project tenancy, policy decisions, audit events, retention, and destructive-action controls.",
+    "Replace local PTY and filesystem authority with explicit Daycostra runtime contracts.",
+    "Use the repository as a source-to-target reference for thread tables, terminal multiplexing, handoffs, relationships, git correlation, and Workboard interaction."
+  ],
+  "evidence": [
+    "README.md describes a local React 19 and Node.js application for managing multiple Amp agent threads with table, card, Kanban, terminal, search, handoff, git correlation, skills, MCP status, and WebSocket streaming.",
+    "README.md documents Amp-specific storage under ~/.local/share/amp, local SQLite metadata, an Amp internal API client, and an Amp CLI prerequisite.",
+    "SECURITY.md states that the server has no API or WebSocket authentication, reads Amp CLI credentials, exposes a full local PTY, and must not be exposed to untrusted networks.",
+    "package.json declares Apache-2.0, Node 24, pnpm 10, React 19, Vite 7, better-sqlite3, node-pty, ws, Vitest, and a private package.",
+    "The current design is a single-user local development tool rather than a multi-tenant governed production control plane."
+  ],
+  "reviewed_at": "2026-07-25",
+  "reviewer": "Sophie-X / Amarax Platform Replication"
+}
