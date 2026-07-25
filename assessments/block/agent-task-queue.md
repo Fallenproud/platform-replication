@@ -15,6 +15,7 @@ It is not a production multi-tenant scheduler. Its primary tool intentionally ac
 - Version observed: `0.4.1`
 - License: Apache-2.0
 - Build reproduction: **passed** on Python 3.10 and Python 3.13 in workflow run `30147827108`
+- Dependency review: **conditional**
 
 ## Capability map
 
@@ -76,12 +77,23 @@ Before product integration, the fork requires:
 
 The pinned source was checked out in GitHub Actions. Dependency installation, Ruff validation and the complete upstream pytest suite passed independently on Python 3.10 and Python 3.13. This establishes reproducibility of the Python package and test surface, not production safety or distributed readiness.
 
+## Dependency evidence
+
+The all-extras Python 3.13 environment produced a checked-in dependency inventory, license CSV and CycloneDX SBOM under `evidence/dependencies/agent-task-queue/`.
+
+- Components: **74**
+- Initial non-normalized or missing license fields: **6**
+- Evidence-backed version-specific corrections: **6**
+- Remaining unresolved normalized license fields: **0**
+
+The corrections are governed by `compliance/license-overrides.json` and cite primary repository license or project metadata. This closes metadata discovery, not the complete legal review. License files, notices, vendored code, sidecar dependencies, assets, scripts, patent considerations and intended distribution choices remain open.
+
 ## Remaining import gates
 
 - Perform explicit `tq` CLI and MCP protocol smoke tests.
 - Reproduce or deliberately exclude the Compose desktop sidecar.
-- Generate Python and Gradle dependency inventories.
-- Review FastMCP, desktop dependencies, assets, and all distributed notices.
+- Generate and review the desktop Gradle dependency inventory.
+- Review FastMCP, all package license files, assets, build scripts, vendored content and required notices.
 - Create a minimal patch queue containing only Amarax-specific boundaries and controls.
 - Add upstream sync automation and security-update ownership.
 
