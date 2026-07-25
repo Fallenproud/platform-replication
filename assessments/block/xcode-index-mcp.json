@@ -1,0 +1,61 @@
+{
+  "repository": "block/xcode-index-mcp",
+  "upstream": {
+    "default_branch": "main",
+    "pinned_ref": "c89af82aee64c42690a60c2dda6d9e0f8bf022e9",
+    "archived": false,
+    "moved_from": null
+  },
+  "license": {
+    "status": "verified",
+    "identifier": "Apache-2.0",
+    "notice_required": true,
+    "dependency_review": "pending"
+  },
+  "runtime": {
+    "build_reproduced": true,
+    "self_hostable": "partial",
+    "private_dependencies": [],
+    "required_services": [
+      "macOS 12 or newer",
+      "Xcode and DerivedData indexes",
+      "Swift toolchain",
+      "Python 3.13 or newer",
+      "Apple IndexStoreDB"
+    ]
+  },
+  "scores": {
+    "product_fit": 3,
+    "license_confidence": 5,
+    "self_hostability": 2,
+    "independence": 2,
+    "maintenance": 2,
+    "security": 2,
+    "integration_cost": 4,
+    "replacement_difficulty": 3
+  },
+  "target": "Voltino optional macOS and Swift semantic index provider",
+  "disposition": "FORK",
+  "conditions": [
+    "Keep the provider optional and isolated behind Voltino's language-neutral CodeIndexProvider contract.",
+    "Pin IndexStoreDB to an approved release or commit instead of following an unbounded main branch.",
+    "Replace the fixed unauthenticated localhost service with an authenticated managed child-process, Unix-domain socket, or ephemeral authenticated port.",
+    "Validate project identity, DerivedData roots, file paths, request sizes, symbol-query limits, and index freshness.",
+    "Remove Goose-specific paths and assumptions from the product adapter.",
+    "Review screenshots, assets, Swift dependencies, Python dependencies, and all transitive licenses separately before redistribution.",
+    "Perform an integration test against a real disposable Xcode DerivedData index before source enters Voltino.",
+    "Preserve Apache-2.0, applicable notices, and a clear record of local modifications."
+  ],
+  "evidence": [
+    "README.md describes a Python MCP server plus a Swift IndexStoreDB service for Xcode project symbol search, occurrences, definitions, call sites, and refactoring support.",
+    "LICENSE.txt at the pinned revision contains the Apache License 2.0 text.",
+    "pyproject.toml declares Python 3.13+, MCP and requests dependencies, but does not repeat the repository license in project metadata.",
+    "swift-service/Package.swift requires macOS 12 and follows the main branch of Apple's IndexStoreDB instead of pinning a release or commit.",
+    "server.py launches a local Swift executable, connects to fixed localhost port 7949, writes Goose-specific logs, and exchanges newline-delimited JSON without an authentication or handshake layer.",
+    "The implementation is strongly coupled to macOS, Xcode DerivedData, Swift IndexStoreDB, and local process behavior.",
+    "The initial missing-license finding was corrected after CI enumerated tracked files and found LICENSE.txt; Decision 0006 is superseded by Decision 0007.",
+    "Platform Replication Upstream Build Verification run 30147827108 checked out the pinned commit on macOS 15, installed the Python 3.13 environment, compiled the Python package, built the Swift service, and completed the Swift test suite successfully."
+  ],
+  "reviewed_at": "2026-07-25",
+  "reviewer": "Sophie-X / Amarax Platform Replication"
+}

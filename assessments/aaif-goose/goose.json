@@ -1,0 +1,54 @@
+{
+  "repository": "aaif-goose/goose",
+  "upstream": {
+    "default_branch": "main",
+    "pinned_ref": "192b5db8b947f91e8a6ceca67b4773dc28ae6169",
+    "archived": false,
+    "moved_from": "block/goose"
+  },
+  "license": {
+    "status": "verified",
+    "identifier": "Apache-2.0",
+    "notice_required": true,
+    "dependency_review": "pending"
+  },
+  "runtime": {
+    "build_reproduced": false,
+    "self_hostable": "yes",
+    "private_dependencies": [],
+    "required_services": [
+      "one configured model provider or a local model runtime",
+      "optional MCP extensions"
+    ]
+  },
+  "scores": {
+    "product_fit": 5,
+    "license_confidence": 5,
+    "self_hostability": 5,
+    "independence": 4,
+    "maintenance": 5,
+    "security": 3,
+    "integration_cost": 3,
+    "replacement_difficulty": 5
+  },
+  "target": "AIKOV agent runtime with a narrow adapter into Sophie-X and Voltino",
+  "disposition": "FORK",
+  "conditions": [
+    "Do not import source into a product repository until the pinned revision builds in an isolated CI environment.",
+    "Complete Cargo, pnpm, vendored-code, asset, font, model, and transitive-license review.",
+    "Preserve Apache-2.0 license and applicable copyright notices and mark local modifications.",
+    "Replace upstream branding and do not imply AAIF, Block, or Goose endorsement.",
+    "Disable or redirect PostHog telemetry before any Amarax or Daycostra distribution.",
+    "Keep the fork delta in configuration, extensions, adapters, and branding wherever possible.",
+    "Define an upstream synchronization and security-update policy before distribution."
+  ],
+  "evidence": [
+    "README.md identifies a local general-purpose AI agent with desktop, CLI, API, 15+ model providers, 70+ MCP extensions, Rust implementation, and AAIF governance.",
+    "CUSTOM_DISTROS.md explicitly documents white-label distributions, custom providers, bundled MCP tools, branding, custom UIs over ACP, recipes, Apache-2.0 obligations, and telemetry controls.",
+    "Cargo.toml declares workspace version 1.44.0, Rust 1.94.1, Apache-2.0, ACP/MCP dependencies, keyring support, OpenTelemetry, tree-sitter support, and vendored/patched dependencies requiring review.",
+    "ui/desktop/package.json declares Electron 41, React 19, Vite 7, pnpm 10.30+, Node 24.10+, Playwright, Vitest, and Apache-2.0.",
+    "Top-level NOTICE was not found at the pinned main-branch snapshot; absence of a NOTICE file does not remove license and copyright obligations."
+  ],
+  "reviewed_at": "2026-07-25",
+  "reviewer": "Sophie-X / Amarax Platform Replication"
+}

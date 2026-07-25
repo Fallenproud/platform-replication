@@ -1,0 +1,179 @@
+name: Upstream SBOM Evidence
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "assessments/block/agent-task-queue.json"
+      - "assessments/block/ai-rules.json"
+      - "compliance/license-overrides.json"
+      - "tools/generate_upstream_sbom.py"
+      - "tools/apply_license_overrides.py"
+      - ".github/workflows/upstream-sbom-evidence.yml"
+  push:
+    branches:
+      - "program/**"
+    paths:
+      - "assessments/block/agent-task-queue.json"
+      - "assessments/block/ai-rules.json"
+      - "compliance/license-overrides.json"
+      - "tools/generate_upstream_sbom.py"
+      - "tools/apply_license_overrides.py"
+      - ".github/workflows/upstream-sbom-evidence.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: upstream-sbom-evidence-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  agent-task-queue:
+    name: Agent Task Queue dependency evidence
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout replication program
+        uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@eac588ad8def6316056a12d4907a9d4d84ff7a3b
+
+      - name: Fetch pinned upstream
+        run: |
+          mkdir -p _upstream
+          git clone --filter=blob:none https://github.com/block/agent-task-queue.git _upstream/agent-task-queue
+          cd _upstream/agent-task-queue
+          git checkout ccb94ae25c2b286d62e7371fd4c0f7ce60e33efa
+          test "$(git rev-parse HEAD)" = "ccb94ae25c2b286d62e7371fd4c0f7ce60e33efa"
+
+      - name: Materialize Python environment
+        working-directory: _upstream/agent-task-queue
+        env:
+          UV_DEFAULT_INDEX: https://pypi.org/simple
+          UV_INDEX_URL: https://pypi.org/simple
+        run: |
+          uv python install 3.13
+          uv sync --all-extras --python 3.13
+
+      - name: Generate dependency and license evidence
+        run: |
+          python tools/generate_upstream_sbom.py \
+            --repository block/agent-task-queue \
+            --revision ccb94ae25c2b286d62e7371fd4c0f7ce60e33efa \
+            --out-dir evidence-output/agent-task-queue \
+            python-env \
+            --python _upstream/agent-task-queue/.venv/bin/python
+          python tools/apply_license_overrides.py \
+            --directory evidence-output/agent-task-queue \
+            --overrides compliance/license-overrides.json
+          test "$(python -c 'import json; print(json.load(open("evidence-output/agent-task-queue/dependency-inventory.json"))["unknown_license_count"])')" = "0"
+
+      - name: Upload Agent Task Queue evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: agent-task-queue-sbom-evidence
+          path: evidence-output/agent-task-queue
+          if-no-files-found: error
+          retention-days: 90
+
+  ai-rules:
+    name: AI Rules dependency evidence
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout replication program
+        uses: actions/checkout@v4
+
+      - name: Fetch pinned upstream
+        run: |
+          mkdir -p _upstream
+          git clone --filter=blob:none https://github.com/block/ai-rules.git _upstream/ai-rules
+          cd _upstream/ai-rules
+          git checkout b2c1cd16d05f47053eb3f059f87524f7b6ee1a1f
+          test "$(git rev-parse HEAD)" = "b2c1cd16d05f47053eb3f059f87524f7b6ee1a1f"
+
+      - name: Generate locked Cargo metadata
+        working-directory: _upstream/ai-rules
+        run: |
+          source bin/activate-hermit
+          cargo metadata --locked --format-version 1 > ../../cargo-metadata.json
+
+      - name: Generate dependency and license evidence
+        run: |
+          python tools/generate_upstream_sbom.py \
+            --repository block/ai-rules \
+            --revision b2c1cd16d05f47053eb3f059f87524f7b6ee1a1f \
+            --out-dir evidence-output/ai-rules \
+            cargo-metadata \
+            --metadata cargo-metadata.json
+          python tools/apply_license_overrides.py \
+            --directory evidence-output/ai-rules \
+            --overrides compliance/license-overrides.json
+          cp cargo-metadata.json evidence-output/ai-rules/cargo-metadata.json
+          test "$(python -c 'import json; print(json.load(open("evidence-output/ai-rules/dependency-inventory.json"))["unknown_license_count"])')" = "0"
+
+      - name: Upload AI Rules evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: ai-rules-sbom-evidence
+          path: evidence-output/ai-rules
+          if-no-files-found: error
+          retention-days: 90
+
+  persist-evidence:
+    name: Persist dependency evidence
+    if: github.event_name == 'push'
+    needs: [agent-task-queue, ai-rules]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout program branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+          fetch-depth: 0
+
+      - name: Download Agent Task Queue evidence
+        uses: actions/download-artifact@v4
+        with:
+          name: agent-task-queue-sbom-evidence
+          path: evidence/dependencies/agent-task-queue
+
+      - name: Download AI Rules evidence
+        uses: actions/download-artifact@v4
+        with:
+          name: ai-rules-sbom-evidence
+          path: evidence/dependencies/ai-rules
+
+      - name: Remove raw Cargo metadata from committed evidence
+        run: rm -f evidence/dependencies/ai-rules/cargo-metadata.json
+
+      - name: Write provenance manifest
+        run: |
+          cat > evidence/dependencies/PROVENANCE.json <<EOF
+          {
+            "schema_version": 1,
+            "workflow": "Upstream SBOM Evidence",
+            "workflow_run_id": "${GITHUB_RUN_ID}",
+            "source_branch": "${GITHUB_REF_NAME}",
+            "source_commit": "${GITHUB_SHA}",
+            "generated_at": "$(date -u +%Y-%m-%dT%H:%M:%SZ)",
+            "artifacts": [
+              "agent-task-queue-sbom-evidence",
+              "ai-rules-sbom-evidence"
+            ],
+            "policy": "Evidence only. Product distribution requires an approved repository assessment and import gate."
+          }
+          EOF
+
+      - name: Commit generated evidence
+        run: |
+          git config user.name "platform-replication-bot"
+          git config user.email "platform-replication-bot@users.noreply.github.com"
+          git add evidence/dependencies
+          if git diff --cached --quiet; then
+            echo "Dependency evidence is already current."
+            exit 0
+          fi
+          git commit -m "evidence: persist upstream dependency inventories [skip ci]"
+          git push origin HEAD:${GITHUB_REF_NAME}

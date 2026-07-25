@@ -1,0 +1,4231 @@
+{
+  "bomFormat": "CycloneDX",
+  "components": [
+    {
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/BurntSushi/aho-corasick"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/BurntSushi/aho-corasick"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "Unlicense OR MIT"
+          }
+        }
+      ],
+      "name": "aho-corasick",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/aho-corasick@1.1.3",
+      "type": "library",
+      "version": "1.1.3"
+    },
+    {
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache License 2.0"
+          }
+        }
+      ],
+      "name": "ai-rules",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": ""
+        },
+        {
+          "name": "amarax:direct",
+          "value": "true"
+        }
+      ],
+      "purl": "pkg:cargo/ai-rules@1.7.0",
+      "type": "library",
+      "version": "1.7.0"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/rust-cli/anstyle.git"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "name": "anstream",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/anstream@0.6.20",
+      "type": "library",
+      "version": "0.6.20"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/rust-cli/anstyle.git"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "name": "anstyle",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/anstyle@1.0.11",
+      "type": "library",
+      "version": "1.0.11"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/rust-cli/anstyle.git"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "name": "anstyle-parse",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/anstyle-parse@0.2.7",
+      "type": "library",
+      "version": "0.2.7"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/rust-cli/anstyle.git"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "name": "anstyle-query",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/anstyle-query@1.1.4",
+      "type": "library",
+      "version": "1.1.4"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/rust-cli/anstyle.git"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "name": "anstyle-wincon",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/anstyle-wincon@3.0.10",
+      "type": "library",
+      "version": "3.0.10"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/dtolnay/anyhow"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "name": "anyhow",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/anyhow@1.0.98",
+      "type": "library",
+      "version": "1.0.98"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/bitflags/bitflags"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/bitflags/bitflags"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "name": "bitflags",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/bitflags@2.9.1",
+      "type": "library",
+      "version": "2.9.1"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/BurntSushi/bstr"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/BurntSushi/bstr"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "name": "bstr",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/bstr@1.12.1",
+      "type": "library",
+      "version": "1.12.1"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/fitzgen/bumpalo"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "name": "bumpalo",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/bumpalo@3.19.0",
+      "type": "library",
+      "version": "3.19.0"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/rust-lang/cfg-if"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "name": "cfg-if",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/cfg-if@1.0.1",
+      "type": "library",
+      "version": "1.0.1"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/clap-rs/clap"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "name": "clap",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/clap@4.5.43",
+      "type": "library",
+      "version": "4.5.43"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/clap-rs/clap"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "name": "clap_builder",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/clap_builder@4.5.43",
+      "type": "library",
+      "version": "4.5.43"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/clap-rs/clap"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "name": "clap_derive",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/clap_derive@4.5.41",
+      "type": "library",
+      "version": "4.5.41"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/clap-rs/clap"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "name": "clap_lex",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/clap_lex@0.7.5",
+      "type": "library",
+      "version": "0.7.5"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/fadeevab/cliclack"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/fadeevab/cliclack"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "name": "cliclack",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/cliclack@0.3.6",
+      "type": "library",
+      "version": "0.3.6"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/rust-cli/anstyle.git"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "name": "colorchoice",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/colorchoice@1.0.4",
+      "type": "library",
+      "version": "1.0.4"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/console-rs/console"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/console-rs/console"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "name": "console",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/console@0.15.11",
+      "type": "library",
+      "version": "0.15.11"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/crossbeam-rs/crossbeam/tree/master/crossbeam-deque"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/crossbeam-rs/crossbeam"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "name": "crossbeam-deque",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/crossbeam-deque@0.8.6",
+      "type": "library",
+      "version": "0.8.6"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/crossbeam-rs/crossbeam/tree/master/crossbeam-epoch"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/crossbeam-rs/crossbeam"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "name": "crossbeam-epoch",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/crossbeam-epoch@0.9.18",
+      "type": "library",
+      "version": "0.9.18"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/crossbeam-rs/crossbeam/tree/master/crossbeam-utils"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/crossbeam-rs/crossbeam"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "name": "crossbeam-utils",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/crossbeam-utils@0.8.21",
+      "type": "library",
+      "version": "0.8.21"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/tormol/encode_unicode"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0 OR MIT"
+          }
+        }
+      ],
+      "name": "encode_unicode",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/encode_unicode@1.0.0",
+      "type": "library",
+      "version": "1.0.0"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/notpeter/env-home"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/notpeter/env-home"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "name": "env_home",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/env_home@0.1.0",
+      "type": "library",
+      "version": "0.1.0"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/indexmap-rs/equivalent"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0 OR MIT"
+          }
+        }
+      ],
+      "name": "equivalent",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/equivalent@1.0.2",
+      "type": "library",
+      "version": "1.0.2"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/lambda-fairy/rust-errno"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "name": "errno",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/errno@0.3.13",
+      "type": "library",
+      "version": "0.3.13"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/smol-rs/fastrand"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0 OR MIT"
+          }
+        }
+      ],
+      "name": "fastrand",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/fastrand@2.3.0",
+      "type": "library",
+      "version": "2.3.0"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/rust-random/getrandom"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "name": "getrandom",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/getrandom@0.3.3",
+      "type": "library",
+      "version": "0.3.3"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/BurntSushi/ripgrep/tree/master/crates/globset"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/BurntSushi/ripgrep/tree/master/crates/globset"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "Unlicense OR MIT"
+          }
+        }
+      ],
+      "name": "globset",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/globset@0.4.18",
+      "type": "library",
+      "version": "0.4.18"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/rust-lang/hashbrown"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "name": "hashbrown",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/hashbrown@0.15.5",
+      "type": "library",
+      "version": "0.15.5"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/withoutboats/heck"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "name": "heck",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/heck@0.5.0",
+      "type": "library",
+      "version": "0.5.0"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/BurntSushi/ripgrep/tree/master/crates/ignore"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/BurntSushi/ripgrep/tree/master/crates/ignore"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "Unlicense OR MIT"
+          }
+        }
+      ],
+      "name": "ignore",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/ignore@0.4.25",
+      "type": "library",
+      "version": "0.4.25"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/indexmap-rs/indexmap"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0 OR MIT"
+          }
+        }
+      ],
+      "name": "indexmap",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/indexmap@2.10.0",
+      "type": "library",
+      "version": "2.10.0"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/console-rs/indicatif"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "name": "indicatif",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/indicatif@0.17.11",
+      "type": "library",
+      "version": "0.17.11"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/polyfill-rs/is_terminal_polyfill"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "name": "is_terminal_polyfill",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/is_terminal_polyfill@1.70.1",
+      "type": "library",
+      "version": "1.70.1"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/dtolnay/itoa"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "name": "itoa",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/itoa@1.0.15",
+      "type": "library",
+      "version": "1.0.15"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://wasm-bindgen.github.io/wasm-bindgen/"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/wasm-bindgen/wasm-bindgen/tree/master/crates/js-sys"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "name": "js-sys",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/js-sys@0.3.81",
+      "type": "library",
+      "version": "0.3.81"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/rust-lang/libc"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "name": "libc",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/libc@0.2.174",
+      "type": "library",
+      "version": "0.2.174"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/sunfishcode/linux-raw-sys"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0 WITH LLVM-exception OR Apache-2.0 OR MIT"
+          }
+        }
+      ],
+      "name": "linux-raw-sys",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/linux-raw-sys@0.9.4",
+      "type": "library",
+      "version": "0.9.4"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/rust-lang/log"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "name": "log",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/log@0.4.28",
+      "type": "library",
+      "version": "0.4.28"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/BurntSushi/memchr"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/BurntSushi/memchr"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "Unlicense OR MIT"
+          }
+        }
+      ],
+      "name": "memchr",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/memchr@2.7.5",
+      "type": "library",
+      "version": "2.7.5"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/ogham/rust-number-prefix"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "name": "number_prefix",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/number_prefix@0.4.0",
+      "type": "library",
+      "version": "0.4.0"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/matklad/once_cell"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "name": "once_cell",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/once_cell@1.21.3",
+      "type": "library",
+      "version": "1.21.3"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/polyfill-rs/once_cell_polyfill"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "name": "once_cell_polyfill",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/once_cell_polyfill@1.70.1",
+      "type": "library",
+      "version": "1.70.1"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/taiki-e/portable-atomic"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0 OR MIT"
+          }
+        }
+      ],
+      "name": "portable-atomic",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/portable-atomic@1.11.1",
+      "type": "library",
+      "version": "1.11.1"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/dtolnay/proc-macro2"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "name": "proc-macro2",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/proc-macro2@1.0.95",
+      "type": "library",
+      "version": "1.0.95"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/dtolnay/quote"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "name": "quote",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/quote@1.0.40",
+      "type": "library",
+      "version": "1.0.40"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/r-efi/r-efi/wiki"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/r-efi/r-efi"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0 OR LGPL-2.1-or-later"
+          }
+        }
+      ],
+      "name": "r-efi",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/r-efi@5.3.0",
+      "type": "library",
+      "version": "5.3.0"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/rust-lang/regex"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/rust-lang/regex"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "name": "regex",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/regex@1.12.2",
+      "type": "library",
+      "version": "1.12.2"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/rust-lang/regex/tree/master/regex-automata"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/rust-lang/regex"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "name": "regex-automata",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/regex-automata@0.4.13",
+      "type": "library",
+      "version": "0.4.13"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/rust-lang/regex/tree/master/regex-syntax"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/rust-lang/regex"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "name": "regex-syntax",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/regex-syntax@0.8.8",
+      "type": "library",
+      "version": "0.8.8"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/bytecodealliance/rustix"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0 WITH LLVM-exception OR Apache-2.0 OR MIT"
+          }
+        }
+      ],
+      "name": "rustix",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/rustix@1.0.8",
+      "type": "library",
+      "version": "1.0.8"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/dtolnay/rustversion"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "name": "rustversion",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/rustversion@1.0.22",
+      "type": "library",
+      "version": "1.0.22"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/dtolnay/ryu"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0 OR BSL-1.0"
+          }
+        }
+      ],
+      "name": "ryu",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/ryu@1.0.20",
+      "type": "library",
+      "version": "1.0.20"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/BurntSushi/same-file"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/BurntSushi/same-file"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "Unlicense/MIT"
+          }
+        }
+      ],
+      "name": "same-file",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/same-file@1.0.6",
+      "type": "library",
+      "version": "1.0.6"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://serde.rs"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/serde-rs/serde"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "name": "serde",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/serde@1.0.219",
+      "type": "library",
+      "version": "1.0.219"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://serde.rs"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/serde-rs/serde"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "name": "serde_derive",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/serde_derive@1.0.219",
+      "type": "library",
+      "version": "1.0.219"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/serde-rs/json"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "name": "serde_json",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/serde_json@1.0.142",
+      "type": "library",
+      "version": "1.0.142"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/toml-rs/toml"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "name": "serde_spanned",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/serde_spanned@0.6.9",
+      "type": "library",
+      "version": "0.6.9"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/dtolnay/serde-yaml"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "name": "serde_yaml",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/serde_yaml@0.9.34+deprecated",
+      "type": "library",
+      "version": "0.9.34+deprecated"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/mgeisler/smawk"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "name": "smawk",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/smawk@0.3.2",
+      "type": "library",
+      "version": "0.3.2"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/rapidfuzz/strsim-rs"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/rapidfuzz/strsim-rs"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "name": "strsim",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/strsim@0.11.1",
+      "type": "library",
+      "version": "0.11.1"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/dtolnay/syn"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "name": "syn",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/syn@2.0.104",
+      "type": "library",
+      "version": "2.0.104"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://stebalien.com/projects/tempfile-rs/"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/Stebalien/tempfile"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "name": "tempfile",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/tempfile@3.20.0",
+      "type": "library",
+      "version": "3.20.0"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/mgeisler/textwrap"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "name": "textwrap",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/textwrap@0.16.2",
+      "type": "library",
+      "version": "0.16.2"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/toml-rs/toml"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "name": "toml",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/toml@0.8.23",
+      "type": "library",
+      "version": "0.8.23"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/toml-rs/toml"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "name": "toml_datetime",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/toml_datetime@0.6.11",
+      "type": "library",
+      "version": "0.6.11"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/toml-rs/toml"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "name": "toml_edit",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/toml_edit@0.22.27",
+      "type": "library",
+      "version": "0.22.27"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/toml-rs/toml"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "name": "toml_write",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/toml_write@0.1.2",
+      "type": "library",
+      "version": "0.1.2"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/dtolnay/unicode-ident"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "(MIT OR Apache-2.0) AND Unicode-3.0"
+          }
+        }
+      ],
+      "name": "unicode-ident",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/unicode-ident@1.0.18",
+      "type": "library",
+      "version": "1.0.18"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/axelf4/unicode-linebreak"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/axelf4/unicode-linebreak"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0"
+          }
+        }
+      ],
+      "name": "unicode-linebreak",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/unicode-linebreak@0.1.5",
+      "type": "library",
+      "version": "0.1.5"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/unicode-rs/unicode-width"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/unicode-rs/unicode-width"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "name": "unicode-width",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/unicode-width@0.2.2",
+      "type": "library",
+      "version": "0.2.2"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/dtolnay/unsafe-libyaml"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "name": "unsafe-libyaml",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/unsafe-libyaml@0.2.11",
+      "type": "library",
+      "version": "0.2.11"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/alacritty/vte"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0 OR MIT"
+          }
+        }
+      ],
+      "name": "utf8parse",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/utf8parse@0.2.2",
+      "type": "library",
+      "version": "0.2.2"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/BurntSushi/walkdir"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/BurntSushi/walkdir"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "Unlicense/MIT"
+          }
+        }
+      ],
+      "name": "walkdir",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/walkdir@2.5.0",
+      "type": "library",
+      "version": "2.5.0"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/bytecodealliance/wasi-rs"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0 WITH LLVM-exception OR Apache-2.0 OR MIT"
+          }
+        }
+      ],
+      "name": "wasi",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/wasi@0.14.2+wasi-0.2.4",
+      "type": "library",
+      "version": "0.14.2+wasi-0.2.4"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://wasm-bindgen.github.io/wasm-bindgen"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/wasm-bindgen/wasm-bindgen"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "name": "wasm-bindgen",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/wasm-bindgen@0.2.104",
+      "type": "library",
+      "version": "0.2.104"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://wasm-bindgen.github.io/wasm-bindgen/"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/wasm-bindgen/wasm-bindgen/tree/master/crates/backend"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "name": "wasm-bindgen-backend",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/wasm-bindgen-backend@0.2.104",
+      "type": "library",
+      "version": "0.2.104"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://wasm-bindgen.github.io/wasm-bindgen/"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/wasm-bindgen/wasm-bindgen/tree/master/crates/macro"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "name": "wasm-bindgen-macro",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/wasm-bindgen-macro@0.2.104",
+      "type": "library",
+      "version": "0.2.104"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://wasm-bindgen.github.io/wasm-bindgen/"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/wasm-bindgen/wasm-bindgen/tree/master/crates/macro-support"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "name": "wasm-bindgen-macro-support",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/wasm-bindgen-macro-support@0.2.104",
+      "type": "library",
+      "version": "0.2.104"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://wasm-bindgen.github.io/wasm-bindgen/"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/wasm-bindgen/wasm-bindgen/tree/master/crates/shared"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "name": "wasm-bindgen-shared",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/wasm-bindgen-shared@0.2.104",
+      "type": "library",
+      "version": "0.2.104"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/daxpedda/web-time"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "name": "web-time",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/web-time@1.1.0",
+      "type": "library",
+      "version": "1.1.0"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/harryfei/which-rs.git"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "name": "which",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/which@8.0.0",
+      "type": "library",
+      "version": "8.0.0"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/BurntSushi/winapi-util"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/BurntSushi/winapi-util"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "Unlicense OR MIT"
+          }
+        }
+      ],
+      "name": "winapi-util",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/winapi-util@0.1.11",
+      "type": "library",
+      "version": "0.1.11"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/microsoft/windows-rs"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "name": "windows-link",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/windows-link@0.1.3",
+      "type": "library",
+      "version": "0.1.3"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/microsoft/windows-rs"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "name": "windows-sys",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/windows-sys@0.59.0",
+      "type": "library",
+      "version": "0.59.0"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/microsoft/windows-rs"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "name": "windows-sys",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/windows-sys@0.60.2",
+      "type": "library",
+      "version": "0.60.2"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/microsoft/windows-rs"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "name": "windows-targets",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/windows-targets@0.52.6",
+      "type": "library",
+      "version": "0.52.6"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/microsoft/windows-rs"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "name": "windows-targets",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/windows-targets@0.53.3",
+      "type": "library",
+      "version": "0.53.3"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/microsoft/windows-rs"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "name": "windows_aarch64_gnullvm",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/windows_aarch64_gnullvm@0.52.6",
+      "type": "library",
+      "version": "0.52.6"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/microsoft/windows-rs"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "name": "windows_aarch64_gnullvm",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/windows_aarch64_gnullvm@0.53.0",
+      "type": "library",
+      "version": "0.53.0"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/microsoft/windows-rs"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "name": "windows_aarch64_msvc",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/windows_aarch64_msvc@0.52.6",
+      "type": "library",
+      "version": "0.52.6"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/microsoft/windows-rs"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "name": "windows_aarch64_msvc",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/windows_aarch64_msvc@0.53.0",
+      "type": "library",
+      "version": "0.53.0"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/microsoft/windows-rs"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "name": "windows_i686_gnu",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/windows_i686_gnu@0.52.6",
+      "type": "library",
+      "version": "0.52.6"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/microsoft/windows-rs"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "name": "windows_i686_gnu",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/windows_i686_gnu@0.53.0",
+      "type": "library",
+      "version": "0.53.0"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/microsoft/windows-rs"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "name": "windows_i686_gnullvm",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/windows_i686_gnullvm@0.52.6",
+      "type": "library",
+      "version": "0.52.6"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/microsoft/windows-rs"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "name": "windows_i686_gnullvm",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/windows_i686_gnullvm@0.53.0",
+      "type": "library",
+      "version": "0.53.0"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/microsoft/windows-rs"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "name": "windows_i686_msvc",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/windows_i686_msvc@0.52.6",
+      "type": "library",
+      "version": "0.52.6"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/microsoft/windows-rs"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "name": "windows_i686_msvc",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/windows_i686_msvc@0.53.0",
+      "type": "library",
+      "version": "0.53.0"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/microsoft/windows-rs"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "name": "windows_x86_64_gnu",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/windows_x86_64_gnu@0.52.6",
+      "type": "library",
+      "version": "0.52.6"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/microsoft/windows-rs"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "name": "windows_x86_64_gnu",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/windows_x86_64_gnu@0.53.0",
+      "type": "library",
+      "version": "0.53.0"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/microsoft/windows-rs"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "name": "windows_x86_64_gnullvm",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/windows_x86_64_gnullvm@0.52.6",
+      "type": "library",
+      "version": "0.52.6"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/microsoft/windows-rs"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "name": "windows_x86_64_gnullvm",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/windows_x86_64_gnullvm@0.53.0",
+      "type": "library",
+      "version": "0.53.0"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/microsoft/windows-rs"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "name": "windows_x86_64_msvc",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/windows_x86_64_msvc@0.52.6",
+      "type": "library",
+      "version": "0.52.6"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/microsoft/windows-rs"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT OR Apache-2.0"
+          }
+        }
+      ],
+      "name": "windows_x86_64_msvc",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/windows_x86_64_msvc@0.53.0",
+      "type": "library",
+      "version": "0.53.0"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/winnow-rs/winnow"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "name": "winnow",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/winnow@0.7.15",
+      "type": "library",
+      "version": "0.7.15"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/rodrigocfd/winsafe"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ],
+      "name": "winsafe",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/winsafe@0.0.19",
+      "type": "library",
+      "version": "0.0.19"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/bytecodealliance/wit-bindgen"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/bytecodealliance/wit-bindgen"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0 WITH LLVM-exception OR Apache-2.0 OR MIT"
+          }
+        }
+      ],
+      "name": "wit-bindgen-rt",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/wit-bindgen-rt@0.39.0",
+      "type": "library",
+      "version": "0.39.0"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "website",
+          "url": "https://github.com/RustCrypto/utils/tree/master/zeroize"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/RustCrypto/utils"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0 OR MIT"
+          }
+        }
+      ],
+      "name": "zeroize",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/zeroize@1.8.2",
+      "type": "library",
+      "version": "1.8.2"
+    },
+    {
+      "externalReferences": [
+        {
+          "type": "vcs",
+          "url": "https://github.com/RustCrypto/utils/tree/master/zeroize/derive"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "Apache-2.0 OR MIT"
+          }
+        }
+      ],
+      "name": "zeroize_derive",
+      "properties": [
+        {
+          "name": "amarax:ecosystem",
+          "value": "cargo"
+        },
+        {
+          "name": "amarax:license-file",
+          "value": ""
+        },
+        {
+          "name": "amarax:source",
+          "value": "registry+https://github.com/rust-lang/crates.io-index"
+        },
+        {
+          "name": "amarax:direct",
+          "value": "false"
+        }
+      ],
+      "purl": "pkg:cargo/zeroize_derive@1.4.2",
+      "type": "library",
+      "version": "1.4.2"
+    }
+  ],
+  "metadata": {
+    "component": {
+      "name": "block/ai-rules",
+      "properties": [
+        {
+          "name": "amarax:pinned-revision",
+          "value": "b2c1cd16d05f47053eb3f059f87524f7b6ee1a1f"
+        }
+      ],
+      "type": "application",
+      "version": "b2c1cd16d05f47053eb3f059f87524f7b6ee1a1f"
+    },
+    "properties": [
+      {
+        "name": "amarax:license-override-registry",
+        "value": "compliance/license-overrides.json"
+      }
+    ],
+    "timestamp": "2026-07-25T07:14:07Z",
+    "tools": [
+      {
+        "name": "generate_upstream_sbom.py",
+        "vendor": "Amarax Platform Replication",
+        "version": "1.0.0"
+      }
+    ]
+  },
+  "serialNumber": "urn:uuid:5a4ca0a3-5f15-5f34-a283-e097ff9ba3d3",
+  "specVersion": "1.5",
+  "version": 1
+}

@@ -1,0 +1,18 @@
+{
+  "name": "@amarax/guarded-task-adapter",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Policy and workspace boundary for trusted local Agent Task Queue execution.",
+  "engines": {
+    "node": ">=22"
+  },
+  "bin": {
+    "amarax-guarded-task": "./src/cli.mjs"
+  },
+  "scripts": {
+    "check": "node --check src/adapter.mjs && node --check src/cli.mjs",
+    "test": "node --test test/*.test.mjs"
+  },
+  "license": "UNLICENSED"
+}

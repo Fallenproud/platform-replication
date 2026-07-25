@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "policy": "Overrides repair incomplete or non-normalized package metadata. Each entry is version-specific and requires primary-source evidence. Overrides do not replace dependency, asset, notice, or legal review.",
+  "overrides": [
+    {
+      "ecosystem": "pypi",
+      "name": "beartype",
+      "version": "0.22.9",
+      "license": "MIT",
+      "reason": "Installed metadata contains the complete MIT license text rather than an SPDX-like identifier.",
+      "evidence": [
+        "https://github.com/beartype/beartype/blob/main/LICENSE"
+      ]
+    },
+    {
+      "ecosystem": "pypi",
+      "name": "exceptiongroup",
+      "version": "1.3.1",
+      "license": "MIT AND PSF-2.0",
+      "reason": "Package license file grants MIT and includes the required PSF-2.0 notice for copied Python standard-library portions.",
+      "evidence": [
+        "https://github.com/agronholm/exceptiongroup/blob/main/LICENSE"
+      ]
+    },
+    {
+      "ecosystem": "pypi",
+      "name": "jaraco.classes",
+      "version": "3.4.0",
+      "license": "MIT",
+      "reason": "Current canonical project metadata explicitly declares MIT; installed wheel metadata did not expose a normalized license value.",
+      "evidence": [
+        "https://github.com/jaraco/jaraco.classes/blob/main/pyproject.toml"
+      ]
+    },
+    {
+      "ecosystem": "pypi",
+      "name": "markdown-it-py",
+      "version": "4.2.0",
+      "license": "MIT",
+      "reason": "Canonical repository LICENSE is MIT; installed metadata exposed license files but no normalized expression.",
+      "evidence": [
+        "https://github.com/executablebooks/markdown-it-py/blob/master/LICENSE"
+      ]
+    },
+    {
+      "ecosystem": "pypi",
+      "name": "mdurl",
+      "version": "0.1.2",
+      "license": "MIT",
+      "reason": "Canonical repository license grants MIT-style terms for the project and retained Joyent-derived portions.",
+      "evidence": [
+        "https://github.com/executablebooks/mdurl/blob/master/LICENSE"
+      ]
+    },
+    {
+      "ecosystem": "pypi",
+      "name": "uncalled-for",
+      "version": "0.3.2",
+      "license": "MIT",
+      "reason": "Installed metadata contains the complete MIT license text rather than an SPDX-like identifier.",
+      "evidence": [
+        "https://github.com/chrisguidry/uncalled-for/blob/main/LICENSE"
+      ]
+    }
+  ]
+}

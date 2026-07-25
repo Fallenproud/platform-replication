@@ -1,0 +1,32 @@
+name: Platform Replication Compliance
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+      - "program/**"
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Validate assessment records
+        run: python tools/validate_assessments.py
+
+      - name: Generate third-party notices
+        run: python tools/generate_third_party_notices.py
+
+      - name: Ensure generated notices are committed
+        run: git diff --exit-code -- generated/THIRD_PARTY_NOTICES.md

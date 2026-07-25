@@ -1,0 +1,205 @@
+name: AI Rules Wrapper
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "workstreams/ai-rules-wrapper/**"
+      - ".github/workflows/ai-rules-wrapper.yml"
+  push:
+    branches:
+      - "program/**"
+    paths:
+      - "workstreams/ai-rules-wrapper/**"
+      - ".github/workflows/ai-rules-wrapper.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ai-rules-wrapper-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    name: Node 22 transactional wrapper tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    defaults:
+      run:
+        working-directory: workstreams/ai-rules-wrapper
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "npm"
+          cache-dependency-path: workstreams/ai-rules-wrapper/package.json
+
+      - name: Syntax check
+        run: npm run check
+
+      - name: Test
+        run: |
+          set -o pipefail
+          npm test 2>&1 | tee test-output.log
+
+      - name: Upload test diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ai-rules-wrapper-test-output
+          path: workstreams/ai-rules-wrapper/test-output.log
+          if-no-files-found: error
+          retention-days: 30
+
+  pinned-upstream-integration:
+    name: Pinned AI Rules v1.7.0 integration
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Fetch pinned AI Rules upstream
+        run: |
+          git clone --filter=blob:none https://github.com/block/ai-rules.git _upstream/ai-rules
+          cd _upstream/ai-rules
+          git checkout b2c1cd16d05f47053eb3f059f87524f7b6ee1a1f
+          test "$(git rev-parse HEAD)" = "b2c1cd16d05f47053eb3f059f87524f7b6ee1a1f"
+
+      - name: Build pinned release binary
+        working-directory: _upstream/ai-rules
+        run: |
+          source bin/activate-hermit >/tmp/hermit-activation.log 2>&1
+          cargo build --release --quiet >/tmp/ai-rules-build.log 2>&1 || {
+            cat /tmp/hermit-activation.log
+            cat /tmp/ai-rules-build.log
+            exit 1
+          }
+
+      - name: Create disposable repository fixture
+        run: |
+          FIXTURE="${RUNNER_TEMP}/amarax-ai-rules-real-integration"
+          DIAGNOSTICS="${RUNNER_TEMP}/amarax-ai-rules-real-diagnostics"
+          BINARY="${GITHUB_WORKSPACE}/_upstream/ai-rules/target/release/ai-rules"
+          mkdir -p "$FIXTURE" "$DIAGNOSTICS"
+          cd "$FIXTURE"
+          "$BINARY" init | tee "$DIAGNOSTICS/init.txt"
+          cat > ai-rules/platform-replication.md <<'EOF'
+          ---
+          description: Platform replication evidence rules
+          alwaysApply: true
+          ---
+          # Platform Replication
+          Preserve provenance and reject unapproved source imports.
+          EOF
+          cat > ai-rules/mcp.json <<'EOF'
+          {
+            "mcpServers": {
+              "evidence": {
+                "command": "echo",
+                "args": ["evidence-ready"],
+                "env": {"EVIDENCE_REF": "${EVIDENCE_REF}"}
+              }
+            }
+          }
+          EOF
+          python - <<PY
+          import json
+          from pathlib import Path
+          config = {
+              "binary": "$BINARY",
+              "binaryArgs": [],
+              "agents": ["claude", "codex", "cursor"],
+              "sourceDir": "ai-rules",
+              "manifestPath": ".amarax/ai-rules-manifest.json",
+              "allowedOutputs": [
+                  "CLAUDE.md",
+                  "AGENTS.md",
+                  ".mcp.json",
+                  ".codex/**",
+                  ".cursor/**",
+                  "ai-rules/.generated-ai-rules/**",
+              ],
+              "ignoredPaths": [".git/**", ".amarax/**", "node_modules/**"],
+              "compilerEnv": {},
+          }
+          Path("ai-rules.wrapper.json").write_text(json.dumps(config, indent=2) + "\n")
+          PY
+          echo "FIXTURE=$FIXTURE" >> "$GITHUB_ENV"
+          echo "DIAGNOSTICS=$DIAGNOSTICS" >> "$GITHUB_ENV"
+
+      - name: Verify dry-run isolation
+        run: |
+          WRAPPER="${GITHUB_WORKSPACE}/workstreams/ai-rules-wrapper/src/cli.mjs"
+          cd "$FIXTURE"
+          node "$WRAPPER" generate --dry-run --root "$FIXTURE" --config ai-rules.wrapper.json \
+            | tee "$DIAGNOSTICS/dry-run.json"
+          test ! -e CLAUDE.md && test ! -L CLAUDE.md
+          test ! -e AGENTS.md && test ! -L AGENTS.md
+          test ! -e .amarax/ai-rules-manifest.json
+
+      - name: Generate and verify real outputs
+        run: |
+          WRAPPER="${GITHUB_WORKSPACE}/workstreams/ai-rules-wrapper/src/cli.mjs"
+          cd "$FIXTURE"
+          node "$WRAPPER" generate --root "$FIXTURE" --config ai-rules.wrapper.json \
+            | tee "$DIAGNOSTICS/generate.json"
+          node "$WRAPPER" verify --root "$FIXTURE" --config ai-rules.wrapper.json \
+            | tee "$DIAGNOSTICS/verify.json"
+          find . -maxdepth 6 -mindepth 1 -printf '%y %p -> %l\n' | sort \
+            | tee "$DIAGNOSTICS/generated-tree.txt"
+          test -L CLAUDE.md
+          test -L AGENTS.md
+          test -e .mcp.json || test -L .mcp.json
+          test -e .codex/config.toml || test -L .codex/config.toml
+          test -e .cursor/mcp.json || test -L .cursor/mcp.json
+          grep -q "Preserve provenance" CLAUDE.md
+
+      - name: Detect drift and restore canonical output
+        run: |
+          WRAPPER="${GITHUB_WORKSPACE}/workstreams/ai-rules-wrapper/src/cli.mjs"
+          cd "$FIXTURE"
+          TARGET="$(readlink -f CLAUDE.md)"
+          echo "local drift" >> "$TARGET"
+          if node "$WRAPPER" verify --root "$FIXTURE" --config ai-rules.wrapper.json \
+            > "$DIAGNOSTICS/unexpected-verify-success.txt" 2>&1; then
+            echo "verify unexpectedly accepted drift" >&2
+            exit 1
+          fi
+          node "$WRAPPER" generate --root "$FIXTURE" --config ai-rules.wrapper.json \
+            | tee "$DIAGNOSTICS/regenerate.json"
+          node "$WRAPPER" verify --root "$FIXTURE" --config ai-rules.wrapper.json \
+            | tee "$DIAGNOSTICS/verify-restored.json"
+          ! grep -q "local drift" CLAUDE.md
+
+      - name: Clean manifest-owned outputs
+        run: |
+          WRAPPER="${GITHUB_WORKSPACE}/workstreams/ai-rules-wrapper/src/cli.mjs"
+          cd "$FIXTURE"
+          node "$WRAPPER" clean --root "$FIXTURE" --config ai-rules.wrapper.json \
+            | tee "$DIAGNOSTICS/clean.json"
+          test ! -e CLAUDE.md && test ! -L CLAUDE.md
+          test ! -e AGENTS.md && test ! -L AGENTS.md
+          test ! -e .mcp.json && test ! -L .mcp.json
+          test ! -e .amarax/ai-rules-manifest.json
+          test -f ai-rules/platform-replication.md
+
+      - name: Upload real integration diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ai-rules-wrapper-pinned-integration
+          path: ${{ runner.temp }}/amarax-ai-rules-real-diagnostics
+          if-no-files-found: error
+          retention-days: 30

@@ -1,0 +1,24 @@
+{
+  "requestId": "task-request-001",
+  "correlationId": "correlation-001",
+  "actor": {
+    "actorId": "agent-builder",
+    "actorType": "agent",
+    "organizationId": "organization-001",
+    "projectId": "project-001",
+    "environmentId": "development"
+  },
+  "policy": {
+    "decisionId": "policy-decision-001",
+    "outcome": "allow",
+    "expiresAt": "2099-01-01T00:00:00Z"
+  },
+  "queueName": "build",
+  "executable": "node",
+  "args": ["scripts/build.mjs"],
+  "workingDirectory": ".",
+  "environmentReferences": {
+    "CI": "CI"
+  },
+  "timeoutSeconds": 300
+}

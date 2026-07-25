@@ -1,0 +1,220 @@
+name: Guarded Task Adapter
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "workstreams/guarded-task-adapter/**"
+      - ".github/workflows/guarded-task-adapter.yml"
+  push:
+    branches:
+      - "program/**"
+    paths:
+      - "workstreams/guarded-task-adapter/**"
+      - ".github/workflows/guarded-task-adapter.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: guarded-task-adapter-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  unit:
+    name: Node 22 policy and execution tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    defaults:
+      run:
+        working-directory: workstreams/guarded-task-adapter
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "npm"
+          cache-dependency-path: workstreams/guarded-task-adapter/package.json
+
+      - name: Syntax check
+        run: npm run check
+
+      - name: Test
+        run: |
+          set -o pipefail
+          npm test 2>&1 | tee test-output.log
+
+      - name: Upload unit diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: guarded-task-adapter-unit-output
+          path: workstreams/guarded-task-adapter/test-output.log
+          if-no-files-found: error
+          retention-days: 30
+
+  pinned-upstream-integration:
+    name: Pinned Agent Task Queue integration
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@eac588ad8def6316056a12d4907a9d4d84ff7a3b
+
+      - name: Fetch pinned Agent Task Queue upstream
+        run: |
+          git clone --filter=blob:none https://github.com/block/agent-task-queue.git _upstream/agent-task-queue
+          cd _upstream/agent-task-queue
+          git checkout ccb94ae25c2b286d62e7371fd4c0f7ce60e33efa
+          test "$(git rev-parse HEAD)" = "ccb94ae25c2b286d62e7371fd4c0f7ce60e33efa"
+
+      - name: Materialize pinned tq environment
+        working-directory: _upstream/agent-task-queue
+        env:
+          UV_DEFAULT_INDEX: https://pypi.org/simple
+          UV_INDEX_URL: https://pypi.org/simple
+        run: |
+          uv python install 3.13
+          uv sync --all-extras --python 3.13
+          .venv/bin/tq --help >/tmp/tq-help.txt
+
+      - name: Create disposable integration fixture
+        run: |
+          FIXTURE="${RUNNER_TEMP}/amarax-guarded-task-integration"
+          DIAGNOSTICS="${RUNNER_TEMP}/amarax-guarded-task-diagnostics"
+          TQ_BINARY="${GITHUB_WORKSPACE}/_upstream/agent-task-queue/.venv/bin/tq"
+          mkdir -p "$FIXTURE/workspace" "$DIAGNOSTICS"
+          cat > "$FIXTURE/workspace/task.py" <<'PY'
+          import json
+          import os
+          import sys
+          from pathlib import Path
+
+          payload = {
+              "argument": sys.argv[1],
+              "environment": os.environ.get("DEMO_OUTPUT"),
+          }
+          Path("integration-result.json").write_text(json.dumps(payload), encoding="utf-8")
+          print(f"argument={sys.argv[1]}")
+          print(f"environment={os.environ.get('DEMO_OUTPUT')}")
+          PY
+          python - <<PY
+          import json
+          from pathlib import Path
+          root = Path("$FIXTURE")
+          config = {
+              "tqBinary": "$TQ_BINARY",
+              "tqArgs": [],
+              "dataDir": ".amarax/task-queue",
+              "allowedExecutables": ["python3"],
+              "allowedWorkspaceRoots": ["workspace"],
+              "allowedEnvironmentReferences": ["DEMO_REF"],
+              "maxTimeoutSeconds": 30,
+              "queuePattern": "^[A-Za-z0-9._:-]{1,80}$",
+              "terminationGraceMs": 2000,
+          }
+          request = {
+              "requestId": "integration-request-001",
+              "correlationId": "integration-correlation-001",
+              "actor": {
+                  "actorId": "integration-agent",
+                  "actorType": "agent",
+                  "organizationId": "organization-001",
+                  "projectId": "project-001",
+                  "environmentId": "ci",
+              },
+              "policy": {
+                  "decisionId": "integration-policy-001",
+                  "outcome": "allow",
+                  "expiresAt": "2099-01-01T00:00:00Z",
+              },
+              "queueName": "integration",
+              "executable": "python3",
+              "args": ["task.py", "value;not-shell && still-one-argument"],
+              "workingDirectory": "workspace",
+              "environmentReferences": {"DEMO_OUTPUT": "DEMO_REF"},
+              "timeoutSeconds": 20,
+          }
+          denied = dict(request)
+          denied["requestId"] = "integration-request-denied"
+          denied["policy"] = {"decisionId": "integration-policy-denied", "outcome": "deny"}
+          (root / "guarded-task.json").write_text(json.dumps(config, indent=2) + "\n")
+          (root / "request.json").write_text(json.dumps(request, indent=2) + "\n")
+          (root / "request-denied.json").write_text(json.dumps(denied, indent=2) + "\n")
+          PY
+          echo "FIXTURE=$FIXTURE" >> "$GITHUB_ENV"
+          echo "DIAGNOSTICS=$DIAGNOSTICS" >> "$GITHUB_ENV"
+
+      - name: Verify dry-run admission without provider mutation
+        env:
+          DEMO_REF: sensitive-integration-value
+        run: |
+          ADAPTER="${GITHUB_WORKSPACE}/workstreams/guarded-task-adapter/src/cli.mjs"
+          node "$ADAPTER" dry-run \
+            --root "$FIXTURE" \
+            --config guarded-task.json \
+            --request request.json \
+            | tee "$DIAGNOSTICS/dry-run.json"
+          ! grep -q "sensitive-integration-value" "$DIAGNOSTICS/dry-run.json"
+          grep -Fq '${DEMO_REF}' "$DIAGNOSTICS/dry-run.json"
+          test ! -e "$FIXTURE/workspace/integration-result.json"
+
+      - name: Verify denied policy stops before tq
+        env:
+          DEMO_REF: sensitive-integration-value
+        run: |
+          ADAPTER="${GITHUB_WORKSPACE}/workstreams/guarded-task-adapter/src/cli.mjs"
+          set +e
+          node "$ADAPTER" execute \
+            --root "$FIXTURE" \
+            --config guarded-task.json \
+            --request request-denied.json \
+            > "$DIAGNOSTICS/denied-stdout.json" \
+            2> "$DIAGNOSTICS/denied-stderr.json"
+          EXIT_CODE=$?
+          set -e
+          test "$EXIT_CODE" != "0"
+          grep -q '"error": "policy_denied"' "$DIAGNOSTICS/denied-stderr.json"
+          test ! -e "$FIXTURE/workspace/integration-result.json"
+
+      - name: Execute through pinned tq and validate argument integrity
+        env:
+          DEMO_REF: sensitive-integration-value
+        run: |
+          ADAPTER="${GITHUB_WORKSPACE}/workstreams/guarded-task-adapter/src/cli.mjs"
+          node "$ADAPTER" execute --events \
+            --root "$FIXTURE" \
+            --config guarded-task.json \
+            --request request.json \
+            > "$DIAGNOSTICS/result.json" \
+            2> "$DIAGNOSTICS/events.ndjson"
+          jq -e '.status == "succeeded" and .exitCode == 0' "$DIAGNOSTICS/result.json"
+          test "$(jq -r '.argument' "$FIXTURE/workspace/integration-result.json")" = "value;not-shell && still-one-argument"
+          test "$(jq -r '.environment' "$FIXTURE/workspace/integration-result.json")" = "sensitive-integration-value"
+          ! grep -R "sensitive-integration-value" "$DIAGNOSTICS/result.json" "$DIAGNOSTICS/events.ndjson"
+          grep -q '\[REDACTED\]' "$DIAGNOSTICS/result.json"
+          grep -q '"type":"completed"' "$DIAGNOSTICS/events.ndjson"
+          cp "$FIXTURE/workspace/integration-result.json" "$DIAGNOSTICS/integration-result.json"
+          find "$FIXTURE" -maxdepth 5 -mindepth 1 -printf '%y %p -> %l\n' | sort \
+            > "$DIAGNOSTICS/fixture-tree.txt"
+
+      - name: Upload pinned integration diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: guarded-task-adapter-pinned-integration
+          path: ${{ runner.temp }}/amarax-guarded-task-diagnostics
+          if-no-files-found: error
+          retention-days: 30

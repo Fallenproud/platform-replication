@@ -1,0 +1,60 @@
+{
+  "repository": "block/agent-task-queue",
+  "upstream": {
+    "default_branch": "main",
+    "pinned_ref": "ccb94ae25c2b286d62e7371fd4c0f7ce60e33efa",
+    "archived": false,
+    "moved_from": null
+  },
+  "license": {
+    "status": "verified",
+    "identifier": "Apache-2.0",
+    "notice_required": true,
+    "dependency_review": "conditional"
+  },
+  "runtime": {
+    "build_reproduced": true,
+    "self_hostable": "yes",
+    "private_dependencies": [],
+    "required_services": [
+      "Python 3.10 or newer",
+      "FastMCP",
+      "local SQLite",
+      "local process and shell execution"
+    ]
+  },
+  "scores": {
+    "product_fit": 5,
+    "license_confidence": 5,
+    "self_hostability": 5,
+    "independence": 4,
+    "maintenance": 4,
+    "security": 2,
+    "integration_cost": 3,
+    "replacement_difficulty": 2
+  },
+  "target": "AIKOV resource scheduling and guarded local build execution",
+  "disposition": "FORK",
+  "conditions": [
+    "Keep the upstream fork isolated from the authoritative AIKOV control plane behind a product-owned scheduler contract.",
+    "Do not expose arbitrary shell execution to untrusted users, remote tenants, or production agents without policy evaluation and sandbox isolation.",
+    "Add command classification, allow and deny policy, working-directory scope, environment-variable filtering, secret redaction, actor identity, and approval gates.",
+    "Replace the local-only SQLite authority when tasks must coordinate across hosts or tenants.",
+    "Emit immutable queue, execution, timeout, cancellation, and process-kill audit events.",
+    "Reproduce or deliberately exclude the Compose desktop sidecar before product import.",
+    "Review FastMCP, desktop-sidecar dependencies, license files, assets, build scripts, vendored content and all required notices before distribution.",
+    "Preserve Apache-2.0 and applicable copyright or NOTICE material and document local modifications."
+  ],
+  "evidence": [
+    "README.md describes a local MCP task queue that serializes expensive commands, supports named and hierarchical queues, queue capacities, zombie cleanup, timeouts, metrics, a CLI, and a desktop sidecar.",
+    "pyproject.toml declares version 0.4.1, Python 3.10+, FastMCP, Apache-2.0, and console entry points for the MCP server and tq CLI.",
+    "queue_core.py uses SQLite WAL mode, queue rows, process identifiers, repository metadata, stale-lock cleanup, and process-tree termination.",
+    "task_queue.py exposes a destructive MCP run_task tool and intentionally executes caller-provided commands through an operating-system shell.",
+    "The repository contains no mandatory private Block service dependency and is structurally self-hostable, but its trust model is suitable only for a trusted local developer context without additional controls.",
+    "Platform Replication Upstream Build Verification run 30147827108 checked out the pinned commit and completed dependency installation, Ruff lint, and the upstream pytest suite successfully on Python 3.10 and Python 3.13.",
+    "Upstream SBOM Evidence run 30148183032 materialized the Python 3.13 all-extras environment and recorded 74 components. Six incomplete or non-normalized package license fields were corrected through version-pinned primary-source evidence, leaving zero components with unresolved normalized license metadata.",
+    "Upstream Behavior Verification run 30148855573 passed the tq CLI surface, empty-state JSON, command execution, event logs, deterministic FIFO serialization, timeout process termination, in-memory FastMCP tool discovery, and a non-shell MCP tool call."
+  ],
+  "reviewed_at": "2026-07-25",
+  "reviewer": "Sophie-X / Amarax Platform Replication"
+}
